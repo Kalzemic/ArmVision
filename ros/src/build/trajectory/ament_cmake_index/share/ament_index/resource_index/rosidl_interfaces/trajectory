@@ -1,0 +1,4 @@
+srv/Trajectory.idl
+srv/Trajectory.srv
+srv/Trajectory_Request.msg
+srv/Trajectory_Response.msg

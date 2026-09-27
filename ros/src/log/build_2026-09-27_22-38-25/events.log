@@ -1,0 +1,326 @@
+[0.000000] (-) TimerEvent: {}
+[0.000428] (-) JobUnselected: {'identifier': 'kinematics'}
+[0.000485] (-) JobUnselected: {'identifier': 'trajectory'}
+[0.000559] (robo_controller) JobQueued: {'identifier': 'robo_controller', 'dependencies': OrderedDict()}
+[0.000619] (robo_controller) JobStarted: {'identifier': 'robo_controller'}
+[0.008612] (robo_controller) JobProgress: {'identifier': 'robo_controller', 'progress': 'cmake'}
+[0.009131] (robo_controller) Command: {'cmd': ['/usr/bin/cmake', '/home/kalzemic/Projects/ArmVision/ros/src/robo_controller', '-DPYTHON_EXECUTABLE=/usr/bin/python3', '-DCMAKE_INSTALL_PREFIX=/home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller'], 'cwd': '/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller', 'env': OrderedDict([('PROFILEHOME', ''), ('KDE_FULL_SESSION', 'true'), ('MAIL', '/var/spool/mail/kalzemic'), ('LANGUAGE', ''), ('USER', 'kalzemic'), ('PAM_KWALLET5_LOGIN', '/run/user/1000/kwallet5.socket'), ('NVCC_CCBIN', '/usr/bin/g++-15'), ('HOSTNAME', 'archlinux'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('CSF_TObjDefaults', '/usr/share/opencascade/resources/StdResource'), ('KONSOLE_VERSION', '260800'), ('XDG_CACHE_HOME', '/home/kalzemic/.cache'), ('QT_WAYLAND_RECONNECT', '1'), ('CSF_XCAFDefaults', '/usr/share/opencascade/resources/StdResource'), ('SHLVL', '5'), ('LD_LIBRARY_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib:/home/kalzemic/Projects/ArmVision/ros/install/kinematics/lib:/usr/local/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/lib:/usr/local/lib:'), ('CSF_XSMessage', '/usr/share/opencascade/resources/XSMessage'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kalzemic'), ('CHROME_DESKTOP', 'code.desktop'), ('ASDF_DIR', '/home/kalzemic/.asdf'), ('CONDA_SHLVL', '0'), ('CSF_TObjMessage', '/usr/share/opencascade/resources/TObj'), ('MMGT_CLEAR', '1'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/kalzemic/Projects/ArmVision/ros'), ('TERM_PROGRAM_VERSION', '1.138.0'), ('DESKTOP_SESSION', 'plasma'), ('CSF_ShadersDirectory', '/usr/share/opencascade/resources/Shaders'), ('CSF_MDTVTexturesDirectory', '/usr/share/opencascade/resources/Textures'), ('ROS_PYTHON_VERSION', '3'), ('GRADLE_HOME', '/usr/share/java/gradle'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/kalzemic/.gtkrc:/home/kalzemic/.config/gtkrc'), ('KDE_SESSION_VERSION', '6'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\][robotics🐧] \\u:\\w$ \\[\x1b]633;B\x07\\]'), ('DRAWHOME', '/usr/share/opencascade/resources/DrawResources'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('MANAGERPID', '1794'), ('DISTROBOX_ENTER_PATH', '/home/kalzemic/.local/bin/distrobox-enter'), ('SYSTEMD_EXEC_PID', '2044'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('CSF_IGESDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('XDG_STATE_HOME', '/home/kalzemic/.local/state'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('container', 'podman'), ('KONSOLE_DBUS_ACTIVATION_COOKIE', 'bRkANxTVQMQzmffZ5bZZjQxk/CRBK2qP/lKDPC2cJxg='), ('CASROOT', '/usr'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('DEBUGINFOD_URLS', 'https://debuginfod.archlinux.org'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install:/home/kalzemic/Projects/ArmVision/ros/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kalzemic'), ('WINDOWID', '94126642146720'), ('MANAGERPIDFDID', '8565'), ('JOURNAL_STREAM', '10:29987'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CSF_LANGUAGE', 'us'), ('MEMORY_PRESSURE_WATCH', '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-plasmashell.service/memory.pressure'), ('CLAUDE_CODE_SSE_PORT', '57606'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERMINFO_DIRS', '/usr/share/terminfo:/run/host/usr/share/terminfo'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/kalzemic/.gtkrc-2.0:/home/kalzemic/.config/gtkrc-2.0'), ('FLATPAK_TTY_PROGRESS', '1'), ('PATH', '/home/kalzemic/.local/bin:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/kalzemic/.local/bin:/home/kalzemic/.local/bin:/opt/ros/humble/bin:/home/kalzemic/.local/bin:/home/kalzemic/.asdf/shims:/home/kalzemic/.asdf/bin:/home/kalzemic/miniconda3/condabin:/home/kalzemic/.cargo/bin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/usr/local/sbin:/usr/sbin:/usr/local/bin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin'), ('SESSION_MANAGER', 'local/archlinux:@/tmp/.ICE-unix/2027,unix/archlinux:/tmp/.ICE-unix/2027'), ('INVOCATION_ID', '6eec454ec935478baa9310940755ca7a'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('XDG_MENU_PREFIX', 'plasma-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('ICEAUTHORITY', '/run/user/1000/iceauth_RaHTPD'), ('CSF_XmlOcafResource', '/usr/share/opencascade/resources/XmlOcafResource'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('XDG_DATA_HOME', '/home/kalzemic/.local/share'), ('XDG_CONFIG_HOME', '/home/kalzemic/.config'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/run/user/1000/xauth_HBCGKu'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ffdecdbe2b.sock'), ('CSF_StandardDefaults', '/usr/share/opencascade/resources/StdResource'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory:/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics:/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_PluginDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONDA_PYTHON_EXE', '/home/kalzemic/miniconda3/bin/python'), ('SHELL', '/usr/bin/bash'), ('NO_AT_BRIDGE', '1'), ('CSF_SHMessage', '/usr/share/opencascade/resources/SHMessage'), ('KONSOLE_DBUS_SERVICE', ':1.4497'), ('VSSCRIPT_PATH', '/usr/lib/python3.14/site-packages/vapoursynth/libvsscript.so'), ('CSF_STEPDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller'), ('CSF_StandardLiteDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONTAINER_ID', 'robotics'), ('XDG_CONFIG_DIRS', '/home/kalzemic/.config/kdedefaults:/etc/xdg'), ('COPILOT_DEBUG_NONCE', '843a6d01fc8b99b7f3ad0143af53ab15'), ('CONDA_EXE', '/home/kalzemic/miniconda3/bin/conda'), ('CSF_DrawPluginDefaults', '/usr/share/opencascade/resources/DrawResources'), ('CSF_MIGRATION_TYPES', '/usr/share/opencascade/resources/StdResource/MigrationSheet.txt'), ('XDG_DATA_DIRS', '/home/kalzemic/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share'), ('CSF_OCCTResourcePath', '/usr/share/opencascade/resources'), ('PYTHONPATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages:/home/kalzemic/Projects/ArmVision/ros/install/kinematics/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('DRAWDEFAULT', '/usr/share/opencascade/resources/DrawResources/DrawDefault'), ('KDE_SESSION_UID', '1000'), ('COLCON', '1'), ('MEMORY_PRESSURE_WRITE', 'c29tZSAyMDAwMDAgMjAwMDAwMAA='), ('CUDA_PATH', '/opt/cuda'), ('CMAKE_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory:/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics:/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_EXCEPTION_PROMPT', '1')]), 'shell': False}
+[0.063791] (robo_controller) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.099247] (-) TimerEvent: {}
+[0.131377] (robo_controller) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.140223] (robo_controller) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199340] (-) TimerEvent: {}
+[0.223684] (robo_controller) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.232639] (robo_controller) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.232998] (robo_controller) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.233573] (robo_controller) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.236344] (robo_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.299494] (-) TimerEvent: {}
+[0.309755] (robo_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.318641] (robo_controller) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.318910] (robo_controller) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.319595] (robo_controller) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.323057] (robo_controller) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.399561] (-) TimerEvent: {}
+[0.456596] (robo_controller) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.499654] (-) TimerEvent: {}
+[0.553720] (robo_controller) StdoutLine: {'line': b'-- Found controller_interface: 2.54.2 (/opt/ros/humble/share/controller_interface/cmake)\n'}
+[0.599762] (-) TimerEvent: {}
+[0.604605] (robo_controller) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.612182] (robo_controller) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.621032] (robo_controller) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.633958] (robo_controller) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.651382] (robo_controller) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.699848] (-) TimerEvent: {}
+[0.800151] (-) TimerEvent: {}
+[0.898058] (robo_controller) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.4 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.900250] (-) TimerEvent: {}
+[0.901023] (robo_controller) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.929944] (robo_controller) StdoutLine: {'line': b'-- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND\n'}
+[0.983520] (robo_controller) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.986358] (robo_controller) StdoutLine: {'line': b'-- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND\n'}
+[1.000369] (-) TimerEvent: {}
+[1.003504] (robo_controller) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[1.006965] (robo_controller) StdoutLine: {'line': b'-- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND\n'}
+[1.017164] (robo_controller) StdoutLine: {'line': b'-- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND\n'}
+[1.027086] (robo_controller) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.038053] (robo_controller) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.100481] (-) TimerEvent: {}
+[1.104874] (robo_controller) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.105071] (robo_controller) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.175302] (robo_controller) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.176372] (robo_controller) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.200579] (-) TimerEvent: {}
+[1.235035] (robo_controller) StdoutLine: {'line': b'-- Found realtime_tools: 2.15.1 (/opt/ros/humble/share/realtime_tools/cmake)\n'}
+[1.300706] (-) TimerEvent: {}
+[1.305327] (robo_controller) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: filesystem serialization \n'}
+[1.307041] (robo_controller) StdoutLine: {'line': b'-- eigenpy FOUND. eigenpy at /opt/ros/humble/lib/x86_64-linux-gnu/libeigenpy.so\n'}
+[1.331404] (robo_controller) StdoutLine: {'line': b'-- Checking for NumPy\n'}
+[1.400810] (-) TimerEvent: {}
+[1.501106] (-) TimerEvent: {}
+[1.601368] (-) TimerEvent: {}
+[1.637647] (robo_controller) StdoutLine: {'line': b'--   NUMPY_INCLUDE_DIRS=/usr/lib/python3/dist-packages/numpy/core/include\n'}
+[1.702467] (-) TimerEvent: {}
+[1.785534] (robo_controller) StdoutLine: {'line': b'--   NUMPY_VERSION=1.21.5\n'}
+[1.802567] (-) TimerEvent: {}
+[1.902813] (-) TimerEvent: {}
+[2.003159] (-) TimerEvent: {}
+[2.103394] (-) TimerEvent: {}
+[2.134365] (robo_controller) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter Development.Module NumPy \n'}
+[2.135036] (robo_controller) StdoutLine: {'line': b'-- PythonLibraryDirs: \n'}
+[2.135168] (robo_controller) StdoutLine: {'line': b'-- PythonLibVersionString: 3.10.12\n'}
+[2.153264] (robo_controller) StdoutLine: {'line': b'-- Python site lib: lib/python3.10/site-packages\n'}
+[2.153526] (robo_controller) StdoutLine: {'line': b'-- Python include dirs: /usr/include/python3.10\n'}
+[2.190845] (robo_controller) StdoutLine: {'line': b'-- Checking for NumPy\n'}
+[2.203506] (-) TimerEvent: {}
+[2.304492] (-) TimerEvent: {}
+[2.339812] (robo_controller) StdoutLine: {'line': b'--   NUMPY_INCLUDE_DIRS=/usr/lib/python3/dist-packages/numpy/core/include\n'}
+[2.404588] (-) TimerEvent: {}
+[2.476801] (robo_controller) StdoutLine: {'line': b'--   NUMPY_VERSION=1.21.5\n'}
+[2.476955] (robo_controller) StdoutLine: {'line': b'-- NumPy include dir: /usr/lib/python3/dist-packages/numpy/core/include\n'}
+[2.480943] (robo_controller) StderrLine: {'line': b'\x1b[33mCMake Warning at /usr/share/cmake-3.22/Modules/FindBoost.cmake:2201 (message):\n'}
+[2.481081] (robo_controller) StderrLine: {'line': b'  No header defined for python310; skipping header check (note: header-only\n'}
+[2.481151] (robo_controller) StderrLine: {'line': b'  libraries have no designated component)\n'}
+[2.481209] (robo_controller) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[2.481264] (robo_controller) StderrLine: {'line': b'  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/boost.cmake:146 (find_package)\n'}
+[2.481318] (robo_controller) StderrLine: {'line': b'  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/eigenpyConfig.cmake:172 (SEARCH_FOR_BOOST_PYTHON)\n'}
+[2.481378] (robo_controller) StderrLine: {'line': b'  /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)\n'}
+[2.481455] (robo_controller) StderrLine: {'line': b'  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/pinocchio/pinocchioConfig.cmake:184 (find_dependency)\n'}
+[2.481525] (robo_controller) StderrLine: {'line': b'  CMakeLists.txt:19 (find_package)\n'}
+[2.481577] (robo_controller) StderrLine: {'line': b'\n'}
+[2.481629] (robo_controller) StderrLine: {'line': b'\x1b[0m\n'}
+[2.486944] (robo_controller) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: python310 \n'}
+[2.504675] (-) TimerEvent: {}
+[2.604956] (-) TimerEvent: {}
+[2.705266] (-) TimerEvent: {}
+[2.777365] (robo_controller) StdoutLine: {'line': b'-- Default C++ standard: 201703\n'}
+[2.777664] (robo_controller) StdoutLine: {'line': b'-- Minimal C++ standard upgraded to 11\n'}
+[2.777798] (robo_controller) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 11, currently defined: 17\n'}
+[2.777910] (robo_controller) StdoutLine: {'line': b'-- CMAKE_CXX_STANDARD was not set: automatically set to currently defined standard 17\n'}
+[2.779708] (robo_controller) StdoutLine: {'line': b'-- coal FOUND. coal at /opt/ros/humble/lib/x86_64-linux-gnu/libcoal.so\n'}
+[2.785173] (robo_controller) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: serialization filesystem \n'}
+[2.787520] (robo_controller) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 11, currently defined: 17\n'}
+[2.788174] (robo_controller) StdoutLine: {'line': b'-- Minimal C++ standard upgraded to 17\n'}
+[2.788328] (robo_controller) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 17, currently defined: 17\n'}
+[2.792210] (robo_controller) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[2.805347] (-) TimerEvent: {}
+[2.869648] (robo_controller) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[2.869907] (robo_controller) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[2.869980] (robo_controller) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[2.870539] (robo_controller) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.871401] (robo_controller) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[2.871494] (robo_controller) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[2.872129] (robo_controller) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.873404] (robo_controller) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.889029] (robo_controller) StdoutLine: {'line': b'-- Generating done\n'}
+[2.894510] (robo_controller) StdoutLine: {'line': b'-- Build files have been written to: /home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller\n'}
+[2.904354] (robo_controller) CommandEnded: {'returncode': 0}
+[2.905056] (robo_controller) JobProgress: {'identifier': 'robo_controller', 'progress': 'build'}
+[2.906199] (-) TimerEvent: {}
+[2.906548] (robo_controller) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller', '--', '-j8', '-l8'], 'cwd': '/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller', 'env': OrderedDict([('PROFILEHOME', ''), ('KDE_FULL_SESSION', 'true'), ('MAIL', '/var/spool/mail/kalzemic'), ('LANGUAGE', ''), ('USER', 'kalzemic'), ('PAM_KWALLET5_LOGIN', '/run/user/1000/kwallet5.socket'), ('NVCC_CCBIN', '/usr/bin/g++-15'), ('HOSTNAME', 'archlinux'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('CSF_TObjDefaults', '/usr/share/opencascade/resources/StdResource'), ('KONSOLE_VERSION', '260800'), ('XDG_CACHE_HOME', '/home/kalzemic/.cache'), ('QT_WAYLAND_RECONNECT', '1'), ('CSF_XCAFDefaults', '/usr/share/opencascade/resources/StdResource'), ('SHLVL', '5'), ('LD_LIBRARY_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib:/home/kalzemic/Projects/ArmVision/ros/install/kinematics/lib:/usr/local/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/lib:/usr/local/lib:'), ('CSF_XSMessage', '/usr/share/opencascade/resources/XSMessage'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kalzemic'), ('CHROME_DESKTOP', 'code.desktop'), ('ASDF_DIR', '/home/kalzemic/.asdf'), ('CONDA_SHLVL', '0'), ('CSF_TObjMessage', '/usr/share/opencascade/resources/TObj'), ('MMGT_CLEAR', '1'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/kalzemic/Projects/ArmVision/ros'), ('TERM_PROGRAM_VERSION', '1.138.0'), ('DESKTOP_SESSION', 'plasma'), ('CSF_ShadersDirectory', '/usr/share/opencascade/resources/Shaders'), ('CSF_MDTVTexturesDirectory', '/usr/share/opencascade/resources/Textures'), ('ROS_PYTHON_VERSION', '3'), ('GRADLE_HOME', '/usr/share/java/gradle'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/kalzemic/.gtkrc:/home/kalzemic/.config/gtkrc'), ('KDE_SESSION_VERSION', '6'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\][robotics🐧] \\u:\\w$ \\[\x1b]633;B\x07\\]'), ('DRAWHOME', '/usr/share/opencascade/resources/DrawResources'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('MANAGERPID', '1794'), ('DISTROBOX_ENTER_PATH', '/home/kalzemic/.local/bin/distrobox-enter'), ('SYSTEMD_EXEC_PID', '2044'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('CSF_IGESDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('XDG_STATE_HOME', '/home/kalzemic/.local/state'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('container', 'podman'), ('KONSOLE_DBUS_ACTIVATION_COOKIE', 'bRkANxTVQMQzmffZ5bZZjQxk/CRBK2qP/lKDPC2cJxg='), ('CASROOT', '/usr'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('DEBUGINFOD_URLS', 'https://debuginfod.archlinux.org'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install:/home/kalzemic/Projects/ArmVision/ros/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kalzemic'), ('WINDOWID', '94126642146720'), ('MANAGERPIDFDID', '8565'), ('JOURNAL_STREAM', '10:29987'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CSF_LANGUAGE', 'us'), ('MEMORY_PRESSURE_WATCH', '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-plasmashell.service/memory.pressure'), ('CLAUDE_CODE_SSE_PORT', '57606'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERMINFO_DIRS', '/usr/share/terminfo:/run/host/usr/share/terminfo'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/kalzemic/.gtkrc-2.0:/home/kalzemic/.config/gtkrc-2.0'), ('FLATPAK_TTY_PROGRESS', '1'), ('PATH', '/home/kalzemic/.local/bin:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/kalzemic/.local/bin:/home/kalzemic/.local/bin:/opt/ros/humble/bin:/home/kalzemic/.local/bin:/home/kalzemic/.asdf/shims:/home/kalzemic/.asdf/bin:/home/kalzemic/miniconda3/condabin:/home/kalzemic/.cargo/bin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/usr/local/sbin:/usr/sbin:/usr/local/bin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin'), ('SESSION_MANAGER', 'local/archlinux:@/tmp/.ICE-unix/2027,unix/archlinux:/tmp/.ICE-unix/2027'), ('INVOCATION_ID', '6eec454ec935478baa9310940755ca7a'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('XDG_MENU_PREFIX', 'plasma-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('ICEAUTHORITY', '/run/user/1000/iceauth_RaHTPD'), ('CSF_XmlOcafResource', '/usr/share/opencascade/resources/XmlOcafResource'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('XDG_DATA_HOME', '/home/kalzemic/.local/share'), ('XDG_CONFIG_HOME', '/home/kalzemic/.config'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/run/user/1000/xauth_HBCGKu'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ffdecdbe2b.sock'), ('CSF_StandardDefaults', '/usr/share/opencascade/resources/StdResource'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory:/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics:/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_PluginDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONDA_PYTHON_EXE', '/home/kalzemic/miniconda3/bin/python'), ('SHELL', '/usr/bin/bash'), ('NO_AT_BRIDGE', '1'), ('CSF_SHMessage', '/usr/share/opencascade/resources/SHMessage'), ('KONSOLE_DBUS_SERVICE', ':1.4497'), ('VSSCRIPT_PATH', '/usr/lib/python3.14/site-packages/vapoursynth/libvsscript.so'), ('CSF_STEPDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller'), ('CSF_StandardLiteDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONTAINER_ID', 'robotics'), ('XDG_CONFIG_DIRS', '/home/kalzemic/.config/kdedefaults:/etc/xdg'), ('COPILOT_DEBUG_NONCE', '843a6d01fc8b99b7f3ad0143af53ab15'), ('CONDA_EXE', '/home/kalzemic/miniconda3/bin/conda'), ('CSF_DrawPluginDefaults', '/usr/share/opencascade/resources/DrawResources'), ('CSF_MIGRATION_TYPES', '/usr/share/opencascade/resources/StdResource/MigrationSheet.txt'), ('XDG_DATA_DIRS', '/home/kalzemic/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share'), ('CSF_OCCTResourcePath', '/usr/share/opencascade/resources'), ('PYTHONPATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages:/home/kalzemic/Projects/ArmVision/ros/install/kinematics/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('DRAWDEFAULT', '/usr/share/opencascade/resources/DrawResources/DrawDefault'), ('KDE_SESSION_UID', '1000'), ('COLCON', '1'), ('MEMORY_PRESSURE_WRITE', 'c29tZSAyMDAwMDAgMjAwMDAwMAA='), ('CUDA_PATH', '/opt/cuda'), ('CMAKE_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory:/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics:/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_EXCEPTION_PROMPT', '1')]), 'shell': False}
+[2.957479] (robo_controller) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/robo_controller.dir/src/robo_controller.cpp.o\x1b[0m\n'}
+[3.006602] (-) TimerEvent: {}
+[3.106967] (-) TimerEvent: {}
+[3.207321] (-) TimerEvent: {}
+[3.307725] (-) TimerEvent: {}
+[3.408018] (-) TimerEvent: {}
+[3.508414] (-) TimerEvent: {}
+[3.608830] (-) TimerEvent: {}
+[3.709195] (-) TimerEvent: {}
+[3.809543] (-) TimerEvent: {}
+[3.909907] (-) TimerEvent: {}
+[4.010233] (-) TimerEvent: {}
+[4.110613] (-) TimerEvent: {}
+[4.210970] (-) TimerEvent: {}
+[4.311285] (-) TimerEvent: {}
+[4.411633] (-) TimerEvent: {}
+[4.511958] (-) TimerEvent: {}
+[4.612260] (-) TimerEvent: {}
+[4.712580] (-) TimerEvent: {}
+[4.812956] (-) TimerEvent: {}
+[4.913291] (-) TimerEvent: {}
+[5.013604] (-) TimerEvent: {}
+[5.113975] (-) TimerEvent: {}
+[5.214337] (-) TimerEvent: {}
+[5.314735] (-) TimerEvent: {}
+[5.415066] (-) TimerEvent: {}
+[5.515470] (-) TimerEvent: {}
+[5.615889] (-) TimerEvent: {}
+[5.716188] (-) TimerEvent: {}
+[5.816512] (-) TimerEvent: {}
+[5.916832] (-) TimerEvent: {}
+[6.017140] (-) TimerEvent: {}
+[6.117461] (-) TimerEvent: {}
+[6.217766] (-) TimerEvent: {}
+[6.318047] (-) TimerEvent: {}
+[6.418318] (-) TimerEvent: {}
+[6.518684] (-) TimerEvent: {}
+[6.619028] (-) TimerEvent: {}
+[6.719384] (-) TimerEvent: {}
+[6.819733] (-) TimerEvent: {}
+[6.920081] (-) TimerEvent: {}
+[7.020430] (-) TimerEvent: {}
+[7.120749] (-) TimerEvent: {}
+[7.221069] (-) TimerEvent: {}
+[7.321491] (-) TimerEvent: {}
+[7.421878] (-) TimerEvent: {}
+[7.522222] (-) TimerEvent: {}
+[7.622541] (-) TimerEvent: {}
+[7.722859] (-) TimerEvent: {}
+[7.823239] (-) TimerEvent: {}
+[7.923554] (-) TimerEvent: {}
+[8.023859] (-) TimerEvent: {}
+[8.124256] (-) TimerEvent: {}
+[8.224560] (-) TimerEvent: {}
+[8.324849] (-) TimerEvent: {}
+[8.425136] (-) TimerEvent: {}
+[8.525432] (-) TimerEvent: {}
+[8.625718] (-) TimerEvent: {}
+[8.726026] (-) TimerEvent: {}
+[8.826381] (-) TimerEvent: {}
+[8.926689] (-) TimerEvent: {}
+[9.027020] (-) TimerEvent: {}
+[9.127398] (-) TimerEvent: {}
+[9.227751] (-) TimerEvent: {}
+[9.328058] (-) TimerEvent: {}
+[9.428380] (-) TimerEvent: {}
+[9.528725] (-) TimerEvent: {}
+[9.629001] (-) TimerEvent: {}
+[9.729284] (-) TimerEvent: {}
+[9.829609] (-) TimerEvent: {}
+[9.929892] (-) TimerEvent: {}
+[10.030196] (-) TimerEvent: {}
+[10.130516] (-) TimerEvent: {}
+[10.230820] (-) TimerEvent: {}
+[10.331119] (-) TimerEvent: {}
+[10.431405] (-) TimerEvent: {}
+[10.531745] (-) TimerEvent: {}
+[10.632055] (-) TimerEvent: {}
+[10.732336] (-) TimerEvent: {}
+[10.832603] (-) TimerEvent: {}
+[10.932903] (-) TimerEvent: {}
+[11.033214] (-) TimerEvent: {}
+[11.133514] (-) TimerEvent: {}
+[11.233864] (-) TimerEvent: {}
+[11.334166] (-) TimerEvent: {}
+[11.434464] (-) TimerEvent: {}
+[11.534786] (-) TimerEvent: {}
+[11.635136] (-) TimerEvent: {}
+[11.735462] (-) TimerEvent: {}
+[11.835775] (-) TimerEvent: {}
+[11.936105] (-) TimerEvent: {}
+[12.036467] (-) TimerEvent: {}
+[12.136789] (-) TimerEvent: {}
+[12.237118] (-) TimerEvent: {}
+[12.337464] (-) TimerEvent: {}
+[12.437817] (-) TimerEvent: {}
+[12.538160] (-) TimerEvent: {}
+[12.638497] (-) TimerEvent: {}
+[12.738797] (-) TimerEvent: {}
+[12.839201] (-) TimerEvent: {}
+[12.939499] (-) TimerEvent: {}
+[13.039825] (-) TimerEvent: {}
+[13.140151] (-) TimerEvent: {}
+[13.240464] (-) TimerEvent: {}
+[13.340758] (-) TimerEvent: {}
+[13.441034] (-) TimerEvent: {}
+[13.541383] (-) TimerEvent: {}
+[13.641732] (-) TimerEvent: {}
+[13.742072] (-) TimerEvent: {}
+[13.842411] (-) TimerEvent: {}
+[13.942762] (-) TimerEvent: {}
+[14.043097] (-) TimerEvent: {}
+[14.143456] (-) TimerEvent: {}
+[14.243869] (-) TimerEvent: {}
+[14.344171] (-) TimerEvent: {}
+[14.444476] (-) TimerEvent: {}
+[14.544752] (-) TimerEvent: {}
+[14.645044] (-) TimerEvent: {}
+[14.745392] (-) TimerEvent: {}
+[14.845684] (-) TimerEvent: {}
+[14.945976] (-) TimerEvent: {}
+[15.046307] (-) TimerEvent: {}
+[15.146667] (-) TimerEvent: {}
+[15.246955] (-) TimerEvent: {}
+[15.347283] (-) TimerEvent: {}
+[15.447551] (-) TimerEvent: {}
+[15.547836] (-) TimerEvent: {}
+[15.648125] (-) TimerEvent: {}
+[15.748407] (-) TimerEvent: {}
+[15.848689] (-) TimerEvent: {}
+[15.948970] (-) TimerEvent: {}
+[16.049262] (-) TimerEvent: {}
+[16.149582] (-) TimerEvent: {}
+[16.249872] (-) TimerEvent: {}
+[16.350162] (-) TimerEvent: {}
+[16.450466] (-) TimerEvent: {}
+[16.550759] (-) TimerEvent: {}
+[16.651066] (-) TimerEvent: {}
+[16.751362] (-) TimerEvent: {}
+[16.851655] (-) TimerEvent: {}
+[16.951928] (-) TimerEvent: {}
+[17.052209] (-) TimerEvent: {}
+[17.152485] (-) TimerEvent: {}
+[17.252765] (-) TimerEvent: {}
+[17.353041] (-) TimerEvent: {}
+[17.453344] (-) TimerEvent: {}
+[17.553680] (-) TimerEvent: {}
+[17.653979] (-) TimerEvent: {}
+[17.754315] (-) TimerEvent: {}
+[17.854653] (-) TimerEvent: {}
+[17.954989] (-) TimerEvent: {}
+[18.055335] (-) TimerEvent: {}
+[18.155698] (-) TimerEvent: {}
+[18.256024] (-) TimerEvent: {}
+[18.356298] (-) TimerEvent: {}
+[18.456574] (-) TimerEvent: {}
+[18.556856] (-) TimerEvent: {}
+[18.657148] (-) TimerEvent: {}
+[18.757437] (-) TimerEvent: {}
+[18.857726] (-) TimerEvent: {}
+[18.958019] (-) TimerEvent: {}
+[19.058316] (-) TimerEvent: {}
+[19.158610] (-) TimerEvent: {}
+[19.258902] (-) TimerEvent: {}
+[19.359225] (-) TimerEvent: {}
+[19.459530] (-) TimerEvent: {}
+[19.559839] (-) TimerEvent: {}
+[19.660147] (-) TimerEvent: {}
+[19.760433] (-) TimerEvent: {}
+[19.860726] (-) TimerEvent: {}
+[19.961026] (-) TimerEvent: {}
+[20.032500] (robo_controller) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library librobo_controller.so\x1b[0m\n'}
+[20.061166] (-) TimerEvent: {}
+[20.161512] (-) TimerEvent: {}
+[20.261847] (-) TimerEvent: {}
+[20.362177] (-) TimerEvent: {}
+[20.462490] (-) TimerEvent: {}
+[20.548385] (robo_controller) StdoutLine: {'line': b'[100%] Built target robo_controller\n'}
+[20.558928] (robo_controller) CommandEnded: {'returncode': 0}
+[20.559970] (robo_controller) JobProgress: {'identifier': 'robo_controller', 'progress': 'install'}
+[20.562550] (-) TimerEvent: {}
+[20.568118] (robo_controller) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller'], 'cwd': '/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller', 'env': OrderedDict([('PROFILEHOME', ''), ('KDE_FULL_SESSION', 'true'), ('MAIL', '/var/spool/mail/kalzemic'), ('LANGUAGE', ''), ('USER', 'kalzemic'), ('PAM_KWALLET5_LOGIN', '/run/user/1000/kwallet5.socket'), ('NVCC_CCBIN', '/usr/bin/g++-15'), ('HOSTNAME', 'archlinux'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('CSF_TObjDefaults', '/usr/share/opencascade/resources/StdResource'), ('KONSOLE_VERSION', '260800'), ('XDG_CACHE_HOME', '/home/kalzemic/.cache'), ('QT_WAYLAND_RECONNECT', '1'), ('CSF_XCAFDefaults', '/usr/share/opencascade/resources/StdResource'), ('SHLVL', '5'), ('LD_LIBRARY_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib:/home/kalzemic/Projects/ArmVision/ros/install/kinematics/lib:/usr/local/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/lib:/usr/local/lib:'), ('CSF_XSMessage', '/usr/share/opencascade/resources/XSMessage'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kalzemic'), ('CHROME_DESKTOP', 'code.desktop'), ('ASDF_DIR', '/home/kalzemic/.asdf'), ('CONDA_SHLVL', '0'), ('CSF_TObjMessage', '/usr/share/opencascade/resources/TObj'), ('MMGT_CLEAR', '1'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/kalzemic/Projects/ArmVision/ros'), ('TERM_PROGRAM_VERSION', '1.138.0'), ('DESKTOP_SESSION', 'plasma'), ('CSF_ShadersDirectory', '/usr/share/opencascade/resources/Shaders'), ('CSF_MDTVTexturesDirectory', '/usr/share/opencascade/resources/Textures'), ('ROS_PYTHON_VERSION', '3'), ('GRADLE_HOME', '/usr/share/java/gradle'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/kalzemic/.gtkrc:/home/kalzemic/.config/gtkrc'), ('KDE_SESSION_VERSION', '6'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\][robotics🐧] \\u:\\w$ \\[\x1b]633;B\x07\\]'), ('DRAWHOME', '/usr/share/opencascade/resources/DrawResources'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('MANAGERPID', '1794'), ('DISTROBOX_ENTER_PATH', '/home/kalzemic/.local/bin/distrobox-enter'), ('SYSTEMD_EXEC_PID', '2044'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('CSF_IGESDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('XDG_STATE_HOME', '/home/kalzemic/.local/state'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('container', 'podman'), ('KONSOLE_DBUS_ACTIVATION_COOKIE', 'bRkANxTVQMQzmffZ5bZZjQxk/CRBK2qP/lKDPC2cJxg='), ('CASROOT', '/usr'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('DEBUGINFOD_URLS', 'https://debuginfod.archlinux.org'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install:/home/kalzemic/Projects/ArmVision/ros/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kalzemic'), ('WINDOWID', '94126642146720'), ('MANAGERPIDFDID', '8565'), ('JOURNAL_STREAM', '10:29987'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CSF_LANGUAGE', 'us'), ('MEMORY_PRESSURE_WATCH', '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-plasmashell.service/memory.pressure'), ('CLAUDE_CODE_SSE_PORT', '57606'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERMINFO_DIRS', '/usr/share/terminfo:/run/host/usr/share/terminfo'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/kalzemic/.gtkrc-2.0:/home/kalzemic/.config/gtkrc-2.0'), ('FLATPAK_TTY_PROGRESS', '1'), ('PATH', '/home/kalzemic/.local/bin:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/kalzemic/.local/bin:/home/kalzemic/.local/bin:/opt/ros/humble/bin:/home/kalzemic/.local/bin:/home/kalzemic/.asdf/shims:/home/kalzemic/.asdf/bin:/home/kalzemic/miniconda3/condabin:/home/kalzemic/.cargo/bin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/usr/local/sbin:/usr/sbin:/usr/local/bin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin'), ('SESSION_MANAGER', 'local/archlinux:@/tmp/.ICE-unix/2027,unix/archlinux:/tmp/.ICE-unix/2027'), ('INVOCATION_ID', '6eec454ec935478baa9310940755ca7a'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('XDG_MENU_PREFIX', 'plasma-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('ICEAUTHORITY', '/run/user/1000/iceauth_RaHTPD'), ('CSF_XmlOcafResource', '/usr/share/opencascade/resources/XmlOcafResource'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('XDG_DATA_HOME', '/home/kalzemic/.local/share'), ('XDG_CONFIG_HOME', '/home/kalzemic/.config'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/run/user/1000/xauth_HBCGKu'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ffdecdbe2b.sock'), ('CSF_StandardDefaults', '/usr/share/opencascade/resources/StdResource'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory:/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics:/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_PluginDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONDA_PYTHON_EXE', '/home/kalzemic/miniconda3/bin/python'), ('SHELL', '/usr/bin/bash'), ('NO_AT_BRIDGE', '1'), ('CSF_SHMessage', '/usr/share/opencascade/resources/SHMessage'), ('KONSOLE_DBUS_SERVICE', ':1.4497'), ('VSSCRIPT_PATH', '/usr/lib/python3.14/site-packages/vapoursynth/libvsscript.so'), ('CSF_STEPDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller'), ('CSF_StandardLiteDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONTAINER_ID', 'robotics'), ('XDG_CONFIG_DIRS', '/home/kalzemic/.config/kdedefaults:/etc/xdg'), ('COPILOT_DEBUG_NONCE', '843a6d01fc8b99b7f3ad0143af53ab15'), ('CONDA_EXE', '/home/kalzemic/miniconda3/bin/conda'), ('CSF_DrawPluginDefaults', '/usr/share/opencascade/resources/DrawResources'), ('CSF_MIGRATION_TYPES', '/usr/share/opencascade/resources/StdResource/MigrationSheet.txt'), ('XDG_DATA_DIRS', '/home/kalzemic/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share'), ('CSF_OCCTResourcePath', '/usr/share/opencascade/resources'), ('PYTHONPATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages:/home/kalzemic/Projects/ArmVision/ros/install/kinematics/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('DRAWDEFAULT', '/usr/share/opencascade/resources/DrawResources/DrawDefault'), ('KDE_SESSION_UID', '1000'), ('COLCON', '1'), ('MEMORY_PRESSURE_WRITE', 'c29tZSAyMDAwMDAgMjAwMDAwMAA='), ('CUDA_PATH', '/opt/cuda'), ('CMAKE_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory:/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics:/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_EXCEPTION_PROMPT', '1')]), 'shell': False}
+[20.575794] (robo_controller) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[20.576123] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/robo_controller.xml\n'}
+[20.576266] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/lib/librobo_controller.so\n'}
+[20.587837] (robo_controller) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/lib/librobo_controller.so" to ""\n'}
+[20.588178] (robo_controller) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/robo_controller.xml\n'}
+[20.588309] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/ament_index/resource_index/package_run_dependencies/robo_controller\n'}
+[20.588447] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/ament_index/resource_index/parent_prefix_path/robo_controller\n'}
+[20.588576] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/environment/ament_prefix_path.sh\n'}
+[20.588738] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/environment/ament_prefix_path.dsv\n'}
+[20.588897] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/environment/path.sh\n'}
+[20.589113] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/environment/path.dsv\n'}
+[20.589300] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/local_setup.bash\n'}
+[20.589486] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/local_setup.sh\n'}
+[20.589629] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/local_setup.zsh\n'}
+[20.589857] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/local_setup.dsv\n'}
+[20.590007] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/package.dsv\n'}
+[20.590193] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/ament_index/resource_index/packages/robo_controller\n'}
+[20.590399] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/ament_index/resource_index/controller_interface__pluginlib__plugin/robo_controller\n'}
+[20.590653] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/cmake/robo_controllerConfig.cmake\n'}
+[20.590816] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/cmake/robo_controllerConfig-version.cmake\n'}
+[20.590978] (robo_controller) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/robo_controller/share/robo_controller/package.xml\n'}
+[20.592839] (robo_controller) CommandEnded: {'returncode': 0}
+[20.612424] (robo_controller) JobEnded: {'identifier': 'robo_controller', 'rc': 0}
+[20.613283] (-) EventReactorShutdown: {}

@@ -1,0 +1,289 @@
+[0.000000] (-) TimerEvent: {}
+[0.000560] (-) JobUnselected: {'identifier': 'kinematics'}
+[0.000652] (trajectory) JobQueued: {'identifier': 'trajectory', 'dependencies': OrderedDict()}
+[0.000707] (trajectory) JobStarted: {'identifier': 'trajectory'}
+[0.008898] (trajectory) JobProgress: {'identifier': 'trajectory', 'progress': 'cmake'}
+[0.010282] (trajectory) JobProgress: {'identifier': 'trajectory', 'progress': 'build'}
+[0.010460] (trajectory) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/kalzemic/Projects/ArmVision/ros/src/build/trajectory', '--', '-j8', '-l8'], 'cwd': '/home/kalzemic/Projects/ArmVision/ros/src/build/trajectory', 'env': OrderedDict([('PROFILEHOME', ''), ('KDE_FULL_SESSION', 'true'), ('MAIL', '/var/spool/mail/kalzemic'), ('LANGUAGE', ''), ('USER', 'kalzemic'), ('PAM_KWALLET5_LOGIN', '/run/user/1000/kwallet5.socket'), ('NVCC_CCBIN', '/usr/bin/g++-15'), ('HOSTNAME', 'archlinux'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('CSF_TObjDefaults', '/usr/share/opencascade/resources/StdResource'), ('KONSOLE_VERSION', '260800'), ('XDG_CACHE_HOME', '/home/kalzemic/.cache'), ('QT_WAYLAND_RECONNECT', '1'), ('CSF_XCAFDefaults', '/usr/share/opencascade/resources/StdResource'), ('SHLVL', '5'), ('LD_LIBRARY_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib:/home/kalzemic/Projects/ArmVision/ros/install/kinematics/lib:/usr/local/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/lib:/usr/local/lib:'), ('CSF_XSMessage', '/usr/share/opencascade/resources/XSMessage'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kalzemic'), ('CHROME_DESKTOP', 'code.desktop'), ('ASDF_DIR', '/home/kalzemic/.asdf'), ('CONDA_SHLVL', '0'), ('CSF_TObjMessage', '/usr/share/opencascade/resources/TObj'), ('MMGT_CLEAR', '1'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/kalzemic/Projects/ArmVision/ros'), ('TERM_PROGRAM_VERSION', '1.138.0'), ('DESKTOP_SESSION', 'plasma'), ('CSF_ShadersDirectory', '/usr/share/opencascade/resources/Shaders'), ('CSF_MDTVTexturesDirectory', '/usr/share/opencascade/resources/Textures'), ('ROS_PYTHON_VERSION', '3'), ('GRADLE_HOME', '/usr/share/java/gradle'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/kalzemic/.gtkrc:/home/kalzemic/.config/gtkrc'), ('KDE_SESSION_VERSION', '6'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\][robotics🐧] \\u:\\w$ \\[\x1b]633;B\x07\\]'), ('DRAWHOME', '/usr/share/opencascade/resources/DrawResources'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('MANAGERPID', '1794'), ('DISTROBOX_ENTER_PATH', '/home/kalzemic/.local/bin/distrobox-enter'), ('SYSTEMD_EXEC_PID', '2044'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('CSF_IGESDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('XDG_STATE_HOME', '/home/kalzemic/.local/state'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('container', 'podman'), ('KONSOLE_DBUS_ACTIVATION_COOKIE', 'bRkANxTVQMQzmffZ5bZZjQxk/CRBK2qP/lKDPC2cJxg='), ('CASROOT', '/usr'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('DEBUGINFOD_URLS', 'https://debuginfod.archlinux.org'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install:/home/kalzemic/Projects/ArmVision/ros/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kalzemic'), ('WINDOWID', '94126642146720'), ('MANAGERPIDFDID', '8565'), ('JOURNAL_STREAM', '10:29987'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CSF_LANGUAGE', 'us'), ('MEMORY_PRESSURE_WATCH', '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-plasmashell.service/memory.pressure'), ('CLAUDE_CODE_SSE_PORT', '57606'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERMINFO_DIRS', '/usr/share/terminfo:/run/host/usr/share/terminfo'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/kalzemic/.gtkrc-2.0:/home/kalzemic/.config/gtkrc-2.0'), ('FLATPAK_TTY_PROGRESS', '1'), ('PATH', '/home/kalzemic/.local/bin:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/kalzemic/.local/bin:/home/kalzemic/.local/bin:/opt/ros/humble/bin:/home/kalzemic/.local/bin:/home/kalzemic/.asdf/shims:/home/kalzemic/.asdf/bin:/home/kalzemic/miniconda3/condabin:/home/kalzemic/.cargo/bin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/usr/local/sbin:/usr/sbin:/usr/local/bin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin'), ('SESSION_MANAGER', 'local/archlinux:@/tmp/.ICE-unix/2027,unix/archlinux:/tmp/.ICE-unix/2027'), ('INVOCATION_ID', '6eec454ec935478baa9310940755ca7a'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('XDG_MENU_PREFIX', 'plasma-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('ICEAUTHORITY', '/run/user/1000/iceauth_RaHTPD'), ('CSF_XmlOcafResource', '/usr/share/opencascade/resources/XmlOcafResource'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('XDG_DATA_HOME', '/home/kalzemic/.local/share'), ('XDG_CONFIG_HOME', '/home/kalzemic/.config'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/run/user/1000/xauth_HBCGKu'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ffdecdbe2b.sock'), ('CSF_StandardDefaults', '/usr/share/opencascade/resources/StdResource'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory:/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics:/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_PluginDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONDA_PYTHON_EXE', '/home/kalzemic/miniconda3/bin/python'), ('SHELL', '/usr/bin/bash'), ('NO_AT_BRIDGE', '1'), ('CSF_SHMessage', '/usr/share/opencascade/resources/SHMessage'), ('KONSOLE_DBUS_SERVICE', ':1.4497'), ('VSSCRIPT_PATH', '/usr/lib/python3.14/site-packages/vapoursynth/libvsscript.so'), ('CSF_STEPDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/kalzemic/Projects/ArmVision/ros/src/build/trajectory'), ('CSF_StandardLiteDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONTAINER_ID', 'robotics'), ('XDG_CONFIG_DIRS', '/home/kalzemic/.config/kdedefaults:/etc/xdg'), ('COPILOT_DEBUG_NONCE', '843a6d01fc8b99b7f3ad0143af53ab15'), ('CONDA_EXE', '/home/kalzemic/miniconda3/bin/conda'), ('CSF_DrawPluginDefaults', '/usr/share/opencascade/resources/DrawResources'), ('CSF_MIGRATION_TYPES', '/usr/share/opencascade/resources/StdResource/MigrationSheet.txt'), ('XDG_DATA_DIRS', '/home/kalzemic/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share'), ('CSF_OCCTResourcePath', '/usr/share/opencascade/resources'), ('PYTHONPATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages:/home/kalzemic/Projects/ArmVision/ros/install/kinematics/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('DRAWDEFAULT', '/usr/share/opencascade/resources/DrawResources/DrawDefault'), ('KDE_SESSION_UID', '1000'), ('COLCON', '1'), ('MEMORY_PRESSURE_WRITE', 'c29tZSAyMDAwMDAgMjAwMDAwMAA='), ('CUDA_PATH', '/opt/cuda'), ('CMAKE_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory:/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics:/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_EXCEPTION_PROMPT', '1')]), 'shell': False}
+[0.055580] (trajectory) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target trajectory__rosidl_generator_c\x1b[0m\n'}
+[0.067759] (trajectory) StdoutLine: {'line': b'[  2%] Built target trajectory__rs\n'}
+[0.068169] (trajectory) StdoutLine: {'line': b'[  5%] Built target trajectory__cpp\n'}
+[0.069398] (trajectory) StdoutLine: {'line': b'[ 14%] Built target trajectory__rosidl_generator_c\n'}
+[0.081085] (trajectory) StdoutLine: {'line': b'[ 14%] Built target ament_cmake_python_copy_trajectory\n'}
+[0.082907] (trajectory) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target trajectory__rosidl_typesupport_cpp\x1b[0m\n'}
+[0.083248] (trajectory) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target trajectory__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[0.087852] (trajectory) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target trajectory__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[0.089292] (trajectory) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target trajectory__rosidl_typesupport_c\x1b[0m\n'}
+[0.089447] (trajectory) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target trajectory__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[0.090118] (trajectory) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target trajectory__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[0.099938] (-) TimerEvent: {}
+[0.105195] (trajectory) StdoutLine: {'line': b'[ 23%] Built target trajectory__rosidl_typesupport_introspection_cpp\n'}
+[0.106688] (trajectory) StdoutLine: {'line': b'[ 32%] Built target trajectory__rosidl_typesupport_cpp\n'}
+[0.109777] (trajectory) StdoutLine: {'line': b'[ 41%] Built target trajectory__rosidl_typesupport_c\n'}
+[0.111126] (trajectory) StdoutLine: {'line': b'[ 50%] Built target trajectory__rosidl_typesupport_introspection_c\n'}
+[0.112104] (trajectory) StdoutLine: {'line': b'[ 58%] Built target trajectory__rosidl_typesupport_fastrtps_cpp\n'}
+[0.123274] (trajectory) StdoutLine: {'line': b'[ 67%] Built target trajectory__rosidl_typesupport_fastrtps_c\n'}
+[0.124876] (trajectory) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target trajectory_node\x1b[0m\n'}
+[0.148552] (trajectory) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/trajectory_node.dir/src/trajectory.cpp.o\x1b[0m\n'}
+[0.149254] (trajectory) StdoutLine: {'line': b'[ 70%] Built target trajectory\n'}
+[0.174754] (trajectory) StdoutLine: {'line': b'[ 73%] Built target trajectory__py\n'}
+[0.185901] (trajectory) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target trajectory__rosidl_generator_py\x1b[0m\n'}
+[0.200033] (-) TimerEvent: {}
+[0.200739] (trajectory) StdoutLine: {'line': b'[ 79%] Built target trajectory__rosidl_generator_py\n'}
+[0.213136] (trajectory) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target trajectory__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[0.216154] (trajectory) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target trajectory__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[0.217524] (trajectory) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target trajectory__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[0.231500] (trajectory) StdoutLine: {'line': b'[ 85%] Built target trajectory__rosidl_typesupport_c__pyext\n'}
+[0.232971] (trajectory) StdoutLine: {'line': b'[ 91%] Built target trajectory__rosidl_typesupport_introspection_c__pyext\n'}
+[0.233594] (trajectory) StdoutLine: {'line': b'[ 97%] Built target trajectory__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.300065] (-) TimerEvent: {}
+[0.360199] (trajectory) StdoutLine: {'line': b'running egg_info\n'}
+[0.360972] (trajectory) StdoutLine: {'line': b'writing trajectory.egg-info/PKG-INFO\n'}
+[0.361377] (trajectory) StdoutLine: {'line': b'writing dependency_links to trajectory.egg-info/dependency_links.txt\n'}
+[0.361595] (trajectory) StdoutLine: {'line': b'writing top-level names to trajectory.egg-info/top_level.txt\n'}
+[0.365123] (trajectory) StdoutLine: {'line': b"reading manifest file 'trajectory.egg-info/SOURCES.txt'\n"}
+[0.365594] (trajectory) StdoutLine: {'line': b"writing manifest file 'trajectory.egg-info/SOURCES.txt'\n"}
+[0.397497] (trajectory) StdoutLine: {'line': b'[ 97%] Built target ament_cmake_python_build_trajectory_egg\n'}
+[0.400162] (-) TimerEvent: {}
+[0.500432] (-) TimerEvent: {}
+[0.600770] (-) TimerEvent: {}
+[0.701084] (-) TimerEvent: {}
+[0.801440] (-) TimerEvent: {}
+[0.901792] (-) TimerEvent: {}
+[1.002111] (-) TimerEvent: {}
+[1.102464] (-) TimerEvent: {}
+[1.202745] (-) TimerEvent: {}
+[1.303101] (-) TimerEvent: {}
+[1.403466] (-) TimerEvent: {}
+[1.503802] (-) TimerEvent: {}
+[1.604097] (-) TimerEvent: {}
+[1.704406] (-) TimerEvent: {}
+[1.804721] (-) TimerEvent: {}
+[1.905007] (-) TimerEvent: {}
+[2.005347] (-) TimerEvent: {}
+[2.105682] (-) TimerEvent: {}
+[2.205965] (-) TimerEvent: {}
+[2.306289] (-) TimerEvent: {}
+[2.406600] (-) TimerEvent: {}
+[2.506983] (-) TimerEvent: {}
+[2.607318] (-) TimerEvent: {}
+[2.707635] (-) TimerEvent: {}
+[2.807942] (-) TimerEvent: {}
+[2.908235] (-) TimerEvent: {}
+[3.008574] (-) TimerEvent: {}
+[3.108902] (-) TimerEvent: {}
+[3.209234] (-) TimerEvent: {}
+[3.309506] (-) TimerEvent: {}
+[3.409776] (-) TimerEvent: {}
+[3.510094] (-) TimerEvent: {}
+[3.610399] (-) TimerEvent: {}
+[3.710679] (-) TimerEvent: {}
+[3.810952] (-) TimerEvent: {}
+[3.911234] (-) TimerEvent: {}
+[4.011521] (-) TimerEvent: {}
+[4.111829] (-) TimerEvent: {}
+[4.212244] (-) TimerEvent: {}
+[4.312620] (-) TimerEvent: {}
+[4.412936] (-) TimerEvent: {}
+[4.513228] (-) TimerEvent: {}
+[4.613559] (-) TimerEvent: {}
+[4.713906] (-) TimerEvent: {}
+[4.814182] (-) TimerEvent: {}
+[4.914508] (-) TimerEvent: {}
+[5.014796] (-) TimerEvent: {}
+[5.115101] (-) TimerEvent: {}
+[5.215415] (-) TimerEvent: {}
+[5.315715] (-) TimerEvent: {}
+[5.416008] (-) TimerEvent: {}
+[5.516326] (-) TimerEvent: {}
+[5.616663] (-) TimerEvent: {}
+[5.716969] (-) TimerEvent: {}
+[5.817300] (-) TimerEvent: {}
+[5.917614] (-) TimerEvent: {}
+[6.017931] (-) TimerEvent: {}
+[6.118246] (-) TimerEvent: {}
+[6.218527] (-) TimerEvent: {}
+[6.318807] (-) TimerEvent: {}
+[6.419091] (-) TimerEvent: {}
+[6.519384] (-) TimerEvent: {}
+[6.619657] (-) TimerEvent: {}
+[6.719947] (-) TimerEvent: {}
+[6.820257] (-) TimerEvent: {}
+[6.920582] (-) TimerEvent: {}
+[7.020897] (-) TimerEvent: {}
+[7.121211] (-) TimerEvent: {}
+[7.221513] (-) TimerEvent: {}
+[7.321821] (-) TimerEvent: {}
+[7.422173] (-) TimerEvent: {}
+[7.522487] (-) TimerEvent: {}
+[7.622800] (-) TimerEvent: {}
+[7.723094] (-) TimerEvent: {}
+[7.823375] (-) TimerEvent: {}
+[7.923652] (-) TimerEvent: {}
+[8.023986] (-) TimerEvent: {}
+[8.124308] (-) TimerEvent: {}
+[8.224585] (-) TimerEvent: {}
+[8.309084] (trajectory) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable trajectory_node\x1b[0m\n'}
+[8.324703] (-) TimerEvent: {}
+[8.424999] (-) TimerEvent: {}
+[8.525392] (-) TimerEvent: {}
+[8.625665] (-) TimerEvent: {}
+[8.725953] (-) TimerEvent: {}
+[8.755701] (trajectory) StdoutLine: {'line': b'[100%] Built target trajectory_node\n'}
+[8.767253] (trajectory) CommandEnded: {'returncode': 0}
+[8.767933] (trajectory) JobProgress: {'identifier': 'trajectory', 'progress': 'install'}
+[8.776652] (trajectory) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/kalzemic/Projects/ArmVision/ros/src/build/trajectory'], 'cwd': '/home/kalzemic/Projects/ArmVision/ros/src/build/trajectory', 'env': OrderedDict([('PROFILEHOME', ''), ('KDE_FULL_SESSION', 'true'), ('MAIL', '/var/spool/mail/kalzemic'), ('LANGUAGE', ''), ('USER', 'kalzemic'), ('PAM_KWALLET5_LOGIN', '/run/user/1000/kwallet5.socket'), ('NVCC_CCBIN', '/usr/bin/g++-15'), ('HOSTNAME', 'archlinux'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('CSF_TObjDefaults', '/usr/share/opencascade/resources/StdResource'), ('KONSOLE_VERSION', '260800'), ('XDG_CACHE_HOME', '/home/kalzemic/.cache'), ('QT_WAYLAND_RECONNECT', '1'), ('CSF_XCAFDefaults', '/usr/share/opencascade/resources/StdResource'), ('SHLVL', '5'), ('LD_LIBRARY_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib:/home/kalzemic/Projects/ArmVision/ros/install/kinematics/lib:/usr/local/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/lib:/usr/local/lib:'), ('CSF_XSMessage', '/usr/share/opencascade/resources/XSMessage'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kalzemic'), ('CHROME_DESKTOP', 'code.desktop'), ('ASDF_DIR', '/home/kalzemic/.asdf'), ('CONDA_SHLVL', '0'), ('CSF_TObjMessage', '/usr/share/opencascade/resources/TObj'), ('MMGT_CLEAR', '1'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/kalzemic/Projects/ArmVision/ros'), ('TERM_PROGRAM_VERSION', '1.138.0'), ('DESKTOP_SESSION', 'plasma'), ('CSF_ShadersDirectory', '/usr/share/opencascade/resources/Shaders'), ('CSF_MDTVTexturesDirectory', '/usr/share/opencascade/resources/Textures'), ('ROS_PYTHON_VERSION', '3'), ('GRADLE_HOME', '/usr/share/java/gradle'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/kalzemic/.gtkrc:/home/kalzemic/.config/gtkrc'), ('KDE_SESSION_VERSION', '6'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\][robotics🐧] \\u:\\w$ \\[\x1b]633;B\x07\\]'), ('DRAWHOME', '/usr/share/opencascade/resources/DrawResources'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('MANAGERPID', '1794'), ('DISTROBOX_ENTER_PATH', '/home/kalzemic/.local/bin/distrobox-enter'), ('SYSTEMD_EXEC_PID', '2044'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('CSF_IGESDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('XDG_STATE_HOME', '/home/kalzemic/.local/state'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('container', 'podman'), ('KONSOLE_DBUS_ACTIVATION_COOKIE', 'bRkANxTVQMQzmffZ5bZZjQxk/CRBK2qP/lKDPC2cJxg='), ('CASROOT', '/usr'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('DEBUGINFOD_URLS', 'https://debuginfod.archlinux.org'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install:/home/kalzemic/Projects/ArmVision/ros/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kalzemic'), ('WINDOWID', '94126642146720'), ('MANAGERPIDFDID', '8565'), ('JOURNAL_STREAM', '10:29987'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CSF_LANGUAGE', 'us'), ('MEMORY_PRESSURE_WATCH', '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-plasmashell.service/memory.pressure'), ('CLAUDE_CODE_SSE_PORT', '57606'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERMINFO_DIRS', '/usr/share/terminfo:/run/host/usr/share/terminfo'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/kalzemic/.gtkrc-2.0:/home/kalzemic/.config/gtkrc-2.0'), ('FLATPAK_TTY_PROGRESS', '1'), ('PATH', '/home/kalzemic/.local/bin:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/kalzemic/.local/bin:/home/kalzemic/.local/bin:/opt/ros/humble/bin:/home/kalzemic/.local/bin:/home/kalzemic/.asdf/shims:/home/kalzemic/.asdf/bin:/home/kalzemic/miniconda3/condabin:/home/kalzemic/.cargo/bin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/usr/local/sbin:/usr/sbin:/usr/local/bin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin'), ('SESSION_MANAGER', 'local/archlinux:@/tmp/.ICE-unix/2027,unix/archlinux:/tmp/.ICE-unix/2027'), ('INVOCATION_ID', '6eec454ec935478baa9310940755ca7a'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('XDG_MENU_PREFIX', 'plasma-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('ICEAUTHORITY', '/run/user/1000/iceauth_RaHTPD'), ('CSF_XmlOcafResource', '/usr/share/opencascade/resources/XmlOcafResource'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('XDG_DATA_HOME', '/home/kalzemic/.local/share'), ('XDG_CONFIG_HOME', '/home/kalzemic/.config'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/run/user/1000/xauth_HBCGKu'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ffdecdbe2b.sock'), ('CSF_StandardDefaults', '/usr/share/opencascade/resources/StdResource'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory:/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics:/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_PluginDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONDA_PYTHON_EXE', '/home/kalzemic/miniconda3/bin/python'), ('SHELL', '/usr/bin/bash'), ('NO_AT_BRIDGE', '1'), ('CSF_SHMessage', '/usr/share/opencascade/resources/SHMessage'), ('KONSOLE_DBUS_SERVICE', ':1.4497'), ('VSSCRIPT_PATH', '/usr/lib/python3.14/site-packages/vapoursynth/libvsscript.so'), ('CSF_STEPDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/kalzemic/Projects/ArmVision/ros/src/build/trajectory'), ('CSF_StandardLiteDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONTAINER_ID', 'robotics'), ('XDG_CONFIG_DIRS', '/home/kalzemic/.config/kdedefaults:/etc/xdg'), ('COPILOT_DEBUG_NONCE', '843a6d01fc8b99b7f3ad0143af53ab15'), ('CONDA_EXE', '/home/kalzemic/miniconda3/bin/conda'), ('CSF_DrawPluginDefaults', '/usr/share/opencascade/resources/DrawResources'), ('CSF_MIGRATION_TYPES', '/usr/share/opencascade/resources/StdResource/MigrationSheet.txt'), ('XDG_DATA_DIRS', '/home/kalzemic/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share'), ('CSF_OCCTResourcePath', '/usr/share/opencascade/resources'), ('PYTHONPATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages:/home/kalzemic/Projects/ArmVision/ros/install/kinematics/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('DRAWDEFAULT', '/usr/share/opencascade/resources/DrawResources/DrawDefault'), ('KDE_SESSION_UID', '1000'), ('COLCON', '1'), ('MEMORY_PRESSURE_WRITE', 'c29tZSAyMDAwMDAgMjAwMDAwMAA='), ('CUDA_PATH', '/opt/cuda'), ('CMAKE_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory:/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics:/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_EXCEPTION_PROMPT', '1')]), 'shell': False}
+[8.783992] (trajectory) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.784232] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/ament_index/resource_index/rosidl_interfaces/trajectory\n'}
+[8.784382] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory\n'}
+[8.784610] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv\n'}
+[8.784788] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/trajectory.h\n'}
+[8.784926] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail\n'}
+[8.785057] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__struct.h\n'}
+[8.785176] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__functions.c\n'}
+[8.785291] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__type_support.h\n'}
+[8.785398] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__functions.h\n'}
+[8.785457] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/msg\n'}
+[8.785514] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/msg/rosidl_generator_c__visibility_control.h\n'}
+[8.785584] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/environment/library_path.sh\n'}
+[8.785641] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/environment/library_path.dsv\n'}
+[8.785701] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_generator_c.so\n'}
+[8.785813] (trajectory) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_generator_c.so" to ""\n'}
+[8.785935] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory\n'}
+[8.786061] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv\n'}
+[8.786159] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail\n'}
+[8.786274] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__rosidl_typesupport_fastrtps_c.h\n'}
+[8.786367] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/msg\n'}
+[8.786471] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[8.786578] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_typesupport_fastrtps_c.so\n'}
+[8.786677] (trajectory) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[8.786738] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory\n'}
+[8.786865] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv\n'}
+[8.786980] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/trajectory.hpp\n'}
+[8.787093] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail\n'}
+[8.787164] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__struct.hpp\n'}
+[8.787300] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__traits.hpp\n'}
+[8.787447] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__type_support.hpp\n'}
+[8.787562] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__builder.hpp\n'}
+[8.787672] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/msg\n'}
+[8.787767] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[8.787858] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory\n'}
+[8.788014] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv\n'}
+[8.788098] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail\n'}
+[8.788180] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[8.788292] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/dds_fastrtps\n'}
+[8.788402] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/msg\n'}
+[8.788495] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[8.788584] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_typesupport_fastrtps_cpp.so\n'}
+[8.788685] (trajectory) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[8.788773] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory\n'}
+[8.788838] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv\n'}
+[8.788894] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail\n'}
+[8.788950] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__type_support.c\n'}
+[8.789094] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__rosidl_typesupport_introspection_c.h\n'}
+[8.789211] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/msg\n'}
+[8.789287] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[8.789358] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_typesupport_introspection_c.so\n'}
+[8.789454] (trajectory) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_typesupport_introspection_c.so" to ""\n'}
+[8.789571] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_typesupport_c.so\n'}
+[8.789663] (trajectory) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_typesupport_c.so" to ""\n'}
+[8.789789] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory\n'}
+[8.789881] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv\n'}
+[8.789972] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail\n'}
+[8.790138] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__type_support.cpp\n'}
+[8.790267] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/include/trajectory/trajectory/srv/detail/trajectory__rosidl_typesupport_introspection_cpp.hpp\n'}
+[8.790369] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_typesupport_introspection_cpp.so\n'}
+[8.790494] (trajectory) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[8.790613] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_typesupport_cpp.so\n'}
+[8.790733] (trajectory) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_typesupport_cpp.so" to ""\n'}
+[8.790827] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/environment/pythonpath.sh\n'}
+[8.790937] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/environment/pythonpath.dsv\n'}
+[8.791045] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory-0.0.0-py3.10.egg-info\n'}
+[8.791105] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[8.791186] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[8.791258] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[8.791314] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[8.791368] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory\n'}
+[8.791425] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/trajectory_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.791499] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/_trajectory_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[8.791584] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/__init__.py\n'}
+[8.791683] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/_trajectory_s.ep.rosidl_typesupport_c.c\n'}
+[8.791823] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/libtrajectory__rosidl_generator_py.so\n'}
+[8.791972] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/srv\n'}
+[8.792085] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/srv/_trajectory.py\n'}
+[8.792231] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/srv/_trajectory_s.c\n'}
+[8.792370] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/srv/__init__.py\n'}
+[8.792519] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/_trajectory_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[8.792632] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/trajectory_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.792795] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/trajectory_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.823105] (trajectory) StdoutLine: {'line': b"Listing '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory'...\n"}
+[8.823367] (trajectory) StdoutLine: {'line': b"Compiling '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/__init__.py'...\n"}
+[8.823534] (trajectory) StdoutLine: {'line': b"Listing '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/srv'...\n"}
+[8.823661] (trajectory) StdoutLine: {'line': b"Compiling '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/srv/__init__.py'...\n"}
+[8.823765] (trajectory) StdoutLine: {'line': b"Compiling '/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/srv/_trajectory.py'...\n"}
+[8.826037] (-) TimerEvent: {}
+[8.827838] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/trajectory_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.828216] (trajectory) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/trajectory_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[8.828486] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/trajectory_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.828859] (trajectory) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/trajectory_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[8.829117] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/trajectory_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.829491] (trajectory) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/local/lib/python3.10/dist-packages/trajectory/trajectory_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[8.829689] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_generator_py.so\n'}
+[8.830055] (trajectory) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/libtrajectory__rosidl_generator_py.so" to ""\n'}
+[8.830315] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/rust\n'}
+[8.830490] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/rust/build.rs\n'}
+[8.830663] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/rust/Cargo.toml\n'}
+[8.830814] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/rust/src\n'}
+[8.830965] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/rust/src/srv.rs\n'}
+[8.831115] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/rust/src/lib.rs\n'}
+[8.831263] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/rust/src/srv\n'}
+[8.831416] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/rust/src/srv/rmw.rs\n'}
+[8.831562] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/srv/Trajectory.idl\n'}
+[8.831685] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/srv/Trajectory.srv\n'}
+[8.831830] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/srv/Trajectory_Request.msg\n'}
+[8.831995] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/srv/Trajectory_Response.msg\n'}
+[8.832139] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/trajectory/trajectory_node\n'}
+[8.836008] (trajectory) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/lib/trajectory/trajectory_node" to ""\n'}
+[8.836318] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/ament_index/resource_index/package_run_dependencies/trajectory\n'}
+[8.836640] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/ament_index/resource_index/parent_prefix_path/trajectory\n'}
+[8.836851] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/environment/ament_prefix_path.sh\n'}
+[8.836984] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/environment/ament_prefix_path.dsv\n'}
+[8.837182] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/environment/path.sh\n'}
+[8.837332] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/environment/path.dsv\n'}
+[8.837485] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/local_setup.bash\n'}
+[8.837700] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/local_setup.sh\n'}
+[8.837863] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/local_setup.zsh\n'}
+[8.838017] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/local_setup.dsv\n'}
+[8.838197] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/package.dsv\n'}
+[8.838356] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/ament_index/resource_index/packages/trajectory\n'}
+[8.838509] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/export_trajectory__rosidl_generator_cExport.cmake\n'}
+[8.838629] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/export_trajectory__rosidl_generator_cExport-noconfig.cmake\n'}
+[8.838780] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/export_trajectory__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[8.838937] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/export_trajectory__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[8.839100] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/export_trajectory__rosidl_generator_cppExport.cmake\n'}
+[8.839221] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/export_trajectory__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[8.839370] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/export_trajectory__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[8.839516] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/trajectory__rosidl_typesupport_introspection_cExport.cmake\n'}
+[8.839669] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/trajectory__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[8.839821] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/trajectory__rosidl_typesupport_cExport.cmake\n'}
+[8.839951] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/trajectory__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[8.840116] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/trajectory__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[8.840280] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/trajectory__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[8.840442] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/trajectory__rosidl_typesupport_cppExport.cmake\n'}
+[8.840593] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/trajectory__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[8.840758] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/export_trajectory__rosidl_generator_pyExport.cmake\n'}
+[8.840932] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/export_trajectory__rosidl_generator_pyExport-noconfig.cmake\n'}
+[8.841104] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/rosidl_cmake-extras.cmake\n'}
+[8.841275] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[8.841444] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[8.841611] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[8.841783] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[8.841948] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[8.842138] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[8.842298] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/rosidl_cmake_aggregate_target-extras.cmake\n'}
+[8.842460] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/trajectoryConfig.cmake\n'}
+[8.842621] (trajectory) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/cmake/trajectoryConfig-version.cmake\n'}
+[8.842776] (trajectory) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/trajectory/share/trajectory/package.xml\n'}
+[8.845402] (trajectory) CommandEnded: {'returncode': 0}
+[8.864605] (trajectory) JobEnded: {'identifier': 'trajectory', 'rc': 0}
+[8.865434] (-) EventReactorShutdown: {}

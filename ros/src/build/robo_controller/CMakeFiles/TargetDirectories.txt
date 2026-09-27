@@ -1,0 +1,10 @@
+/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller/CMakeFiles/uninstall.dir
+/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller/CMakeFiles/robo_controller_uninstall.dir
+/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller/CMakeFiles/robo_controller.dir
+/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller/CMakeFiles/test.dir
+/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller/CMakeFiles/edit_cache.dir
+/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller/CMakeFiles/rebuild_cache.dir
+/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller/CMakeFiles/list_install_components.dir
+/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller/CMakeFiles/install.dir
+/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller/CMakeFiles/install/local.dir
+/home/kalzemic/Projects/ArmVision/ros/src/build/robo_controller/CMakeFiles/install/strip.dir

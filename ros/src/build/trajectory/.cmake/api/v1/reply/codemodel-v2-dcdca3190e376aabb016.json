@@ -1,0 +1,267 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-e08a1c02a474b7e41f85.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "trajectory__py",
+					"jsonFile" : "directory-trajectory__py-7e0e9002431690011731.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/kalzemic/Projects/ArmVision/ros/src/build/trajectory/trajectory__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "trajectory__rs",
+					"jsonFile" : "directory-trajectory__rs-2d3834bdaa686415f530.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/kalzemic/Projects/ArmVision/ros/src/build/trajectory/trajectory__rs",
+					"targetIndexes" : 
+					[
+						16
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "trajectory",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_trajectory_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_trajectory_egg-af1267ab892591382295.json",
+					"name" : "ament_cmake_python_build_trajectory_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_trajectory::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_trajectory-c90f7de4128dd0c17742.json",
+					"name" : "ament_cmake_python_copy_trajectory",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory-9d8b2d16841853012081.json",
+					"name" : "trajectory",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory__cpp-7f61adef8e7da387545e.json",
+					"name" : "trajectory__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "trajectory__py::@0ea880fc4ecadeb6452c",
+					"jsonFile" : "target-trajectory__py-a0b9565cdb55cf5d3880.json",
+					"name" : "trajectory__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory__rosidl_generator_c-9f7adf0779cfc03b1ffb.json",
+					"name" : "trajectory__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory__rosidl_generator_py-deab30c7614dddf5c72d.json",
+					"name" : "trajectory__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory__rosidl_typesupport_c-0b5004390ce26257a3e5.json",
+					"name" : "trajectory__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory__rosidl_typesupport_c__pyext-0ce9c841bbf87073f4bc.json",
+					"name" : "trajectory__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory__rosidl_typesupport_cpp-7ddf7a2c28676f6124ef.json",
+					"name" : "trajectory__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory__rosidl_typesupport_fastrtps_c-ec45142717425678ac86.json",
+					"name" : "trajectory__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory__rosidl_typesupport_fastrtps_c__pyext-ff3b50e9bca83a4c182d.json",
+					"name" : "trajectory__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory__rosidl_typesupport_fastrtps_cpp-6d12557f13bd3b0fea0e.json",
+					"name" : "trajectory__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory__rosidl_typesupport_introspection_c-78f8ab6e3782b3ba113a.json",
+					"name" : "trajectory__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory__rosidl_typesupport_introspection_c__pyext-540a228e8f2efff806cb.json",
+					"name" : "trajectory__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory__rosidl_typesupport_introspection_cpp-af1eaaefcd2144f4efb2.json",
+					"name" : "trajectory__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "trajectory__rs::@aff91b7423f88ef7e3de",
+					"jsonFile" : "target-trajectory__rs-99e42e3e07f26e2bbb4b.json",
+					"name" : "trajectory__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory_node-690faf858c2ebd8133d2.json",
+					"name" : "trajectory_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory_uninstall-ad7e6fcb3a17850492fa.json",
+					"name" : "trajectory_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-41e456ea12df5c0722fb.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/kalzemic/Projects/ArmVision/ros/src/build/trajectory",
+		"source" : "/home/kalzemic/Projects/ArmVision/ros/src/trajectory"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

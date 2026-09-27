@@ -1,0 +1,267 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-1fa08454816a46d1d98c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "kinematics__py",
+					"jsonFile" : "directory-kinematics__py-241d50b3c4c466f151cc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics/kinematics__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "kinematics__rs",
+					"jsonFile" : "directory-kinematics__rs-4029e12351a09499ef6c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics/kinematics__rs",
+					"targetIndexes" : 
+					[
+						16
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "kinematics",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_kinematics_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_kinematics_egg-1b6a2160d9d672a5002e.json",
+					"name" : "ament_cmake_python_build_kinematics_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_kinematics::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_kinematics-d35e5a30ea4d6a8be6f6.json",
+					"name" : "ament_cmake_python_copy_kinematics",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics-38f3f179ad2e27202c78.json",
+					"name" : "kinematics",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics__cpp-94eb764c26305b2eb95e.json",
+					"name" : "kinematics__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "kinematics__py::@9e4047db2915ed2c751b",
+					"jsonFile" : "target-kinematics__py-17da6126d21a5e4ab650.json",
+					"name" : "kinematics__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics__rosidl_generator_c-f9a50339810d3e894819.json",
+					"name" : "kinematics__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics__rosidl_generator_py-69ef7d7d6b5f4a0e28c6.json",
+					"name" : "kinematics__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics__rosidl_typesupport_c-1a8bd228706d2ab1c5bb.json",
+					"name" : "kinematics__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics__rosidl_typesupport_c__pyext-f7ec86351e276918b717.json",
+					"name" : "kinematics__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics__rosidl_typesupport_cpp-590730b911210a35908e.json",
+					"name" : "kinematics__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics__rosidl_typesupport_fastrtps_c-609116aa2252774439b0.json",
+					"name" : "kinematics__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics__rosidl_typesupport_fastrtps_c__pyext-0c483cea63c33559184d.json",
+					"name" : "kinematics__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics__rosidl_typesupport_fastrtps_cpp-0a9e40b0c90ba99cda08.json",
+					"name" : "kinematics__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics__rosidl_typesupport_introspection_c-004b7fa77ed213de15d8.json",
+					"name" : "kinematics__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics__rosidl_typesupport_introspection_c__pyext-d6d8fe8ebdb5197c3479.json",
+					"name" : "kinematics__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics__rosidl_typesupport_introspection_cpp-23995c5994bed6143a9a.json",
+					"name" : "kinematics__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "kinematics__rs::@ec1098d1da6734559bd1",
+					"jsonFile" : "target-kinematics__rs-c2509c6328f8f0832489.json",
+					"name" : "kinematics__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics_node-4e769f5466541a8d94b6.json",
+					"name" : "kinematics_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics_uninstall-f6f6194b9b6486a960c1.json",
+					"name" : "kinematics_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-8a18184bf22b9db3aeb7.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics",
+		"source" : "/home/kalzemic/Projects/ArmVision/ros/src/kinematics"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

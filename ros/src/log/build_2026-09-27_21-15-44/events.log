@@ -1,0 +1,770 @@
+[0.000000] (-) TimerEvent: {}
+[0.000447] (-) JobUnselected: {'identifier': 'trajectory'}
+[0.000536] (kinematics) JobQueued: {'identifier': 'kinematics', 'dependencies': OrderedDict()}
+[0.000598] (kinematics) JobStarted: {'identifier': 'kinematics'}
+[0.010479] (kinematics) JobProgress: {'identifier': 'kinematics', 'progress': 'cmake'}
+[0.011608] (kinematics) Command: {'cmd': ['/usr/bin/cmake', '/home/kalzemic/Projects/ArmVision/ros/src/kinematics', '-DCMAKE_INSTALL_PREFIX=/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics'], 'cwd': '/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics', 'env': OrderedDict([('PROFILEHOME', ''), ('KDE_FULL_SESSION', 'true'), ('MAIL', '/var/spool/mail/kalzemic'), ('LANGUAGE', ''), ('USER', 'kalzemic'), ('PAM_KWALLET5_LOGIN', '/run/user/1000/kwallet5.socket'), ('NVCC_CCBIN', '/usr/bin/g++-15'), ('HOSTNAME', 'archlinux'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('CSF_TObjDefaults', '/usr/share/opencascade/resources/StdResource'), ('KONSOLE_VERSION', '260800'), ('XDG_CACHE_HOME', '/home/kalzemic/.cache'), ('QT_WAYLAND_RECONNECT', '1'), ('CSF_XCAFDefaults', '/usr/share/opencascade/resources/StdResource'), ('SHLVL', '5'), ('LD_LIBRARY_PATH', '/usr/local/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/lib:/usr/local/lib:'), ('CSF_XSMessage', '/usr/share/opencascade/resources/XSMessage'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kalzemic'), ('CHROME_DESKTOP', 'code.desktop'), ('ASDF_DIR', '/home/kalzemic/.asdf'), ('CONDA_SHLVL', '0'), ('CSF_TObjMessage', '/usr/share/opencascade/resources/TObj'), ('MMGT_CLEAR', '1'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/kalzemic/Projects/ArmVision/ros'), ('TERM_PROGRAM_VERSION', '1.138.0'), ('DESKTOP_SESSION', 'plasma'), ('CSF_ShadersDirectory', '/usr/share/opencascade/resources/Shaders'), ('CSF_MDTVTexturesDirectory', '/usr/share/opencascade/resources/Textures'), ('ROS_PYTHON_VERSION', '3'), ('GRADLE_HOME', '/usr/share/java/gradle'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/kalzemic/.gtkrc:/home/kalzemic/.config/gtkrc'), ('KDE_SESSION_VERSION', '6'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\][robotics🐧] \\u:\\w$ \\[\x1b]633;B\x07\\]'), ('DRAWHOME', '/usr/share/opencascade/resources/DrawResources'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('MANAGERPID', '1794'), ('DISTROBOX_ENTER_PATH', '/home/kalzemic/.local/bin/distrobox-enter'), ('SYSTEMD_EXEC_PID', '2044'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('CSF_IGESDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('XDG_STATE_HOME', '/home/kalzemic/.local/state'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('container', 'podman'), ('KONSOLE_DBUS_ACTIVATION_COOKIE', 'bRkANxTVQMQzmffZ5bZZjQxk/CRBK2qP/lKDPC2cJxg='), ('CASROOT', '/usr'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('DEBUGINFOD_URLS', 'https://debuginfod.archlinux.org'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kalzemic'), ('WINDOWID', '94126642146720'), ('MANAGERPIDFDID', '8565'), ('JOURNAL_STREAM', '10:29987'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CSF_LANGUAGE', 'us'), ('MEMORY_PRESSURE_WATCH', '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-plasmashell.service/memory.pressure'), ('CLAUDE_CODE_SSE_PORT', '57606'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERMINFO_DIRS', '/usr/share/terminfo:/run/host/usr/share/terminfo'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/kalzemic/.gtkrc-2.0:/home/kalzemic/.config/gtkrc-2.0'), ('FLATPAK_TTY_PROGRESS', '1'), ('PATH', '/home/kalzemic/.local/bin:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/kalzemic/.local/bin:/home/kalzemic/.local/bin:/opt/ros/humble/bin:/home/kalzemic/.local/bin:/home/kalzemic/.asdf/shims:/home/kalzemic/.asdf/bin:/home/kalzemic/miniconda3/condabin:/home/kalzemic/.cargo/bin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/usr/local/sbin:/usr/sbin:/usr/local/bin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin'), ('SESSION_MANAGER', 'local/archlinux:@/tmp/.ICE-unix/2027,unix/archlinux:/tmp/.ICE-unix/2027'), ('INVOCATION_ID', '6eec454ec935478baa9310940755ca7a'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('XDG_MENU_PREFIX', 'plasma-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('ICEAUTHORITY', '/run/user/1000/iceauth_RaHTPD'), ('CSF_XmlOcafResource', '/usr/share/opencascade/resources/XmlOcafResource'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('XDG_DATA_HOME', '/home/kalzemic/.local/share'), ('XDG_CONFIG_HOME', '/home/kalzemic/.config'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/run/user/1000/xauth_HBCGKu'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ffdecdbe2b.sock'), ('CSF_StandardDefaults', '/usr/share/opencascade/resources/StdResource'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_PluginDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONDA_PYTHON_EXE', '/home/kalzemic/miniconda3/bin/python'), ('SHELL', '/usr/bin/bash'), ('NO_AT_BRIDGE', '1'), ('CSF_SHMessage', '/usr/share/opencascade/resources/SHMessage'), ('KONSOLE_DBUS_SERVICE', ':1.4497'), ('VSSCRIPT_PATH', '/usr/lib/python3.14/site-packages/vapoursynth/libvsscript.so'), ('CSF_STEPDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics'), ('CSF_StandardLiteDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONTAINER_ID', 'robotics'), ('XDG_CONFIG_DIRS', '/home/kalzemic/.config/kdedefaults:/etc/xdg'), ('COPILOT_DEBUG_NONCE', '843a6d01fc8b99b7f3ad0143af53ab15'), ('CONDA_EXE', '/home/kalzemic/miniconda3/bin/conda'), ('CSF_DrawPluginDefaults', '/usr/share/opencascade/resources/DrawResources'), ('CSF_MIGRATION_TYPES', '/usr/share/opencascade/resources/StdResource/MigrationSheet.txt'), ('XDG_DATA_DIRS', '/home/kalzemic/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share'), ('CSF_OCCTResourcePath', '/usr/share/opencascade/resources'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('DRAWDEFAULT', '/usr/share/opencascade/resources/DrawResources/DrawDefault'), ('KDE_SESSION_UID', '1000'), ('COLCON', '1'), ('MEMORY_PRESSURE_WRITE', 'c29tZSAyMDAwMDAgMjAwMDAwMAA='), ('CUDA_PATH', '/opt/cuda'), ('CMAKE_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_EXCEPTION_PROMPT', '1')]), 'shell': False}
+[0.028084] (kinematics) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099366] (-) TimerEvent: {}
+[0.164378] (kinematics) StdoutLine: {'line': b'-- Found rclcpp: 16.0.21 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.195226] (kinematics) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.197482] (kinematics) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.199464] (-) TimerEvent: {}
+[0.203283] (kinematics) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.214409] (kinematics) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.227469] (kinematics) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.258547] (kinematics) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.4 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.259756] (kinematics) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.299574] (-) TimerEvent: {}
+[0.399937] (-) TimerEvent: {}
+[0.420412] (kinematics) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.472349] (kinematics) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.2 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.500072] (-) TimerEvent: {}
+[0.503212] (kinematics) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.522455] (kinematics) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: filesystem serialization \n'}
+[0.523596] (kinematics) StdoutLine: {'line': b'-- eigenpy FOUND. eigenpy at /opt/ros/humble/lib/x86_64-linux-gnu/libeigenpy.so\n'}
+[0.547781] (kinematics) StdoutLine: {'line': b'-- Checking for NumPy\n'}
+[0.600161] (-) TimerEvent: {}
+[0.700524] (-) TimerEvent: {}
+[0.800862] (-) TimerEvent: {}
+[0.901140] (-) TimerEvent: {}
+[0.902791] (kinematics) StdoutLine: {'line': b'--   NUMPY_INCLUDE_DIRS=/usr/lib/python3/dist-packages/numpy/core/include\n'}
+[1.001236] (-) TimerEvent: {}
+[1.052326] (kinematics) StdoutLine: {'line': b'--   NUMPY_VERSION=1.21.5\n'}
+[1.101322] (-) TimerEvent: {}
+[1.201626] (-) TimerEvent: {}
+[1.301902] (-) TimerEvent: {}
+[1.398485] (kinematics) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter Development.Module NumPy \n'}
+[1.399500] (kinematics) StdoutLine: {'line': b'-- PythonLibraryDirs: \n'}
+[1.399667] (kinematics) StdoutLine: {'line': b'-- PythonLibVersionString: 3.10.12\n'}
+[1.401982] (-) TimerEvent: {}
+[1.419044] (kinematics) StdoutLine: {'line': b'-- Python site lib: lib/python3.10/site-packages\n'}
+[1.419325] (kinematics) StdoutLine: {'line': b'-- Python include dirs: /usr/include/python3.10\n'}
+[1.457491] (kinematics) StdoutLine: {'line': b'-- Checking for NumPy\n'}
+[1.502082] (-) TimerEvent: {}
+[1.598537] (kinematics) StdoutLine: {'line': b'--   NUMPY_INCLUDE_DIRS=/usr/lib/python3/dist-packages/numpy/core/include\n'}
+[1.602192] (-) TimerEvent: {}
+[1.702488] (-) TimerEvent: {}
+[1.741780] (kinematics) StdoutLine: {'line': b'--   NUMPY_VERSION=1.21.5\n'}
+[1.741986] (kinematics) StdoutLine: {'line': b'-- NumPy include dir: /usr/lib/python3/dist-packages/numpy/core/include\n'}
+[1.746379] (kinematics) StderrLine: {'line': b'\x1b[33mCMake Warning at /usr/share/cmake-3.22/Modules/FindBoost.cmake:2201 (message):\n'}
+[1.746647] (kinematics) StderrLine: {'line': b'  No header defined for python310; skipping header check (note: header-only\n'}
+[1.746769] (kinematics) StderrLine: {'line': b'  libraries have no designated component)\n'}
+[1.746891] (kinematics) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.747008] (kinematics) StderrLine: {'line': b'  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/boost.cmake:146 (find_package)\n'}
+[1.747115] (kinematics) StderrLine: {'line': b'  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/eigenpyConfig.cmake:172 (SEARCH_FOR_BOOST_PYTHON)\n'}
+[1.747219] (kinematics) StderrLine: {'line': b'  /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)\n'}
+[1.747321] (kinematics) StderrLine: {'line': b'  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/pinocchio/pinocchioConfig.cmake:184 (find_dependency)\n'}
+[1.747423] (kinematics) StderrLine: {'line': b'  CMakeLists.txt:14 (find_package)\n'}
+[1.747520] (kinematics) StderrLine: {'line': b'\n'}
+[1.747620] (kinematics) StderrLine: {'line': b'\x1b[0m\n'}
+[1.747947] (kinematics) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: python310 \n'}
+[1.802606] (-) TimerEvent: {}
+[1.902910] (-) TimerEvent: {}
+[2.003708] (-) TimerEvent: {}
+[2.078649] (kinematics) StdoutLine: {'line': b'-- Default C++ standard: 201703\n'}
+[2.078894] (kinematics) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 17, currently defined: 17\n'}
+[2.079014] (kinematics) StdoutLine: {'line': b'-- CMAKE_CXX_STANDARD was not set: automatically set to currently defined standard 17\n'}
+[2.081398] (kinematics) StdoutLine: {'line': b'-- coal FOUND. coal at /opt/ros/humble/lib/x86_64-linux-gnu/libcoal.so\n'}
+[2.090025] (kinematics) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: serialization filesystem \n'}
+[2.093915] (kinematics) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 17, currently defined: 17\n'}
+[2.094395] (kinematics) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 17, currently defined: 17\n'}
+[2.103816] (-) TimerEvent: {}
+[2.158427] (kinematics) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[2.203855] (-) TimerEvent: {}
+[2.304119] (-) TimerEvent: {}
+[2.396178] (kinematics) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.1 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[2.404211] (-) TimerEvent: {}
+[2.504484] (-) TimerEvent: {}
+[2.604739] (-) TimerEvent: {}
+[2.705117] (-) TimerEvent: {}
+[2.805400] (-) TimerEvent: {}
+[2.854932] (kinematics) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.905502] (-) TimerEvent: {}
+[3.005863] (-) TimerEvent: {}
+[3.030693] (kinematics) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[3.053300] (kinematics) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[3.078297] (kinematics) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[3.078471] (kinematics) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[3.078537] (kinematics) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[3.105987] (-) TimerEvent: {}
+[3.206300] (-) TimerEvent: {}
+[3.220695] (kinematics) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[3.231890] (kinematics) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[3.232616] (kinematics) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[3.232798] (kinematics) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[3.233348] (kinematics) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.234292] (kinematics) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[3.234444] (kinematics) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[3.234803] (kinematics) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.236801] (kinematics) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.288673] (kinematics) StdoutLine: {'line': b'-- Generating done\n'}
+[3.303799] (kinematics) StdoutLine: {'line': b'-- Build files have been written to: /home/kalzemic/Projects/ArmVision/ros/src/build/kinematics\n'}
+[3.306432] (-) TimerEvent: {}
+[3.317662] (kinematics) CommandEnded: {'returncode': 0}
+[3.318572] (kinematics) JobProgress: {'identifier': 'kinematics', 'progress': 'build'}
+[3.319319] (kinematics) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics', '--', '-j8', '-l8'], 'cwd': '/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics', 'env': OrderedDict([('PROFILEHOME', ''), ('KDE_FULL_SESSION', 'true'), ('MAIL', '/var/spool/mail/kalzemic'), ('LANGUAGE', ''), ('USER', 'kalzemic'), ('PAM_KWALLET5_LOGIN', '/run/user/1000/kwallet5.socket'), ('NVCC_CCBIN', '/usr/bin/g++-15'), ('HOSTNAME', 'archlinux'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('CSF_TObjDefaults', '/usr/share/opencascade/resources/StdResource'), ('KONSOLE_VERSION', '260800'), ('XDG_CACHE_HOME', '/home/kalzemic/.cache'), ('QT_WAYLAND_RECONNECT', '1'), ('CSF_XCAFDefaults', '/usr/share/opencascade/resources/StdResource'), ('SHLVL', '5'), ('LD_LIBRARY_PATH', '/usr/local/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/lib:/usr/local/lib:'), ('CSF_XSMessage', '/usr/share/opencascade/resources/XSMessage'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kalzemic'), ('CHROME_DESKTOP', 'code.desktop'), ('ASDF_DIR', '/home/kalzemic/.asdf'), ('CONDA_SHLVL', '0'), ('CSF_TObjMessage', '/usr/share/opencascade/resources/TObj'), ('MMGT_CLEAR', '1'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/kalzemic/Projects/ArmVision/ros'), ('TERM_PROGRAM_VERSION', '1.138.0'), ('DESKTOP_SESSION', 'plasma'), ('CSF_ShadersDirectory', '/usr/share/opencascade/resources/Shaders'), ('CSF_MDTVTexturesDirectory', '/usr/share/opencascade/resources/Textures'), ('ROS_PYTHON_VERSION', '3'), ('GRADLE_HOME', '/usr/share/java/gradle'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/kalzemic/.gtkrc:/home/kalzemic/.config/gtkrc'), ('KDE_SESSION_VERSION', '6'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\][robotics🐧] \\u:\\w$ \\[\x1b]633;B\x07\\]'), ('DRAWHOME', '/usr/share/opencascade/resources/DrawResources'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('MANAGERPID', '1794'), ('DISTROBOX_ENTER_PATH', '/home/kalzemic/.local/bin/distrobox-enter'), ('SYSTEMD_EXEC_PID', '2044'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('CSF_IGESDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('XDG_STATE_HOME', '/home/kalzemic/.local/state'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('container', 'podman'), ('KONSOLE_DBUS_ACTIVATION_COOKIE', 'bRkANxTVQMQzmffZ5bZZjQxk/CRBK2qP/lKDPC2cJxg='), ('CASROOT', '/usr'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('DEBUGINFOD_URLS', 'https://debuginfod.archlinux.org'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kalzemic'), ('WINDOWID', '94126642146720'), ('MANAGERPIDFDID', '8565'), ('JOURNAL_STREAM', '10:29987'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CSF_LANGUAGE', 'us'), ('MEMORY_PRESSURE_WATCH', '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-plasmashell.service/memory.pressure'), ('CLAUDE_CODE_SSE_PORT', '57606'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERMINFO_DIRS', '/usr/share/terminfo:/run/host/usr/share/terminfo'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/kalzemic/.gtkrc-2.0:/home/kalzemic/.config/gtkrc-2.0'), ('FLATPAK_TTY_PROGRESS', '1'), ('PATH', '/home/kalzemic/.local/bin:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/kalzemic/.local/bin:/home/kalzemic/.local/bin:/opt/ros/humble/bin:/home/kalzemic/.local/bin:/home/kalzemic/.asdf/shims:/home/kalzemic/.asdf/bin:/home/kalzemic/miniconda3/condabin:/home/kalzemic/.cargo/bin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/usr/local/sbin:/usr/sbin:/usr/local/bin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin'), ('SESSION_MANAGER', 'local/archlinux:@/tmp/.ICE-unix/2027,unix/archlinux:/tmp/.ICE-unix/2027'), ('INVOCATION_ID', '6eec454ec935478baa9310940755ca7a'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('XDG_MENU_PREFIX', 'plasma-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('ICEAUTHORITY', '/run/user/1000/iceauth_RaHTPD'), ('CSF_XmlOcafResource', '/usr/share/opencascade/resources/XmlOcafResource'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('XDG_DATA_HOME', '/home/kalzemic/.local/share'), ('XDG_CONFIG_HOME', '/home/kalzemic/.config'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/run/user/1000/xauth_HBCGKu'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ffdecdbe2b.sock'), ('CSF_StandardDefaults', '/usr/share/opencascade/resources/StdResource'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_PluginDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONDA_PYTHON_EXE', '/home/kalzemic/miniconda3/bin/python'), ('SHELL', '/usr/bin/bash'), ('NO_AT_BRIDGE', '1'), ('CSF_SHMessage', '/usr/share/opencascade/resources/SHMessage'), ('KONSOLE_DBUS_SERVICE', ':1.4497'), ('VSSCRIPT_PATH', '/usr/lib/python3.14/site-packages/vapoursynth/libvsscript.so'), ('CSF_STEPDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics'), ('CSF_StandardLiteDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONTAINER_ID', 'robotics'), ('XDG_CONFIG_DIRS', '/home/kalzemic/.config/kdedefaults:/etc/xdg'), ('COPILOT_DEBUG_NONCE', '843a6d01fc8b99b7f3ad0143af53ab15'), ('CONDA_EXE', '/home/kalzemic/miniconda3/bin/conda'), ('CSF_DrawPluginDefaults', '/usr/share/opencascade/resources/DrawResources'), ('CSF_MIGRATION_TYPES', '/usr/share/opencascade/resources/StdResource/MigrationSheet.txt'), ('XDG_DATA_DIRS', '/home/kalzemic/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share'), ('CSF_OCCTResourcePath', '/usr/share/opencascade/resources'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('DRAWDEFAULT', '/usr/share/opencascade/resources/DrawResources/DrawDefault'), ('KDE_SESSION_UID', '1000'), ('COLCON', '1'), ('MEMORY_PRESSURE_WRITE', 'c29tZSAyMDAwMDAgMjAwMDAwMAA='), ('CUDA_PATH', '/opt/cuda'), ('CMAKE_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_EXCEPTION_PROMPT', '1')]), 'shell': False}
+[3.362400] (kinematics) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target kinematics__rosidl_generator_c\x1b[0m\n'}
+[3.371018] (kinematics) StdoutLine: {'line': b'[  2%] Built target kinematics__cpp\n'}
+[3.374463] (kinematics) StdoutLine: {'line': b'[  5%] Built target kinematics__rs\n'}
+[3.376462] (kinematics) StdoutLine: {'line': b'[ 14%] Built target kinematics__rosidl_generator_c\n'}
+[3.387121] (kinematics) StdoutLine: {'line': b'[ 14%] Built target ament_cmake_python_copy_kinematics\n'}
+[3.387345] (kinematics) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target kinematics__rosidl_typesupport_cpp\x1b[0m\n'}
+[3.387456] (kinematics) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target kinematics__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[3.387542] (kinematics) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target kinematics__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[3.390548] (kinematics) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target kinematics__rosidl_typesupport_c\x1b[0m\n'}
+[3.390826] (kinematics) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target kinematics__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[3.392616] (kinematics) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target kinematics__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[3.404861] (kinematics) StdoutLine: {'line': b'[ 23%] Built target kinematics__rosidl_typesupport_fastrtps_cpp\n'}
+[3.405104] (kinematics) StdoutLine: {'line': b'[ 32%] Built target kinematics__rosidl_typesupport_c\n'}
+[3.406538] (-) TimerEvent: {}
+[3.406940] (kinematics) StdoutLine: {'line': b'[ 50%] Built target kinematics__rosidl_typesupport_introspection_cpp\n'}
+[3.407167] (kinematics) StdoutLine: {'line': b'[ 50%] Built target kinematics__rosidl_typesupport_cpp\n'}
+[3.407314] (kinematics) StdoutLine: {'line': b'[ 58%] Built target kinematics__rosidl_typesupport_introspection_c\n'}
+[3.414192] (kinematics) StdoutLine: {'line': b'[ 67%] Built target kinematics__rosidl_typesupport_fastrtps_c\n'}
+[3.421008] (kinematics) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target kinematics_node\x1b[0m\n'}
+[3.439430] (kinematics) StdoutLine: {'line': b'[ 67%] Built target kinematics\n'}
+[3.461509] (kinematics) StdoutLine: {'line': b'[ 73%] Built target kinematics__py\n'}
+[3.461758] (kinematics) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/kinematics_node.dir/src/kinematics.cpp.o\x1b[0m\n'}
+[3.471530] (kinematics) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target kinematics__rosidl_generator_py\x1b[0m\n'}
+[3.485088] (kinematics) StdoutLine: {'line': b'[ 79%] Built target kinematics__rosidl_generator_py\n'}
+[3.496327] (kinematics) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target kinematics__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[3.497542] (kinematics) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target kinematics__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[3.498278] (kinematics) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target kinematics__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[3.508101] (-) TimerEvent: {}
+[3.511991] (kinematics) StdoutLine: {'line': b'[ 85%] Built target kinematics__rosidl_typesupport_c__pyext\n'}
+[3.513580] (kinematics) StdoutLine: {'line': b'[ 91%] Built target kinematics__rosidl_typesupport_fastrtps_c__pyext\n'}
+[3.514852] (kinematics) StdoutLine: {'line': b'[ 97%] Built target kinematics__rosidl_typesupport_introspection_c__pyext\n'}
+[3.608188] (-) TimerEvent: {}
+[3.650019] (kinematics) StdoutLine: {'line': b'running egg_info\n'}
+[3.651672] (kinematics) StdoutLine: {'line': b'writing kinematics.egg-info/PKG-INFO\n'}
+[3.651967] (kinematics) StdoutLine: {'line': b'writing dependency_links to kinematics.egg-info/dependency_links.txt\n'}
+[3.652055] (kinematics) StdoutLine: {'line': b'writing top-level names to kinematics.egg-info/top_level.txt\n'}
+[3.653773] (kinematics) StdoutLine: {'line': b"reading manifest file 'kinematics.egg-info/SOURCES.txt'\n"}
+[3.654318] (kinematics) StdoutLine: {'line': b"writing manifest file 'kinematics.egg-info/SOURCES.txt'\n"}
+[3.688239] (kinematics) StdoutLine: {'line': b'[ 97%] Built target ament_cmake_python_build_kinematics_egg\n'}
+[3.708297] (-) TimerEvent: {}
+[3.808613] (-) TimerEvent: {}
+[3.908916] (-) TimerEvent: {}
+[4.009244] (-) TimerEvent: {}
+[4.109593] (-) TimerEvent: {}
+[4.209896] (-) TimerEvent: {}
+[4.310202] (-) TimerEvent: {}
+[4.410498] (-) TimerEvent: {}
+[4.510770] (-) TimerEvent: {}
+[4.611052] (-) TimerEvent: {}
+[4.711356] (-) TimerEvent: {}
+[4.811686] (-) TimerEvent: {}
+[4.912013] (-) TimerEvent: {}
+[5.012340] (-) TimerEvent: {}
+[5.112668] (-) TimerEvent: {}
+[5.212997] (-) TimerEvent: {}
+[5.313436] (-) TimerEvent: {}
+[5.413756] (-) TimerEvent: {}
+[5.514104] (-) TimerEvent: {}
+[5.614425] (-) TimerEvent: {}
+[5.714755] (-) TimerEvent: {}
+[5.815084] (-) TimerEvent: {}
+[5.915398] (-) TimerEvent: {}
+[6.015711] (-) TimerEvent: {}
+[6.116007] (-) TimerEvent: {}
+[6.216286] (-) TimerEvent: {}
+[6.316560] (-) TimerEvent: {}
+[6.416877] (-) TimerEvent: {}
+[6.517187] (-) TimerEvent: {}
+[6.617496] (-) TimerEvent: {}
+[6.717768] (-) TimerEvent: {}
+[6.818108] (-) TimerEvent: {}
+[6.918413] (-) TimerEvent: {}
+[7.018739] (-) TimerEvent: {}
+[7.119112] (-) TimerEvent: {}
+[7.219451] (-) TimerEvent: {}
+[7.319781] (-) TimerEvent: {}
+[7.420134] (-) TimerEvent: {}
+[7.520463] (-) TimerEvent: {}
+[7.620831] (-) TimerEvent: {}
+[7.721181] (-) TimerEvent: {}
+[7.821546] (-) TimerEvent: {}
+[7.921868] (-) TimerEvent: {}
+[8.022181] (-) TimerEvent: {}
+[8.122494] (-) TimerEvent: {}
+[8.222896] (-) TimerEvent: {}
+[8.323209] (-) TimerEvent: {}
+[8.423520] (-) TimerEvent: {}
+[8.523834] (-) TimerEvent: {}
+[8.624271] (-) TimerEvent: {}
+[8.724739] (-) TimerEvent: {}
+[8.825045] (-) TimerEvent: {}
+[8.925357] (-) TimerEvent: {}
+[9.025671] (-) TimerEvent: {}
+[9.125959] (-) TimerEvent: {}
+[9.226273] (-) TimerEvent: {}
+[9.326606] (-) TimerEvent: {}
+[9.427377] (-) TimerEvent: {}
+[9.527699] (-) TimerEvent: {}
+[9.628008] (-) TimerEvent: {}
+[9.728292] (-) TimerEvent: {}
+[9.828576] (-) TimerEvent: {}
+[9.928906] (-) TimerEvent: {}
+[10.029190] (-) TimerEvent: {}
+[10.129478] (-) TimerEvent: {}
+[10.229788] (-) TimerEvent: {}
+[10.330077] (-) TimerEvent: {}
+[10.430377] (-) TimerEvent: {}
+[10.530664] (-) TimerEvent: {}
+[10.630949] (-) TimerEvent: {}
+[10.731235] (-) TimerEvent: {}
+[10.831869] (-) TimerEvent: {}
+[10.932184] (-) TimerEvent: {}
+[11.032503] (-) TimerEvent: {}
+[11.132815] (-) TimerEvent: {}
+[11.233117] (-) TimerEvent: {}
+[11.333409] (-) TimerEvent: {}
+[11.433725] (-) TimerEvent: {}
+[11.534047] (-) TimerEvent: {}
+[11.634374] (-) TimerEvent: {}
+[11.734709] (-) TimerEvent: {}
+[11.835039] (-) TimerEvent: {}
+[11.935338] (-) TimerEvent: {}
+[12.035694] (-) TimerEvent: {}
+[12.136011] (-) TimerEvent: {}
+[12.236304] (-) TimerEvent: {}
+[12.336593] (-) TimerEvent: {}
+[12.436905] (-) TimerEvent: {}
+[12.537210] (-) TimerEvent: {}
+[12.637517] (-) TimerEvent: {}
+[12.737864] (-) TimerEvent: {}
+[12.838174] (-) TimerEvent: {}
+[12.938486] (-) TimerEvent: {}
+[13.038881] (-) TimerEvent: {}
+[13.139235] (-) TimerEvent: {}
+[13.239640] (-) TimerEvent: {}
+[13.339909] (-) TimerEvent: {}
+[13.440239] (-) TimerEvent: {}
+[13.540542] (-) TimerEvent: {}
+[13.640911] (-) TimerEvent: {}
+[13.741263] (-) TimerEvent: {}
+[13.841590] (-) TimerEvent: {}
+[13.941944] (-) TimerEvent: {}
+[14.042267] (-) TimerEvent: {}
+[14.142614] (-) TimerEvent: {}
+[14.242947] (-) TimerEvent: {}
+[14.343241] (-) TimerEvent: {}
+[14.443548] (-) TimerEvent: {}
+[14.543878] (-) TimerEvent: {}
+[14.644199] (-) TimerEvent: {}
+[14.744510] (-) TimerEvent: {}
+[14.844850] (-) TimerEvent: {}
+[14.945172] (-) TimerEvent: {}
+[15.045469] (-) TimerEvent: {}
+[15.145748] (-) TimerEvent: {}
+[15.246067] (-) TimerEvent: {}
+[15.346409] (-) TimerEvent: {}
+[15.446708] (-) TimerEvent: {}
+[15.547021] (-) TimerEvent: {}
+[15.647318] (-) TimerEvent: {}
+[15.747634] (-) TimerEvent: {}
+[15.847954] (-) TimerEvent: {}
+[15.948300] (-) TimerEvent: {}
+[16.048620] (-) TimerEvent: {}
+[16.148884] (-) TimerEvent: {}
+[16.249200] (-) TimerEvent: {}
+[16.349463] (-) TimerEvent: {}
+[16.449759] (-) TimerEvent: {}
+[16.550089] (-) TimerEvent: {}
+[16.650365] (-) TimerEvent: {}
+[16.750662] (-) TimerEvent: {}
+[16.850950] (-) TimerEvent: {}
+[16.951262] (-) TimerEvent: {}
+[17.051542] (-) TimerEvent: {}
+[17.151824] (-) TimerEvent: {}
+[17.252100] (-) TimerEvent: {}
+[17.352372] (-) TimerEvent: {}
+[17.452652] (-) TimerEvent: {}
+[17.552927] (-) TimerEvent: {}
+[17.653209] (-) TimerEvent: {}
+[17.753585] (-) TimerEvent: {}
+[17.853899] (-) TimerEvent: {}
+[17.954180] (-) TimerEvent: {}
+[18.054484] (-) TimerEvent: {}
+[18.154772] (-) TimerEvent: {}
+[18.255096] (-) TimerEvent: {}
+[18.355383] (-) TimerEvent: {}
+[18.455714] (-) TimerEvent: {}
+[18.556067] (-) TimerEvent: {}
+[18.656408] (-) TimerEvent: {}
+[18.756752] (-) TimerEvent: {}
+[18.857106] (-) TimerEvent: {}
+[18.957412] (-) TimerEvent: {}
+[19.057749] (-) TimerEvent: {}
+[19.158112] (-) TimerEvent: {}
+[19.258442] (-) TimerEvent: {}
+[19.358750] (-) TimerEvent: {}
+[19.459072] (-) TimerEvent: {}
+[19.559349] (-) TimerEvent: {}
+[19.659619] (-) TimerEvent: {}
+[19.759956] (-) TimerEvent: {}
+[19.860274] (-) TimerEvent: {}
+[19.960573] (-) TimerEvent: {}
+[20.060874] (-) TimerEvent: {}
+[20.161181] (-) TimerEvent: {}
+[20.261503] (-) TimerEvent: {}
+[20.361805] (-) TimerEvent: {}
+[20.462123] (-) TimerEvent: {}
+[20.562403] (-) TimerEvent: {}
+[20.662727] (-) TimerEvent: {}
+[20.763039] (-) TimerEvent: {}
+[20.863389] (-) TimerEvent: {}
+[20.963726] (-) TimerEvent: {}
+[21.064070] (-) TimerEvent: {}
+[21.164353] (-) TimerEvent: {}
+[21.264650] (-) TimerEvent: {}
+[21.364959] (-) TimerEvent: {}
+[21.465240] (-) TimerEvent: {}
+[21.565540] (-) TimerEvent: {}
+[21.665801] (-) TimerEvent: {}
+[21.766091] (-) TimerEvent: {}
+[21.866381] (-) TimerEvent: {}
+[21.966743] (-) TimerEvent: {}
+[22.067067] (-) TimerEvent: {}
+[22.167339] (-) TimerEvent: {}
+[22.267623] (-) TimerEvent: {}
+[22.367883] (-) TimerEvent: {}
+[22.468174] (-) TimerEvent: {}
+[22.568460] (-) TimerEvent: {}
+[22.668741] (-) TimerEvent: {}
+[22.769055] (-) TimerEvent: {}
+[22.869333] (-) TimerEvent: {}
+[22.969621] (-) TimerEvent: {}
+[23.069902] (-) TimerEvent: {}
+[23.170223] (-) TimerEvent: {}
+[23.270533] (-) TimerEvent: {}
+[23.370874] (-) TimerEvent: {}
+[23.471187] (-) TimerEvent: {}
+[23.571469] (-) TimerEvent: {}
+[23.671751] (-) TimerEvent: {}
+[23.772121] (-) TimerEvent: {}
+[23.872508] (-) TimerEvent: {}
+[23.972839] (-) TimerEvent: {}
+[24.073164] (-) TimerEvent: {}
+[24.173490] (-) TimerEvent: {}
+[24.273788] (-) TimerEvent: {}
+[24.374093] (-) TimerEvent: {}
+[24.474387] (-) TimerEvent: {}
+[24.574750] (-) TimerEvent: {}
+[24.676959] (-) TimerEvent: {}
+[24.777306] (-) TimerEvent: {}
+[24.877623] (-) TimerEvent: {}
+[24.977990] (-) TimerEvent: {}
+[25.078349] (-) TimerEvent: {}
+[25.178674] (-) TimerEvent: {}
+[25.279002] (-) TimerEvent: {}
+[25.379284] (-) TimerEvent: {}
+[25.479615] (-) TimerEvent: {}
+[25.579963] (-) TimerEvent: {}
+[25.680267] (-) TimerEvent: {}
+[25.780579] (-) TimerEvent: {}
+[25.880930] (-) TimerEvent: {}
+[25.981246] (-) TimerEvent: {}
+[26.081519] (-) TimerEvent: {}
+[26.181832] (-) TimerEvent: {}
+[26.282111] (-) TimerEvent: {}
+[26.382435] (-) TimerEvent: {}
+[26.482761] (-) TimerEvent: {}
+[26.583053] (-) TimerEvent: {}
+[26.683430] (-) TimerEvent: {}
+[26.783794] (-) TimerEvent: {}
+[26.884127] (-) TimerEvent: {}
+[26.984442] (-) TimerEvent: {}
+[27.084863] (-) TimerEvent: {}
+[27.185190] (-) TimerEvent: {}
+[27.285481] (-) TimerEvent: {}
+[27.385849] (-) TimerEvent: {}
+[27.486189] (-) TimerEvent: {}
+[27.586499] (-) TimerEvent: {}
+[27.686843] (-) TimerEvent: {}
+[27.787185] (-) TimerEvent: {}
+[27.887513] (-) TimerEvent: {}
+[27.987864] (-) TimerEvent: {}
+[28.088172] (-) TimerEvent: {}
+[28.188498] (-) TimerEvent: {}
+[28.288854] (-) TimerEvent: {}
+[28.389183] (-) TimerEvent: {}
+[28.489410] (-) TimerEvent: {}
+[28.589740] (-) TimerEvent: {}
+[28.690099] (-) TimerEvent: {}
+[28.790446] (-) TimerEvent: {}
+[28.890779] (-) TimerEvent: {}
+[28.991121] (-) TimerEvent: {}
+[29.091468] (-) TimerEvent: {}
+[29.191760] (-) TimerEvent: {}
+[29.292043] (-) TimerEvent: {}
+[29.392303] (-) TimerEvent: {}
+[29.492591] (-) TimerEvent: {}
+[29.592897] (-) TimerEvent: {}
+[29.693166] (-) TimerEvent: {}
+[29.793518] (-) TimerEvent: {}
+[29.893797] (-) TimerEvent: {}
+[29.994055] (-) TimerEvent: {}
+[30.094260] (-) TimerEvent: {}
+[30.194526] (-) TimerEvent: {}
+[30.294833] (-) TimerEvent: {}
+[30.395105] (-) TimerEvent: {}
+[30.495387] (-) TimerEvent: {}
+[30.595661] (-) TimerEvent: {}
+[30.695886] (-) TimerEvent: {}
+[30.796154] (-) TimerEvent: {}
+[30.896406] (-) TimerEvent: {}
+[30.996734] (-) TimerEvent: {}
+[31.097018] (-) TimerEvent: {}
+[31.197342] (-) TimerEvent: {}
+[31.297663] (-) TimerEvent: {}
+[31.397958] (-) TimerEvent: {}
+[31.498315] (-) TimerEvent: {}
+[31.598636] (-) TimerEvent: {}
+[31.698943] (-) TimerEvent: {}
+[31.799278] (-) TimerEvent: {}
+[31.899614] (-) TimerEvent: {}
+[31.999886] (-) TimerEvent: {}
+[32.100180] (-) TimerEvent: {}
+[32.200516] (-) TimerEvent: {}
+[32.300873] (-) TimerEvent: {}
+[32.401246] (-) TimerEvent: {}
+[32.501526] (-) TimerEvent: {}
+[32.601877] (-) TimerEvent: {}
+[32.702184] (-) TimerEvent: {}
+[32.802486] (-) TimerEvent: {}
+[32.902764] (-) TimerEvent: {}
+[33.003068] (-) TimerEvent: {}
+[33.103361] (-) TimerEvent: {}
+[33.203622] (-) TimerEvent: {}
+[33.303887] (-) TimerEvent: {}
+[33.404166] (-) TimerEvent: {}
+[33.504450] (-) TimerEvent: {}
+[33.604741] (-) TimerEvent: {}
+[33.705114] (-) TimerEvent: {}
+[33.805448] (-) TimerEvent: {}
+[33.905776] (-) TimerEvent: {}
+[34.006096] (-) TimerEvent: {}
+[34.106487] (-) TimerEvent: {}
+[34.206861] (-) TimerEvent: {}
+[34.307162] (-) TimerEvent: {}
+[34.407466] (-) TimerEvent: {}
+[34.507763] (-) TimerEvent: {}
+[34.608140] (-) TimerEvent: {}
+[34.708480] (-) TimerEvent: {}
+[34.808780] (-) TimerEvent: {}
+[34.909096] (-) TimerEvent: {}
+[35.009402] (-) TimerEvent: {}
+[35.109686] (-) TimerEvent: {}
+[35.209960] (-) TimerEvent: {}
+[35.310260] (-) TimerEvent: {}
+[35.410603] (-) TimerEvent: {}
+[35.510891] (-) TimerEvent: {}
+[35.611145] (-) TimerEvent: {}
+[35.711433] (-) TimerEvent: {}
+[35.811722] (-) TimerEvent: {}
+[35.911985] (-) TimerEvent: {}
+[36.012283] (-) TimerEvent: {}
+[36.112596] (-) TimerEvent: {}
+[36.212891] (-) TimerEvent: {}
+[36.313216] (-) TimerEvent: {}
+[36.413527] (-) TimerEvent: {}
+[36.513821] (-) TimerEvent: {}
+[36.614134] (-) TimerEvent: {}
+[36.714438] (-) TimerEvent: {}
+[36.814714] (-) TimerEvent: {}
+[36.914998] (-) TimerEvent: {}
+[37.015296] (-) TimerEvent: {}
+[37.115594] (-) TimerEvent: {}
+[37.215902] (-) TimerEvent: {}
+[37.316278] (-) TimerEvent: {}
+[37.416535] (-) TimerEvent: {}
+[37.516806] (-) TimerEvent: {}
+[37.617152] (-) TimerEvent: {}
+[37.717468] (-) TimerEvent: {}
+[37.817788] (-) TimerEvent: {}
+[37.918061] (-) TimerEvent: {}
+[38.018326] (-) TimerEvent: {}
+[38.118627] (-) TimerEvent: {}
+[38.218895] (-) TimerEvent: {}
+[38.319177] (-) TimerEvent: {}
+[38.419492] (-) TimerEvent: {}
+[38.519823] (-) TimerEvent: {}
+[38.620125] (-) TimerEvent: {}
+[38.720419] (-) TimerEvent: {}
+[38.820699] (-) TimerEvent: {}
+[38.921053] (-) TimerEvent: {}
+[39.021374] (-) TimerEvent: {}
+[39.121756] (-) TimerEvent: {}
+[39.222083] (-) TimerEvent: {}
+[39.322397] (-) TimerEvent: {}
+[39.422717] (-) TimerEvent: {}
+[39.523074] (-) TimerEvent: {}
+[39.623398] (-) TimerEvent: {}
+[39.723693] (-) TimerEvent: {}
+[39.824001] (-) TimerEvent: {}
+[39.924282] (-) TimerEvent: {}
+[40.024640] (-) TimerEvent: {}
+[40.124977] (-) TimerEvent: {}
+[40.225301] (-) TimerEvent: {}
+[40.325588] (-) TimerEvent: {}
+[40.425891] (-) TimerEvent: {}
+[40.526200] (-) TimerEvent: {}
+[40.626510] (-) TimerEvent: {}
+[40.726867] (-) TimerEvent: {}
+[40.827264] (-) TimerEvent: {}
+[40.927574] (-) TimerEvent: {}
+[41.027917] (-) TimerEvent: {}
+[41.128207] (-) TimerEvent: {}
+[41.228499] (-) TimerEvent: {}
+[41.328774] (-) TimerEvent: {}
+[41.429083] (-) TimerEvent: {}
+[41.529373] (-) TimerEvent: {}
+[41.629708] (-) TimerEvent: {}
+[41.730064] (-) TimerEvent: {}
+[41.830412] (-) TimerEvent: {}
+[41.930764] (-) TimerEvent: {}
+[42.031116] (-) TimerEvent: {}
+[42.131453] (-) TimerEvent: {}
+[42.231774] (-) TimerEvent: {}
+[42.332145] (-) TimerEvent: {}
+[42.432403] (-) TimerEvent: {}
+[42.532719] (-) TimerEvent: {}
+[42.633016] (-) TimerEvent: {}
+[42.733328] (-) TimerEvent: {}
+[42.833638] (-) TimerEvent: {}
+[42.933963] (-) TimerEvent: {}
+[43.034265] (-) TimerEvent: {}
+[43.134565] (-) TimerEvent: {}
+[43.234865] (-) TimerEvent: {}
+[43.335170] (-) TimerEvent: {}
+[43.435473] (-) TimerEvent: {}
+[43.535790] (-) TimerEvent: {}
+[43.636103] (-) TimerEvent: {}
+[43.736408] (-) TimerEvent: {}
+[43.836739] (-) TimerEvent: {}
+[43.937049] (-) TimerEvent: {}
+[44.037373] (-) TimerEvent: {}
+[44.137729] (-) TimerEvent: {}
+[44.238049] (-) TimerEvent: {}
+[44.338402] (-) TimerEvent: {}
+[44.438742] (-) TimerEvent: {}
+[44.539076] (-) TimerEvent: {}
+[44.639440] (-) TimerEvent: {}
+[44.739794] (-) TimerEvent: {}
+[44.840126] (-) TimerEvent: {}
+[44.940436] (-) TimerEvent: {}
+[45.040722] (-) TimerEvent: {}
+[45.141030] (-) TimerEvent: {}
+[45.241350] (-) TimerEvent: {}
+[45.341630] (-) TimerEvent: {}
+[45.441889] (-) TimerEvent: {}
+[45.542191] (-) TimerEvent: {}
+[45.642475] (-) TimerEvent: {}
+[45.742763] (-) TimerEvent: {}
+[45.843075] (-) TimerEvent: {}
+[45.943398] (-) TimerEvent: {}
+[46.043747] (-) TimerEvent: {}
+[46.144174] (-) TimerEvent: {}
+[46.244545] (-) TimerEvent: {}
+[46.344886] (-) TimerEvent: {}
+[46.445189] (-) TimerEvent: {}
+[46.545553] (-) TimerEvent: {}
+[46.645852] (-) TimerEvent: {}
+[46.746185] (-) TimerEvent: {}
+[46.846497] (-) TimerEvent: {}
+[46.946773] (-) TimerEvent: {}
+[47.047060] (-) TimerEvent: {}
+[47.147391] (-) TimerEvent: {}
+[47.247748] (-) TimerEvent: {}
+[47.348122] (-) TimerEvent: {}
+[47.448395] (-) TimerEvent: {}
+[47.548687] (-) TimerEvent: {}
+[47.648993] (-) TimerEvent: {}
+[47.749329] (-) TimerEvent: {}
+[47.849604] (-) TimerEvent: {}
+[47.949882] (-) TimerEvent: {}
+[48.050198] (-) TimerEvent: {}
+[48.150485] (-) TimerEvent: {}
+[48.250805] (-) TimerEvent: {}
+[48.351068] (-) TimerEvent: {}
+[48.451378] (-) TimerEvent: {}
+[48.551685] (-) TimerEvent: {}
+[48.652034] (-) TimerEvent: {}
+[48.752324] (-) TimerEvent: {}
+[48.852609] (-) TimerEvent: {}
+[48.952877] (-) TimerEvent: {}
+[49.053139] (-) TimerEvent: {}
+[49.153441] (-) TimerEvent: {}
+[49.253746] (-) TimerEvent: {}
+[49.354062] (-) TimerEvent: {}
+[49.454382] (-) TimerEvent: {}
+[49.554725] (-) TimerEvent: {}
+[49.571600] (kinematics) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable kinematics_node\x1b[0m\n'}
+[49.654847] (-) TimerEvent: {}
+[49.755200] (-) TimerEvent: {}
+[49.855630] (-) TimerEvent: {}
+[49.956114] (-) TimerEvent: {}
+[50.056576] (-) TimerEvent: {}
+[50.156984] (-) TimerEvent: {}
+[50.257338] (-) TimerEvent: {}
+[50.357707] (-) TimerEvent: {}
+[50.458061] (-) TimerEvent: {}
+[50.558331] (-) TimerEvent: {}
+[50.658653] (-) TimerEvent: {}
+[50.758929] (-) TimerEvent: {}
+[50.859223] (-) TimerEvent: {}
+[50.959535] (-) TimerEvent: {}
+[51.059805] (-) TimerEvent: {}
+[51.160124] (-) TimerEvent: {}
+[51.260415] (-) TimerEvent: {}
+[51.360706] (-) TimerEvent: {}
+[51.460984] (-) TimerEvent: {}
+[51.561244] (-) TimerEvent: {}
+[51.661552] (-) TimerEvent: {}
+[51.681865] (kinematics) StdoutLine: {'line': b'[100%] Built target kinematics_node\n'}
+[51.692947] (kinematics) CommandEnded: {'returncode': 0}
+[51.693650] (kinematics) JobProgress: {'identifier': 'kinematics', 'progress': 'install'}
+[51.702224] (kinematics) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics'], 'cwd': '/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics', 'env': OrderedDict([('PROFILEHOME', ''), ('KDE_FULL_SESSION', 'true'), ('MAIL', '/var/spool/mail/kalzemic'), ('LANGUAGE', ''), ('USER', 'kalzemic'), ('PAM_KWALLET5_LOGIN', '/run/user/1000/kwallet5.socket'), ('NVCC_CCBIN', '/usr/bin/g++-15'), ('HOSTNAME', 'archlinux'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('CSF_TObjDefaults', '/usr/share/opencascade/resources/StdResource'), ('KONSOLE_VERSION', '260800'), ('XDG_CACHE_HOME', '/home/kalzemic/.cache'), ('QT_WAYLAND_RECONNECT', '1'), ('CSF_XCAFDefaults', '/usr/share/opencascade/resources/StdResource'), ('SHLVL', '5'), ('LD_LIBRARY_PATH', '/usr/local/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/lib:/usr/local/lib:'), ('CSF_XSMessage', '/usr/share/opencascade/resources/XSMessage'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kalzemic'), ('CHROME_DESKTOP', 'code.desktop'), ('ASDF_DIR', '/home/kalzemic/.asdf'), ('CONDA_SHLVL', '0'), ('CSF_TObjMessage', '/usr/share/opencascade/resources/TObj'), ('MMGT_CLEAR', '1'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/kalzemic/Projects/ArmVision/ros'), ('TERM_PROGRAM_VERSION', '1.138.0'), ('DESKTOP_SESSION', 'plasma'), ('CSF_ShadersDirectory', '/usr/share/opencascade/resources/Shaders'), ('CSF_MDTVTexturesDirectory', '/usr/share/opencascade/resources/Textures'), ('ROS_PYTHON_VERSION', '3'), ('GRADLE_HOME', '/usr/share/java/gradle'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/kalzemic/.gtkrc:/home/kalzemic/.config/gtkrc'), ('KDE_SESSION_VERSION', '6'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\][robotics🐧] \\u:\\w$ \\[\x1b]633;B\x07\\]'), ('DRAWHOME', '/usr/share/opencascade/resources/DrawResources'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('MANAGERPID', '1794'), ('DISTROBOX_ENTER_PATH', '/home/kalzemic/.local/bin/distrobox-enter'), ('SYSTEMD_EXEC_PID', '2044'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('CSF_IGESDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('XDG_STATE_HOME', '/home/kalzemic/.local/state'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('container', 'podman'), ('KONSOLE_DBUS_ACTIVATION_COOKIE', 'bRkANxTVQMQzmffZ5bZZjQxk/CRBK2qP/lKDPC2cJxg='), ('CASROOT', '/usr'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('DEBUGINFOD_URLS', 'https://debuginfod.archlinux.org'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kalzemic'), ('WINDOWID', '94126642146720'), ('MANAGERPIDFDID', '8565'), ('JOURNAL_STREAM', '10:29987'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CSF_LANGUAGE', 'us'), ('MEMORY_PRESSURE_WATCH', '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-plasmashell.service/memory.pressure'), ('CLAUDE_CODE_SSE_PORT', '57606'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERMINFO_DIRS', '/usr/share/terminfo:/run/host/usr/share/terminfo'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/kalzemic/.gtkrc-2.0:/home/kalzemic/.config/gtkrc-2.0'), ('FLATPAK_TTY_PROGRESS', '1'), ('PATH', '/home/kalzemic/.local/bin:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64:/home/kalzemic/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/kalzemic/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/kalzemic/.local/bin:/home/kalzemic/.local/bin:/opt/ros/humble/bin:/home/kalzemic/.local/bin:/home/kalzemic/.asdf/shims:/home/kalzemic/.asdf/bin:/home/kalzemic/miniconda3/condabin:/home/kalzemic/.cargo/bin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/usr/local/sbin:/usr/sbin:/usr/local/bin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin:/home/kalzemic/go/bin:/home/kalzemic/st/stm32cubeide_1.18.1_3/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.100.202412061334/tools/bin'), ('SESSION_MANAGER', 'local/archlinux:@/tmp/.ICE-unix/2027,unix/archlinux:/tmp/.ICE-unix/2027'), ('INVOCATION_ID', '6eec454ec935478baa9310940755ca7a'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('XDG_MENU_PREFIX', 'plasma-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('ICEAUTHORITY', '/run/user/1000/iceauth_RaHTPD'), ('CSF_XmlOcafResource', '/usr/share/opencascade/resources/XmlOcafResource'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('XDG_DATA_HOME', '/home/kalzemic/.local/share'), ('XDG_CONFIG_HOME', '/home/kalzemic/.config'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/run/user/1000/xauth_HBCGKu'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ffdecdbe2b.sock'), ('CSF_StandardDefaults', '/usr/share/opencascade/resources/StdResource'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_PluginDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONDA_PYTHON_EXE', '/home/kalzemic/miniconda3/bin/python'), ('SHELL', '/usr/bin/bash'), ('NO_AT_BRIDGE', '1'), ('CSF_SHMessage', '/usr/share/opencascade/resources/SHMessage'), ('KONSOLE_DBUS_SERVICE', ':1.4497'), ('VSSCRIPT_PATH', '/usr/lib/python3.14/site-packages/vapoursynth/libvsscript.so'), ('CSF_STEPDefaults', '/usr/share/opencascade/resources/XSTEPResource'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics'), ('CSF_StandardLiteDefaults', '/usr/share/opencascade/resources/StdResource'), ('CONTAINER_ID', 'robotics'), ('XDG_CONFIG_DIRS', '/home/kalzemic/.config/kdedefaults:/etc/xdg'), ('COPILOT_DEBUG_NONCE', '843a6d01fc8b99b7f3ad0143af53ab15'), ('CONDA_EXE', '/home/kalzemic/miniconda3/bin/conda'), ('CSF_DrawPluginDefaults', '/usr/share/opencascade/resources/DrawResources'), ('CSF_MIGRATION_TYPES', '/usr/share/opencascade/resources/StdResource/MigrationSheet.txt'), ('XDG_DATA_DIRS', '/home/kalzemic/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share'), ('CSF_OCCTResourcePath', '/usr/share/opencascade/resources'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('DRAWDEFAULT', '/usr/share/opencascade/resources/DrawResources/DrawDefault'), ('KDE_SESSION_UID', '1000'), ('COLCON', '1'), ('MEMORY_PRESSURE_WRITE', 'c29tZSAyMDAwMDAgMjAwMDAwMAA='), ('CUDA_PATH', '/opt/cuda'), ('CMAKE_PREFIX_PATH', '/home/kalzemic/Projects/ArmVision/ros/install/kinematics:/opt/ros/humble'), ('CSF_EXCEPTION_PROMPT', '1')]), 'shell': False}
+[51.709487] (kinematics) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[51.709856] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/ament_index/resource_index/rosidl_interfaces/kinematics\n'}
+[51.710045] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics\n'}
+[51.710145] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv\n'}
+[51.710233] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/kinematics.h\n'}
+[51.710355] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail\n'}
+[51.710463] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__functions.c\n'}
+[51.710547] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__functions.h\n'}
+[51.710741] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__struct.h\n'}
+[51.710877] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__type_support.h\n'}
+[51.710975] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/msg\n'}
+[51.711097] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/msg/rosidl_generator_c__visibility_control.h\n'}
+[51.711178] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/environment/library_path.sh\n'}
+[51.711323] (kinematics) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/environment/library_path.dsv\n'}
+[51.711576] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib/libkinematics__rosidl_generator_c.so\n'}
+[51.711741] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics\n'}
+[51.711925] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv\n'}
+[51.712049] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail\n'}
+[51.712144] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__rosidl_typesupport_fastrtps_c.h\n'}
+[51.712247] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/msg\n'}
+[51.712332] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[51.712452] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib/libkinematics__rosidl_typesupport_fastrtps_c.so\n'}
+[51.712615] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics\n'}
+[51.712701] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv\n'}
+[51.712803] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail\n'}
+[51.712927] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__traits.hpp\n'}
+[51.713013] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__struct.hpp\n'}
+[51.713096] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__type_support.hpp\n'}
+[51.713206] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__builder.hpp\n'}
+[51.713294] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/kinematics.hpp\n'}
+[51.713432] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/msg\n'}
+[51.713528] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[51.713609] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics\n'}
+[51.713719] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv\n'}
+[51.713803] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail\n'}
+[51.713895] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/dds_fastrtps\n'}
+[51.713980] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[51.714085] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/msg\n'}
+[51.714164] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[51.714265] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib/libkinematics__rosidl_typesupport_fastrtps_cpp.so\n'}
+[51.714366] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics\n'}
+[51.714448] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv\n'}
+[51.714563] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail\n'}
+[51.714666] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__type_support.c\n'}
+[51.714779] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__rosidl_typesupport_introspection_c.h\n'}
+[51.714890] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/msg\n'}
+[51.714970] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[51.715091] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib/libkinematics__rosidl_typesupport_introspection_c.so\n'}
+[51.715241] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib/libkinematics__rosidl_typesupport_c.so\n'}
+[51.715357] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics\n'}
+[51.715468] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv\n'}
+[51.715552] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail\n'}
+[51.715634] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__type_support.cpp\n'}
+[51.715717] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/include/kinematics/kinematics/srv/detail/kinematics__rosidl_typesupport_introspection_cpp.hpp\n'}
+[51.715797] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib/libkinematics__rosidl_typesupport_introspection_cpp.so\n'}
+[51.715883] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib/libkinematics__rosidl_typesupport_cpp.so\n'}
+[51.715961] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/environment/pythonpath.sh\n'}
+[51.716038] (kinematics) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/environment/pythonpath.dsv\n'}
+[51.716116] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics-0.0.0-py3.10.egg-info\n'}
+[51.716194] (kinematics) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[51.716272] (kinematics) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[51.716350] (kinematics) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[51.716446] (kinematics) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[51.716529] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics\n'}
+[51.716611] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/_kinematics_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[51.716702] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/_kinematics_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[51.716784] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/kinematics_s__rosidl_typesupport_c..cpython-310-x86_64-linux-gnu.so\n'}
+[51.716874] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/libkinematics__rosidl_generator_py.so\n'}
+[51.716956] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/kinematics_s__rosidl_typesupport_fastrtps_c..cpython-310-x86_64-linux-gnu.so\n'}
+[51.717037] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/_kinematics_s.ep.rosidl_typesupport_c.c\n'}
+[51.717118] (kinematics) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/__init__.py\n'}
+[51.717205] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/kinematics_s__rosidl_typesupport_introspection_c..cpython-310-x86_64-linux-gnu.so\n'}
+[51.717291] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/srv\n'}
+[51.717372] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/srv/_kinematics_s.c\n'}
+[51.717453] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/srv/__init__.py\n'}
+[51.717532] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/srv/_kinematics.py\n'}
+[51.744299] (kinematics) StdoutLine: {'line': b"Listing '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics'...\n"}
+[51.744479] (kinematics) StdoutLine: {'line': b"Compiling '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/__init__.py'...\n"}
+[51.744569] (kinematics) StdoutLine: {'line': b"Listing '/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/srv'...\n"}
+[51.748403] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/kinematics_s__rosidl_typesupport_fastrtps_c..cpython-310-x86_64-linux-gnu.so\n'}
+[51.748725] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/kinematics_s__rosidl_typesupport_introspection_c..cpython-310-x86_64-linux-gnu.so\n'}
+[51.749058] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/local/lib/python3.10/dist-packages/kinematics/kinematics_s__rosidl_typesupport_c..cpython-310-x86_64-linux-gnu.so\n'}
+[51.749333] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib/libkinematics__rosidl_generator_py.so\n'}
+[51.749467] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/rust\n'}
+[51.749650] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/rust/build.rs\n'}
+[51.749779] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/rust/Cargo.toml\n'}
+[51.749901] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/rust/src\n'}
+[51.750004] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/rust/src/srv.rs\n'}
+[51.750083] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/rust/src/lib.rs\n'}
+[51.750182] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/rust/src/srv\n'}
+[51.750264] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/rust/src/srv/rmw.rs\n'}
+[51.750343] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/srv/Kinematics.idl\n'}
+[51.750423] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/srv/Kinematics.srv\n'}
+[51.750510] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/srv/Kinematics_Request.msg\n'}
+[51.750589] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/srv/Kinematics_Response.msg\n'}
+[51.750667] (kinematics) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib/kinematics/kinematics_node\n'}
+[51.761652] (-) TimerEvent: {}
+[51.769541] (kinematics) StdoutLine: {'line': b'-- Set runtime path of "/home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/lib/kinematics/kinematics_node" to ""\n'}
+[51.769878] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/ament_index/resource_index/package_run_dependencies/kinematics\n'}
+[51.770044] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/ament_index/resource_index/parent_prefix_path/kinematics\n'}
+[51.770243] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/environment/ament_prefix_path.sh\n'}
+[51.770367] (kinematics) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/environment/ament_prefix_path.dsv\n'}
+[51.770502] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/environment/path.sh\n'}
+[51.770607] (kinematics) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/environment/path.dsv\n'}
+[51.770750] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/local_setup.bash\n'}
+[51.770882] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/local_setup.sh\n'}
+[51.770994] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/local_setup.zsh\n'}
+[51.771090] (kinematics) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/local_setup.dsv\n'}
+[51.771248] (kinematics) StdoutLine: {'line': b'-- Installing: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/package.dsv\n'}
+[51.771410] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/ament_index/resource_index/packages/kinematics\n'}
+[51.771519] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/export_kinematics__rosidl_generator_cExport.cmake\n'}
+[51.771667] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/export_kinematics__rosidl_generator_cExport-noconfig.cmake\n'}
+[51.771837] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/export_kinematics__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[51.771990] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/export_kinematics__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[51.772143] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/export_kinematics__rosidl_generator_cppExport.cmake\n'}
+[51.772298] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/export_kinematics__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[51.772525] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/export_kinematics__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[51.772727] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/kinematics__rosidl_typesupport_introspection_cExport.cmake\n'}
+[51.772863] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/kinematics__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[51.772975] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/kinematics__rosidl_typesupport_cExport.cmake\n'}
+[51.773087] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/kinematics__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[51.773190] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/kinematics__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[51.773656] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/kinematics__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[51.773781] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/kinematics__rosidl_typesupport_cppExport.cmake\n'}
+[51.773911] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/kinematics__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[51.774022] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/export_kinematics__rosidl_generator_pyExport.cmake\n'}
+[51.774132] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/export_kinematics__rosidl_generator_pyExport-noconfig.cmake\n'}
+[51.774245] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/rosidl_cmake-extras.cmake\n'}
+[51.774350] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[51.774467] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[51.774558] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[51.774648] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[51.774738] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[51.774948] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[51.775239] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/rosidl_cmake_aggregate_target-extras.cmake\n'}
+[51.775853] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/kinematicsConfig.cmake\n'}
+[51.775972] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/cmake/kinematicsConfig-version.cmake\n'}
+[51.776108] (kinematics) StdoutLine: {'line': b'-- Up-to-date: /home/kalzemic/Projects/ArmVision/ros/src/install/kinematics/share/kinematics/package.xml\n'}
+[51.776169] (kinematics) CommandEnded: {'returncode': 0}
+[51.795560] (kinematics) JobEnded: {'identifier': 'kinematics', 'rc': 0}
+[51.796385] (-) EventReactorShutdown: {}

@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from kinematics/srv/Kinematics.srv
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/PoseStamped.idl"
+#include "sensor_msgs/msg/JointState.idl"
+
+module kinematics {
+  module srv {
+    struct Kinematics_Request {
+      geometry_msgs::msg::PoseStamped target;
+    };
+    struct Kinematics_Response {
+      boolean success;
+
+      sensor_msgs::msg::JointState solution;
+    };
+  };
+};

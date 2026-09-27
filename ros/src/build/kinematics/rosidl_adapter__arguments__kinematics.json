@@ -1,0 +1,6 @@
+{
+  "package_name": "kinematics",
+  "non_idl_tuples": [
+    "/home/kalzemic/Projects/ArmVision/ros/src/kinematics:srv/Kinematics.srv"
+  ]
+}

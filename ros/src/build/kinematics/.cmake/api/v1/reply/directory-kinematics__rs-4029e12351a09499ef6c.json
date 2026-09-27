@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "kinematics__rs",
+		"source" : "/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics/kinematics__rs"
+	}
+}

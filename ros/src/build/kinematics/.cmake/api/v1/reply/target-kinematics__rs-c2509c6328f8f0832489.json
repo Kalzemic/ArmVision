@@ -1,0 +1,73 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target"
+		],
+		"files" : 
+		[
+			"/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics/kinematics__rs/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 32,
+				"parent" : 0
+			}
+		]
+	},
+	"id" : "kinematics__rs::@ec1098d1da6734559bd1",
+	"name" : "kinematics__rs",
+	"paths" : 
+	{
+		"build" : "kinematics__rs",
+		"source" : "/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics/kinematics__rs"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics/kinematics__rs/CMakeFiles/kinematics__rs",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics/kinematics__rs/CMakeFiles/kinematics__rs.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/kalzemic/Projects/ArmVision/ros/src/build/kinematics/rosidl_generator_rs/kinematics/rust/src/lib.rs.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

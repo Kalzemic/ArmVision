@@ -1,0 +1,4 @@
+srv/Kinematics.idl
+srv/Kinematics.srv
+srv/Kinematics_Request.msg
+srv/Kinematics_Response.msg

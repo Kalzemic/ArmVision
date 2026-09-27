@@ -1,0 +1,6 @@
+{
+  "package_name": "trajectory",
+  "non_idl_tuples": [
+    "/home/kalzemic/Projects/ArmVision/ros/src/trajectory:srv/Trajectory.srv"
+  ]
+}
