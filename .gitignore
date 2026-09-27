@@ -1,6 +1,6 @@
 .vscode/
 
-/ros/install/ 
-/ros/build/
-/ros/log/
+ros/install/ 
+ros/build/
+ros/log/
 

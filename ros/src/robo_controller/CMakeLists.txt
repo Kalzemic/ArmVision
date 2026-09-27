@@ -48,6 +48,11 @@ install(
 )
 
 install(
+  DIRECTORY config
+  DESTINATION share/${PROJECT_NAME}
+)
+
+install(
     FILES robo_controller.xml
     DESTINATION share/${PROJECT_NAME}
 )

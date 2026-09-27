@@ -1,0 +1,11 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000
+
+    robo_controller:
+      type: robo_controller/RoboController
+
+robo_controller:
+  ros__parameters:
+    frequency: 5.0
+    damping_ratio: 1.0
