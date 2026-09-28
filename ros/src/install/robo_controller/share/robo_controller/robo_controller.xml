@@ -1,8 +1,0 @@
-<library path="robo_controller">
-    <class
-        name="robo_controller/RoboController"
-        type="RoboController::RoboController"
-        base_class_type="controller_interface::ControllerInterface">
-        <description>Computed torque robot controller</description>
-    </class>
-</library>

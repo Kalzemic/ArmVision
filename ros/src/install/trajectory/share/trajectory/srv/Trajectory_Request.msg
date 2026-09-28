@@ -1,2 +1,0 @@
-sensor_msgs/JointState goal
-builtin_interfaces/Duration duration

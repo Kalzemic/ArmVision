@@ -1,7 +1,0 @@
-[01m[K/home/kalzemic/Projects/ArmVision/ros/src/trajectory/src/trajectory.cpp:[m[K In member function ‘[01m[Kvoid armvision::Trajectory::service_callback(std::shared_ptr<trajectory::srv::Trajectory_Request_<std::allocator<void> > >, std::shared_ptr<trajectory::srv::Trajectory_Response_<std::allocator<void> > >)[m[K’:
-[01m[K/home/kalzemic/Projects/ArmVision/ros/src/trajectory/src/trajectory.cpp:113:71:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass rclcpp::Duration[m[K’ has no member named ‘[01m[Kto_msg[m[K’
-  113 |             point.time_from_start = rclcpp::Duration::from_seconds(t).[01;31m[Kto_msg[m[K();
-      |                                                                       [01;31m[K^~~~~~[m[K
-gmake[2]: *** [CMakeFiles/trajectory_node.dir/build.make:76: CMakeFiles/trajectory_node.dir/src/trajectory.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:612: CMakeFiles/trajectory_node.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

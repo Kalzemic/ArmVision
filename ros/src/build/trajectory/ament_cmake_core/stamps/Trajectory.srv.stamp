@@ -1,5 +1,0 @@
-sensor_msgs/JointState goal
-builtin_interfaces/Duration duration
----
-bool success
-trajectory_msgs/JointTrajectory trajectory

@@ -5,7 +5,11 @@ controller_manager:
     robo_controller:
       type: robo_controller/RoboController
 
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
 robo_controller:
   ros__parameters:
     frequency: 5.0
     damping_ratio: 1.0
+

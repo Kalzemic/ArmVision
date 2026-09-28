@@ -14,7 +14,8 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 find_package(realtime_tools REQUIRED)
-
+find_package(control_msgs REQUIRED)
+find_package(rclcpp_action REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(pinocchio REQUIRED)
 
@@ -30,6 +31,8 @@ ament_target_dependencies(robo_controller
     rclcpp_lifecycle
     trajectory_msgs
     realtime_tools
+    control_msgs
+    rclcpp_action
 )
 
 target_link_libraries(robo_controller

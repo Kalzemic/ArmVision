@@ -40,6 +40,11 @@ public:
         this->declare_parameter<double>("ik.epsilon", 1e-4);
         this->declare_parameter<double>("ik.step_size", 0.1);
         this->declare_parameter<double>("ik.damping", 1e-6);
+        this->declare_parameter<std::string>("end_effector", "end_effector");
+        
+        std::string ee_name;
+        this->get_parameter("end_effector", ee_name);
+
 
         this->get_parameter("ik.max_iterations", max_iterations_);
         this->get_parameter("ik.epsilon", epsilon_);
@@ -57,6 +62,13 @@ public:
         this->get_parameter("robot_description",urdf);
     
         pinocchio::urdf::buildModelFromXML(urdf, this->model_);
+        
+        if (!this->model_.existFrame(ee_name))
+        {
+            throw std::invalid_argument("End-effector frame does not exist: " + ee_name);
+        }
+        this->end_effector_ = this->model_.getFrameId(ee_name);
+        
         data_ = std::make_unique<pinocchio::Data>(model_);
     }
 
@@ -122,13 +134,7 @@ public:
         // State Evaluation
         Eigen::VectorXd q = jointStateToQ(*this->state_);
 
-        
-        if (!this->model_.existFrame("end_effector"))
-        {
-            response->success = false;
-            return;
-        }
-        pinocchio::FrameIndex ee_id = this->model_.getFrameId("end_effector");
+
         
         
         for(int i = 0; i < this->max_iterations_; i++)
@@ -136,7 +142,7 @@ public:
             // Forward kinematics
             pinocchio::forwardKinematics(this->model_, *this->data_, q);
             pinocchio::updateFramePlacements(this->model_, *this->data_);
-            const pinocchio::SE3& current = data_->oMf[ee_id];
+            const pinocchio::SE3& current = data_->oMf[this->end_effector_];
 
             // Error computation
             pinocchio::SE3 error_transform = current.actInv(target);
@@ -153,7 +159,7 @@ public:
 
             // Jacobian Computation
             Eigen::MatrixXd J(6, this->model_.nv);
-            pinocchio::computeFrameJacobian(this->model_, *this->data_, q, ee_id, pinocchio::LOCAL, J);
+            pinocchio::computeFrameJacobian(this->model_, *this->data_, q, this->end_effector_, pinocchio::LOCAL, J);
             Eigen::Matrix<double, 6, 6> Jlog;
             pinocchio::Jlog6(error_transform.inverse(), Jlog);
             J = -Jlog * J;
@@ -189,6 +195,7 @@ private:
     sensor_msgs::msg::JointState::SharedPtr state_ = nullptr;
     pinocchio::Model model_;
     std::unique_ptr<pinocchio::Data> data_;
+    pinocchio::FrameIndex end_effector_;
 };
 }
 
