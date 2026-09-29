@@ -3,27 +3,27 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="armvision">
 
-    <!-- <xacro:arg name="is_ignition" default="true" /> -->
-    <!-- <xacro:include filename="$(find armvision_description)/urdf/armvision_gazebo.xacro" /> -->
     <!-- <xacro:include filename="$(find armvision_description)/urdf/sensors.xacro" /> -->
     <xacro:include filename="$(find armvision_description)/urdf/armvision_ros2_control.xacro" />
     <xacro:property name="PI" value="3.14159" />
     <xacro:property name="effort" value="30.0" />
     <xacro:property name="velocity" value="10.0" />
 
-    <xacro:macro name="default_inertial" params="mass">
+    <!-- Solid box approximation: x y z are the box dimensions, com is the center of mass -->
+    <xacro:macro name="box_inertial" params="mass x y z com">
         <inertial>
+            <origin rpy="0 0 0" xyz="${com}" />
             <mass value="${mass}" />
-            <inertia ixx="1.0" ixy="0.0" ixz="0.0"
-                iyy="1.0" iyz="0.0"
-                izz="1.0"
+            <inertia ixx="${mass / 12.0 * (y*y + z*z)}" ixy="0.0" ixz="0.0"
+                iyy="${mass / 12.0 * (x*x + z*z)}" iyz="0.0"
+                izz="${mass / 12.0 * (x*x + y*y)}"
             />
         </inertial>
     </xacro:macro>
     <link name="world" />
 
     <link name="base_link">
-        <xacro:default_inertial mass="1.0" />
+        <xacro:box_inertial mass="1.0" x="0.3" y="0.3" z="0.3" com="0 0 0.15" />
         <visual>
             <origin rpy="0 0 0" xyz="-0.5 -0.5 0" />
             <geometry>
@@ -48,7 +48,7 @@
 
 
     <link name="base_plate">
-        <xacro:default_inertial mass="0.1" />
+        <xacro:box_inertial mass="0.1" x="0.2" y="0.2" z="0.35" com="0 0 0.175" />
         <visual>
             <origin rpy="0 0 0" xyz="-0.39 -0.39 -0.56" />
             <geometry>
@@ -75,7 +75,7 @@
 
 
     <link name="forward_drive_arm">
-        <xacro:default_inertial mass="0.1" />
+        <xacro:box_inertial mass="0.1" x="0.05" y="0.05" z="0.8" com="0 0 0.4" />
         <visual>
             <origin rpy="0 -${PI/2} ${PI/2}" xyz="0.19 0.06 -0.08" />
             <geometry>
@@ -101,7 +101,7 @@
     </joint>
 
     <link name="horizontal_arm">
-        <xacro:default_inertial mass="0.1" />
+        <xacro:box_inertial mass="0.1" x="0.05" y="0.82" z="0.05" com="0 0.41 0" />
         <visual>
             <origin rpy="${PI/2} 0 ${PI/2}" xyz="-0.03 -0.4 -0.06" />
             <geometry>
@@ -127,7 +127,7 @@
     </joint>
 
     <link name="claw_support">
-        <xacro:default_inertial mass="0.05" />
+        <xacro:box_inertial mass="0.05" x="0.1" y="0.1" z="0.1" com="0 0 0" />
         <visual>
             <origin rpy="0 0 ${PI/2}" xyz="0 -0.05 -0.15" />
             <geometry>
@@ -151,7 +151,7 @@
     </joint>
 
     <link name="gripper_right">
-        <xacro:default_inertial mass="0.01" />
+        <xacro:box_inertial mass="0.01" x="0.02" y="0.1" z="0.02" com="0 0 0" />
         <visual>
             <origin rpy="0 0 -${PI/2}" xyz="-0.1 0.5 -0.1" />
             <geometry>
@@ -169,7 +169,7 @@
     </link>
 
     <link name="gripper_left">
-        <xacro:default_inertial mass="0.01" />
+        <xacro:box_inertial mass="0.01" x="0.02" y="0.1" z="0.02" com="0 0 0" />
         <visual>
             <origin rpy="0 0 -${PI/2}" xyz="-0.04 0.5 -0.1" />
             <geometry>
@@ -213,7 +213,7 @@
 
 
     <link name="rgb_camera">
-        <xacro:default_inertial mass="0.001" />
+        <xacro:box_inertial mass="0.001" x="0.03" y="0.03" z="0.03" com="0 0 0" />
         <visual>
             <origin rpy="-${PI/2} 0 0" xyz="-0.125 0 0.34" />
             <geometry>

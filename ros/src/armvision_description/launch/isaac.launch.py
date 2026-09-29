@@ -1,9 +1,9 @@
 from launch import LaunchDescription
-from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.parameter_descriptions import ParameterValue  
+from launch_ros.actions import Node, SetParameter
 import os
 
 
@@ -67,12 +67,22 @@ def generate_launch_description():
         arguments=['robo_controller', '--controller-manager','/controller_manager']
     )
 
+
+    motion_executor = Node(
+        package='motion_executor',
+        executable='motion_executor_node',
+        
+
+    )
+
     return LaunchDescription([
+        SetParameter(name='use_sim_time', value=True),
         model_arg,
         robot_state_publisher,
         kinematics,
         trajectory,
         controller_manager,
         joint_state_broadcaster_spawner,
-        robo_controller_spawner
+        robo_controller_spawner,
+        motion_executor
     ])
