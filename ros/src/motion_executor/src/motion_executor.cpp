@@ -38,7 +38,7 @@ private:
     std::atomic<bool> goal_active_{false};
     std::atomic<bool> cancel_requested_{false};
 
-    rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID&, std::shared_ptr<const motion_executor::action::MoveToPose::Goal> goal)
+    rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID&, std::shared_ptr<const motion_executor::action::MoveToPose::Goal>)
     {
         bool expected = false;
         if (!this->goal_active_.compare_exchange_strong(expected, true))
@@ -47,7 +47,7 @@ private:
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
     }
 
-    rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<rclcpp_action::ServerGoalHandle<motion_executor::action::MoveToPose>> goal_handle)
+    rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<rclcpp_action::ServerGoalHandle<motion_executor::action::MoveToPose>>)
     {
         this->cancel_requested_.store(true);
         return rclcpp_action::CancelResponse::ACCEPT;

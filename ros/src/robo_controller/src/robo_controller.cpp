@@ -25,8 +25,13 @@ public:
     {
         return controller_interface::CallbackReturn::SUCCESS;
     }
+    controller_interface::CallbackReturn on_activate(const rclcpp_lifecycle::State&) override
+    {
+        this->read_pos();
+        return controller_interface::CallbackReturn::SUCCESS;
+    }
 
-   controller_interface::CallbackReturn on_configure(const rclcpp_lifecycle::State &) override  
+   controller_interface::CallbackReturn on_configure(const rclcpp_lifecycle::State&) override  
     {
         
         auto node = this->get_node();
@@ -71,66 +76,77 @@ public:
         };
     }
 
-
+    
     controller_interface::return_type update(const rclcpp::Time& time, const rclcpp::Duration&) override
     {
-        if (!this->goal_active_.load())
-            return controller_interface::return_type::OK;
         auto trajectory = this->trajectory_buffer_.readFromRT();
         auto goal_handle = this->goal_handle_buffer_.readFromRT();
         auto result = this->result_buffer_.readFromRT();
+
+        bool active = this->goal_active_.load();
         if (!trajectory || !(*trajectory) || !goal_handle || !(*goal_handle) || !result || !(*result))
         {
-            return controller_interface::return_type::OK;
+             active = false;
         }
 
-        if (this->cancel_requested_.load())
-        {
-            (*goal_handle)->canceled(*result);
-
-            // this->trajectory_buffer_.writeFromRT(nullptr);
-            // this->goal_handle_buffer_.writeFromRT(nullptr);
-            // this->result_buffer_.writeFromRT(nullptr);
-
-            this->goal_active_.store(false);
-            this->cancel_requested_.store(false);
-            this->trajectory_start_time_ = rclcpp::Time(0);
-
-            return controller_interface::return_type::OK;
-        }
-
-        if (this->trajectory_start_time_.nanoseconds() == 0)
-            this->trajectory_start_time_ = time;
-        double elapsed = (time - this->trajectory_start_time_).seconds();
-        
-        
-
-        const auto& points = (*trajectory)->points;
         size_t point_idx = 0;
-        while (point_idx < points.size() && rclcpp::Duration(points[point_idx].time_from_start).seconds() < elapsed)
+
+        if(active)
         {
-            ++point_idx;
+            if (this->cancel_requested_.load())
+            {
+                (*goal_handle)->canceled(*result);
+                this->goal_active_.store(false);
+                this->cancel_requested_.store(false);
+                active = false;
+                this->read_pos();
+                this->trajectory_start_time_ = rclcpp::Time(0);
+
+                return controller_interface::return_type::OK;
+            }
+            else 
+            {
+                if (this->trajectory_start_time_.nanoseconds() == 0)
+                    this->trajectory_start_time_ = time;
+                double elapsed = (time - this->trajectory_start_time_).seconds();
+                
+                
+
+                const auto& points = (*trajectory)->points;
+                
+                while (point_idx < points.size() && rclcpp::Duration(points[point_idx].time_from_start).seconds() < elapsed)
+                {
+                    ++point_idx;
+                }
+                
+
+                if (point_idx >= points.size())
+                {   
+                    if(!this->success_.load())
+                    {    
+                        (*goal_handle)->succeed(*result);
+                        this->success_.store(true);
+                    }
+                    this->goal_active_.store(false);
+                    active = false; 
+                    this->read_pos();
+                    this->trajectory_start_time_ = rclcpp::Time(0);
+
+                }
+            }
         }
-        if (point_idx >= points.size())
-        {
-            (*goal_handle)->succeed(*result);
+        
 
-            // this->trajectory_buffer_.writeFromRT(nullptr);
-            // this->goal_handle_buffer_.writeFromRT(nullptr);
-            // this->result_buffer_.writeFromRT(nullptr);
-            this->goal_active_.store(false);
-            this->trajectory_start_time_ = rclcpp::Time(0);
 
-            return controller_interface::return_type::OK;
-        }
-
-        const auto& point = points[point_idx];
+        const auto& point = active ? (*trajectory)->points[point_idx] : this->pos_;
         Eigen::Map<const Eigen::VectorXd> q_d(point.positions.data(),point.positions.size());
         Eigen::Map<const Eigen::VectorXd> qdot_d(point.velocities.data(),point.velocities.size());
         Eigen::Map<const Eigen::VectorXd> qdotdot_d(point.accelerations.data(),point.accelerations.size());
         
         Eigen::VectorXd q(model_.nq);
         Eigen::VectorXd qdot(model_.nv);
+
+        
 
         size_t pos_idx = 0;
         size_t vel_idx = 0;
@@ -169,6 +185,21 @@ public:
 
 private:
 
+    void read_pos()
+    {
+        std::vector<double> vec;
+        for (const auto& iface: state_interfaces_)
+        {
+            if (iface.get_interface_name() == "position")
+                vec.push_back(iface.get_value());
+
+        }
+
+        this->pos_.positions.assign(vec.data(),vec.data() + vec.size());
+        this->pos_.velocities.assign(vec.size(), 0.0);
+        this->pos_.accelerations.assign(vec.size(), 0.0);
+    }
+
     rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID&, std::shared_ptr<const control_msgs::action::FollowJointTrajectory::Goal> goal)
     {
         if (goal->trajectory.points.empty())
@@ -194,6 +225,7 @@ private:
         this->goal_handle_buffer_.writeFromNonRT(goal_handle);
         this->result_buffer_.writeFromNonRT(std::make_shared<control_msgs::action::FollowJointTrajectory::Result>());
         this->trajectory_start_time_ = rclcpp::Time(0);
+        this->success_.store(false);
     }
     
     rclcpp_action::Server<control_msgs::action::FollowJointTrajectory>::SharedPtr action_server_;
@@ -202,8 +234,11 @@ private:
     pinocchio::Model model_;
     std::unique_ptr<pinocchio::Data> data_;
 
+    std::atomic<bool> success_{false};
     std::atomic<bool> goal_active_{false};
     std::atomic<bool> cancel_requested_{false};
+    Eigen::VectorXd hold_position_;
+    trajectory_msgs::msg::JointTrajectoryPoint pos_;
     realtime_tools::RealtimeBuffer<std::shared_ptr<trajectory_msgs::msg::JointTrajectory>> trajectory_buffer_;
     realtime_tools::RealtimeBuffer<std::shared_ptr<control_msgs::action::FollowJointTrajectory::Result>> result_buffer_;
     rclcpp::Time trajectory_start_time_;

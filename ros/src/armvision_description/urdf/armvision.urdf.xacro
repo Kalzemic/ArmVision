@@ -203,7 +203,15 @@
         <limit lower="0.0" upper="${PI/2}" effort="${effort}" velocity="${velocity}" />
     </joint>
 
-    <!-- 
+    <link name="end_effector" />
+
+    <joint name="claw_support_to_end_effector" type="fixed">
+        <parent link="claw_support" />
+        <child link="end_effector" />
+        <origin xyz="-0.09 0.13 -0.1" rpy="0 0 0" />
+    </joint>
+
+
     <link name="rgb_camera">
         <xacro:default_inertial mass="0.001" />
         <visual>
@@ -213,22 +221,13 @@
                     scale="0.01 0.01 0.01" />
             </geometry>
         </visual>
-        <collision>
-            <origin rpy="-${PI/2} 0 0" xyz="-0.125 0 0.34" />
-            <geometry>
-                <mesh filename="package://armvision_description/meshes/pi_camera.STL"
-                    scale="0.01 0.01 0.01" />
-            </geometry>
-        </collision>
-    </link> -->
+    </link>
 
-    <!-- <joint name='claw-to-camera' type="fixed">
-        <origin rpy="0 0 0" xyz=" 0 -0.1 0.05" />
+    <joint name="claw_to_camera" type="fixed">
         <parent link="claw_support" />
         <child link="rgb_camera" />
-        <axis xyz='0 0 1' />
-        <limit lower="-${PI/2}" upper="${PI/2}" effort="${effort}" velocity="${velocity}" />
-    </joint> -->
+        <origin xyz="0 -0.1 0.05" rpy="0 0 0" />
+    </joint>
 
 
 </robot>

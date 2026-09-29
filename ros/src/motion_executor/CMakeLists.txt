@@ -9,15 +9,42 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
-find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
-find_package(trajectory_msgs REQUIRED)
+find_package(control_msgs REQUIRED)
+find_package(kinematics REQUIRED)
+find_package(trajectory REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "action/MoveToPose.action"
   DEPENDENCIES
     geometry_msgs
+)
+
+add_executable(motion_executor_node
+  src/motion_executor.cpp
+)
+
+ament_target_dependencies(motion_executor_node
+  rclcpp
+  rclcpp_action
+  geometry_msgs
+  control_msgs
+  kinematics
+  trajectory
+)
+
+rosidl_get_typesupport_target(cpp_typesupport_target
+  ${PROJECT_NAME} "rosidl_typesupport_cpp"
+)
+
+target_link_libraries(motion_executor_node
+  "${cpp_typesupport_target}"
+)
+
+install(TARGETS
+  motion_executor_node
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)
