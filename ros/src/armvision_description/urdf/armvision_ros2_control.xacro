@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arduionobot">
+    <ros2_control type="system" name="ArmVisionSystem">
+
+        <hardware>
+            <plugin>topic_based_ros2_control/TopicBasedSystem</plugin>
+            <param name="joint_commands_topic">/isaac_joint_commands</param>
+            <param name="joint_states_topic">/isaac_joint_states</param>
+        </hardware>
+
+        <joint name="joint_1">
+            <command_interface name="effort" />
+
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+
+        <joint name="joint_2">
+            <command_interface name="effort" />
+
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+
+        <joint name="joint_3">
+            <command_interface name="effort" />
+
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+
+    </ros2_control>
+
+
+</robot>

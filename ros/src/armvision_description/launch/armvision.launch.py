@@ -31,8 +31,8 @@ def generate_launch_description():
             'end_effector': 'end_effector',
             'ik.max_iterations': 100,
             'ik.epsilon': 1e-4,
-            'ik.step_size': 0.1,
-            'ik.damping': 1e-6,
+            'ik.step_size': 0.5,
+            'ik.damping': 1e-3,
         }]
     )
 
@@ -45,7 +45,7 @@ def generate_launch_description():
         }]
     )
 
-    controller_config = os.path.join(get_package_share_directory('robo_controller'),'config','controller.yaml')
+    controller_config = os.path.join(get_package_share_directory('robo_controller'),'config','robo_controller.yaml')
     controller_manager = Node(
         package='controller_manager',
         executable='ros2_control_node',
@@ -71,5 +71,8 @@ def generate_launch_description():
         model_arg,
         robot_state_publisher,
         kinematics,
-        trajectory
+        trajectory,
+        controller_manager,
+        joint_state_broadcaster_spawner,
+        robo_controller_spawner
     ])

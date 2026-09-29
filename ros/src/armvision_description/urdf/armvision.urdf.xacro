@@ -3,8 +3,8 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="armvision">
 
-    <xacro:arg name="is_ignition" default="true" />
-    <xacro:include filename="$(find armvision_description)/urdf/armvision_gazebo.xacro" />
+    <!-- <xacro:arg name="is_ignition" default="true" /> -->
+    <!-- <xacro:include filename="$(find armvision_description)/urdf/armvision_gazebo.xacro" /> -->
     <!-- <xacro:include filename="$(find armvision_description)/urdf/sensors.xacro" /> -->
     <xacro:include filename="$(find armvision_description)/urdf/armvision_ros2_control.xacro" />
     <xacro:property name="PI" value="3.14159" />
@@ -186,21 +186,21 @@
         </collision>
     </link>
 
-    <joint name="joint_4" type="revolute">
+    <joint name="joint_4" type="fixed">
 
         <parent link="claw_support" />
         <child link="gripper_right" />
         <axis xyz="0 0 1" />
         <origin rpy="0 0 0" xyz="0.04 0.13 -0.1" />
-        <limit lower="-${PI/2}" upper="0.0" effort="${effort}" velocity="${velocity}" />
+        <!-- <limit lower="-${PI/2}" upper="0.0" effort="${effort}" velocity="${velocity}" /> -->
     </joint>
-    <joint name="joint_5" type="revolute">
+    <joint name="joint_5" type="fixed">
         <parent link="claw_support" />
         <child link="gripper_left" />
         <axis xyz="0 0 1" />
         <origin rpy="0 0 0" xyz="-0.22 0.13 -0.1" />
-        <mimic joint="joint_4" multiplier="-1" />
-        <limit lower="0.0" upper="${PI/2}" effort="${effort}" velocity="${velocity}" />
+        <!-- <mimic joint="joint_4" multiplier="-1" />
+        <limit lower="0.0" upper="${PI/2}" effort="${effort}" velocity="${velocity}" /> -->
     </joint>
 
     <link name="end_effector" />

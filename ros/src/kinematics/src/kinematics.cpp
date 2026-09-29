@@ -38,8 +38,8 @@ public:
         // Parameters 
         this->declare_parameter<int>("ik.max_iterations", 100);
         this->declare_parameter<double>("ik.epsilon", 1e-4);
-        this->declare_parameter<double>("ik.step_size", 0.1);
-        this->declare_parameter<double>("ik.damping", 1e-6);
+        this->declare_parameter<double>("ik.step_size", 0.5);
+        this->declare_parameter<double>("ik.damping", 1e-3);
         this->declare_parameter<std::string>("end_effector", "end_effector");
         
         std::string ee_name;
@@ -133,10 +133,13 @@ public:
 
         // State Evaluation
         Eigen::VectorXd q = jointStateToQ(*this->state_);
-
-
+        q = q.cwiseMax(this->model_.lowerPositionLimit).cwiseMin(this->model_.upperPositionLimit);
         
-        
+        const double rot_w = request->position_only? 0.0 : 1.0;
+        Eigen::Matrix<double, 6, 1> w;
+        w << 1, 1, 1, rot_w, rot_w, rot_w;
+        Eigen::MatrixXd J(6, this->model_.nv);
+
         for(int i = 0; i < this->max_iterations_; i++)
         {
             // Forward kinematics
@@ -145,11 +148,14 @@ public:
             const pinocchio::SE3& current = data_->oMf[this->end_effector_];
 
             // Error computation
-            pinocchio::SE3 error_transform = current.actInv(target);
-            pinocchio::Motion error = pinocchio::log6(error_transform);
+            Eigen::Matrix<double, 6, 1> err;
+            err.head<3>() = target.translation() - current.translation();
+            const Eigen::Matrix3d E = target.rotation() * current.rotation().transpose();
+            err.tail<3>() = pinocchio::log3(E);
 
+            err = w.asDiagonal() * err;
             // Goal Pose 
-            if (error.toVector().norm() < this->epsilon_)
+            if (err.norm() < this->epsilon_)
             {
                 response->success = true;
                 qToJointState(q, response->solution);
@@ -158,11 +164,13 @@ public:
 
 
             // Jacobian Computation
-            Eigen::MatrixXd J(6, this->model_.nv);
-            pinocchio::computeFrameJacobian(this->model_, *this->data_, q, this->end_effector_, pinocchio::LOCAL, J);
-            Eigen::Matrix<double, 6, 6> Jlog;
-            pinocchio::Jlog6(error_transform.inverse(), Jlog);
-            J = -Jlog * J;
+            J.setZero();
+            pinocchio::computeFrameJacobian(this->model_, *this->data_, q, this->end_effector_, pinocchio::LOCAL_WORLD_ALIGNED, J);
+    
+            Eigen::Matrix3d Jlog;
+            pinocchio::Jlog3(E, Jlog);
+            J.bottomRows<3>() = Jlog * J.bottomRows<3>();
+            J = w.asDiagonal() * J;
 
             // A = J * J_T
             Eigen::Matrix<double, 6, 6> A = J * J.transpose();
@@ -175,8 +183,9 @@ public:
             auto J_pinv = J.transpose() * A.ldlt().solve(Eigen::Matrix<double, 6, 6>::Identity());
 
             // 
-            Eigen::VectorXd dq = -J_pinv * error.toVector();
+            Eigen::VectorXd dq = J_pinv * err;
             q = pinocchio::integrate(this->model_, q, this->step_size_ * dq);
+            q = q.cwiseMax(this->model_.lowerPositionLimit).cwiseMin(this->model_.upperPositionLimit);
         }
         
         response->success = false;

@@ -23,6 +23,8 @@ public:
 
     controller_interface::CallbackReturn on_init() override
     {
+        this->auto_declare<double>("frequency", 5.0);
+        this->auto_declare<double>("damping_ratio", 1.0);
         return controller_interface::CallbackReturn::SUCCESS;
     }
     controller_interface::CallbackReturn on_activate(const rclcpp_lifecycle::State&) override
@@ -35,10 +37,7 @@ public:
     {
         
         auto node = this->get_node();
-
-        node->declare_parameter<double>("frequency",5.0);    
-        node->declare_parameter<double>("damping_ratio",1.0);    
-
+        
         double wn = node->get_parameter("frequency").as_double();
         double zeta = node->get_parameter("damping_ratio").as_double();
 
@@ -58,6 +57,7 @@ public:
 
         pinocchio::urdf::buildModelFromXML(urdf, this->model_);
         data_ = std::make_unique<pinocchio::Data>(model_);
+        
         
         return controller_interface::CallbackReturn::SUCCESS;
     }
@@ -210,6 +210,7 @@ private:
         if (!this->goal_active_.compare_exchange_strong(expected, true))
             return rclcpp_action::GoalResponse::REJECT;
         
+        this->cancel_requested_.store(false); 
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
     }
     rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::FollowJointTrajectory>>)

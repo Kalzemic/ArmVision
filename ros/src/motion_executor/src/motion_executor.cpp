@@ -11,6 +11,8 @@
 #include <chrono>
 #include <future>
 
+
+
 namespace armvision
 {
 class MotionExecutor : public rclcpp::Node
@@ -28,6 +30,8 @@ public:
         this->controller_client_ = rclcpp_action::create_client<control_msgs::action::FollowJointTrajectory>(this, "follow_joint_trajectory");
         this->kinematics_client_ = this->create_client<kinematics::srv::Kinematics>("kinematics");
         this->trajectory_client_ = this->create_client<trajectory::srv::Trajectory>("trajectory");
+
+        RCLCPP_INFO(get_logger(),"Motion Executor online");
     }
 private: 
     rclcpp_action::Server<motion_executor::action::MoveToPose>::SharedPtr server_;
@@ -36,7 +40,7 @@ private:
     rclcpp_action::Client<control_msgs::action::FollowJointTrajectory>::SharedPtr controller_client_;
 
     std::atomic<bool> goal_active_{false};
-    std::atomic<bool> cancel_requested_{false};
+
 
     rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID&, std::shared_ptr<const motion_executor::action::MoveToPose::Goal>)
     {
@@ -44,12 +48,12 @@ private:
         if (!this->goal_active_.compare_exchange_strong(expected, true))
             return rclcpp_action::GoalResponse::REJECT;
         
+
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
     }
 
     rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<rclcpp_action::ServerGoalHandle<motion_executor::action::MoveToPose>>)
     {
-        this->cancel_requested_.store(true);
         return rclcpp_action::CancelResponse::ACCEPT;
     }
 
@@ -60,12 +64,21 @@ private:
 
     void execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle<motion_executor::action::MoveToPose>> goal_handle)
     {
-        
         const auto goal = goal_handle->get_goal();
         auto result = std::make_shared<motion_executor::action::MoveToPose::Result>();
+        
+        if(!this->kinematics_client_->service_is_ready() || !this->trajectory_client_->service_is_ready() || !this->controller_client_->action_server_is_ready())
+        {
+            result->success = false;
+            goal_handle->abort(result);
+            this->goal_active_.store(false);
+            return;
+        }
+        
         auto kinematics_request = std::make_shared<kinematics::srv::Kinematics::Request>();
 
         kinematics_request->target = goal->target;
+        kinematics_request->position_only = goal->position_only;
 
         auto kinematics_future = this->kinematics_client_->async_send_request(kinematics_request);
         auto kinematics_response = kinematics_future.get();
@@ -73,6 +86,14 @@ private:
         {
             result->success = false;
             goal_handle->abort(result);
+            this->goal_active_.store(false);
+            return;
+        }
+
+        if(goal_handle->is_canceling())
+        {
+            result->success = false;
+            goal_handle->canceled(result);
             this->goal_active_.store(false);
             return;
         }
@@ -86,6 +107,14 @@ private:
         {
             result->success = false;
             goal_handle->abort(result);
+            this->goal_active_.store(false);
+            return;
+        }
+
+        if(goal_handle->is_canceling())
+        {
+            result->success = false;
+            goal_handle->canceled(result);
             this->goal_active_.store(false);
             return;
         }
@@ -111,7 +140,7 @@ private:
         bool cancel_sent = false;
         while(controller_result_future.wait_for(std::chrono::milliseconds(10)) != std::future_status::ready)
         {
-            if(this->cancel_requested_.load() && !cancel_sent)
+            if(goal_handle->is_canceling() && !cancel_sent)
             {
                 cancel_sent = true;
                 this->controller_client_->async_cancel_goal(controller_goal_handle);
@@ -124,7 +153,7 @@ private:
             result->success = true;
             goal_handle->succeed(result);
         }
-        else if (controller_result.code == rclcpp_action::ResultCode::CANCELED)
+        else if (controller_result.code == rclcpp_action::ResultCode::CANCELED  && goal_handle->is_canceling())
         {
             result->success = false;
             goal_handle->canceled(result);
@@ -136,7 +165,7 @@ private:
         }
 
         this->goal_active_.store(false);
-        this->cancel_requested_.store(false);
+        
 
     }
 };
