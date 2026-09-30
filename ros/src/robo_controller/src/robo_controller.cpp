@@ -14,6 +14,7 @@
 #include <pinocchio/multibody/data.hpp>
 #include <pinocchio/algorithm/rnea.hpp>
 #include <realtime_tools/realtime_buffer.hpp>
+#include <ament_index_cpp/get_package_share_directory.hpp>
 
 
 namespace RoboController{
@@ -25,6 +26,8 @@ public:
     {
         this->auto_declare<double>("frequency", 5.0);
         this->auto_declare<double>("damping_ratio", 1.0);
+        auto_declare<std::string>("description_package", "");
+        auto_declare<std::string>("urdf_file", "");
         return controller_interface::CallbackReturn::SUCCESS;
     }
     controller_interface::CallbackReturn on_activate(const rclcpp_lifecycle::State&) override
@@ -52,29 +55,38 @@ public:
             std::bind(&RoboController::handle_accepted, this, std::placeholders::_1)
         );
 
-        std::string urdf;
-        node->get_parameter("robot_description", urdf);
+        const auto pkg = node->get_parameter("description_package").as_string();
+        const auto file = node->get_parameter("urdf_file").as_string();
+        std::string urdf_path;
 
-        pinocchio::urdf::buildModelFromXML(urdf, this->model_);
+        try {
+            urdf_path = ament_index_cpp::get_package_share_directory(pkg) + "/" + file;
+            pinocchio::urdf::buildModel(urdf_path, this->model_);
+
+        }catch (const std::exception& e){
+            RCLCPP_ERROR(node->get_logger(), "Failed to load URDF '%s' (pkg '%s'): '%s'", urdf_path.c_str(), pkg.c_str(), e.what());
+            return controller_interface::CallbackReturn::ERROR;
+        }
+
+        
         data_ = std::make_unique<pinocchio::Data>(model_);
         
+
+        for (size_t i = 1; i < model_.names.size(); ++i) 
+        {
+            command_names_.push_back(model_.names[i] + "/effort");
+            state_names_.push_back(model_.names[i] + "/position");
+            state_names_.push_back(model_.names[i] + "/velocity");
+        }
         
         return controller_interface::CallbackReturn::SUCCESS;
     }
 
-    controller_interface::InterfaceConfiguration state_interface_configuration() const override
-    {
-        return {
-            controller_interface::interface_configuration_type::ALL
-        };
-    }
-
     controller_interface::InterfaceConfiguration command_interface_configuration() const override
-    {
-        return {
-            controller_interface::interface_configuration_type::ALL
-        };
-    }
+    { return {controller_interface::interface_configuration_type::INDIVIDUAL, command_names_}; }
+
+    controller_interface::InterfaceConfiguration state_interface_configuration() const override
+    { return {controller_interface::interface_configuration_type::INDIVIDUAL, state_names_}; }
 
     
     controller_interface::return_type update(const rclcpp::Time& time, const rclcpp::Duration&) override
@@ -243,6 +255,8 @@ private:
     realtime_tools::RealtimeBuffer<std::shared_ptr<trajectory_msgs::msg::JointTrajectory>> trajectory_buffer_;
     realtime_tools::RealtimeBuffer<std::shared_ptr<control_msgs::action::FollowJointTrajectory::Result>> result_buffer_;
     rclcpp::Time trajectory_start_time_;
+
+    std::vector<std::string> command_names_, state_names_;
     
     double kp_;
     double kv_;

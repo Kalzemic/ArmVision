@@ -11,7 +11,7 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
-find_package(pinocchio REQUIRED)
+
 find_package(Eigen3 REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
@@ -20,6 +20,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     geometry_msgs
     sensor_msgs
 )
+
+find_package(pinocchio REQUIRED)
 
 add_executable(kinematics_node
   src/kinematics.cpp

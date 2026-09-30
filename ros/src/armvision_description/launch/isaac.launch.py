@@ -2,28 +2,29 @@ from launch import LaunchDescription
 from ament_index_python.packages import get_package_share_directory
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import Command, LaunchConfiguration
-from launch_ros.parameter_descriptions import ParameterValue  
+from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.actions import Node, SetParameter
-from launch.actions import ExecuteProcess, RegisterEventHandler, LogInfo
-from launch.event_handlers import OnProcessExit
 import os
 
 
 def generate_launch_description():
 
-    freq = 100.0
+    freq = 60.0
+
     model_arg = DeclareLaunchArgument(
         name='model',
-        default_value=os.path.join(get_package_share_directory('armvision_description'),'urdf','armvision.urdf.xacro'),
-        description='absolute path to the robot urdf file'
+        default_value=os.path.join(
+            get_package_share_directory('armvision_description'), 'urdf', 'armvision.urdf.xacro'),
+        description='absolute path to the robot urdf file',
     )
 
-    robot_description = ParameterValue(Command(['xacro ',LaunchConfiguration('model')]), value_type=str)
+    robot_description = ParameterValue(
+        Command(['xacro ', LaunchConfiguration('model')]), value_type=str)
 
     robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
-        parameters=[{'robot_description': robot_description}]
+        parameters=[{'robot_description': robot_description}],
     )
 
     kinematics = Node(
@@ -36,7 +37,7 @@ def generate_launch_description():
             'ik.epsilon': 1e-4,
             'ik.step_size': 0.5,
             'ik.damping': 1e-3,
-        }]
+        }],
     )
 
     trajectory = Node(
@@ -45,48 +46,21 @@ def generate_launch_description():
         parameters=[{
             'trajectory.duration': 1.0,
             'frequency': freq,
-        }]
+        }],
     )
 
-    controller_config = os.path.join(get_package_share_directory('robo_controller'),'config','robo_controller.yaml')
-    controller_manager = Node(
-        package='controller_manager',
-        executable='ros2_control_node',
-        parameters=[
-            {'robot_description':robot_description},
-            controller_config
-        ]
-    )
 
-    joint_state_broadcaster_spawner = Node(
+    controller_spawner = Node(
         package='controller_manager',
         executable='spawner',
-        arguments=['joint_state_broadcaster','--controller-manager','/controller_manager']
+        arguments=[
+            'joint_state_broadcaster',
+            'robo_controller',
+            '--controller-manager', '/controller_manager',
+            '--controller-manager-timeout', '120',
+        ],
+        output='screen',
     )
-
-    robo_controller_spawner = Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=['robo_controller', '--controller-manager','/controller_manager']
-    )
-
-
-    wait_for_clock = ExecuteProcess(
-        cmd=['ros2', 'topic', 'echo', '--once', '/clock', 'rosgraph_msgs/msg/Clock'],
-        output='log',
-    )
-
-    start_controllers = RegisterEventHandler(
-        OnProcessExit(
-            target_action=wait_for_clock,
-            on_exit=[
-                LogInfo(msg='/clock received from Isaac, spawning controllers'),
-                joint_state_broadcaster_spawner,
-                robo_controller_spawner,
-            ],
-        )
-    )
-
 
     motion_executor = Node(
         package='motion_executor',
@@ -99,8 +73,6 @@ def generate_launch_description():
         robot_state_publisher,
         kinematics,
         trajectory,
-        controller_manager,
-        joint_state_broadcaster_spawner,
-        robo_controller_spawner,
-        motion_executor
+        controller_spawner,
+        motion_executor,
     ])

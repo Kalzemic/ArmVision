@@ -7,8 +7,8 @@
                 double radius = 5
             }
             dictionary Perspective = {
-                double3 position = (2.6647723963282557, 3.138717432248427, 2.8565617497224522)
-                double3 target = (-0.2219114863111229, 0.2520335496090498, -0.030122064016890437)
+                double3 position = (2.6661512537129695, 2.9157734042596144, 3.589551664548192)
+                double3 target = (-0.3910075405478546, -0.14138539000120875, 0.5323929432563381)
             }
             dictionary Right = {
                 double3 position = (0, -5, 0)
@@ -212,10 +212,10 @@ over "OmniverseKit_Persp" (
     float exposure:time = 0.02
     float focalLength = 18.147562
     float focusDistance = 400
-    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -4.999883110342143)
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -5.295154316337101)
     float3 xformOp:rotateXYZ = (54.73561, -3.1805547e-15, 135)
     float3 xformOp:scale = (1, 1, 1)
-    double3 xformOp:translate = (2.6647723963282557, 3.138717432248427, 2.8565617497224522)
+    double3 xformOp:translate = (2.6661512537129695, 2.9157734042596144, 3.589551664548192)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
 }
 

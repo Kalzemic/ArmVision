@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 1000
+    update_rate: 60
 
     robo_controller:
       type: robo_controller/RoboController
@@ -10,6 +10,8 @@ controller_manager:
 
 robo_controller:
   ros__parameters:
+    description_package: armvision_description
+    urdf_file: urdf/armvision.urdf
     frequency: 5.0
     damping_ratio: 1.0
 
