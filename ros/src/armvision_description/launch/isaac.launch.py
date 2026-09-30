@@ -4,11 +4,14 @@ from launch.actions import DeclareLaunchArgument
 from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.parameter_descriptions import ParameterValue  
 from launch_ros.actions import Node, SetParameter
+from launch.actions import ExecuteProcess, RegisterEventHandler, LogInfo
+from launch.event_handlers import OnProcessExit
 import os
 
 
 def generate_launch_description():
 
+    freq = 100.0
     model_arg = DeclareLaunchArgument(
         name='model',
         default_value=os.path.join(get_package_share_directory('armvision_description'),'urdf','armvision.urdf.xacro'),
@@ -40,8 +43,8 @@ def generate_launch_description():
         package='trajectory',
         executable='trajectory_node',
         parameters=[{
-            'trajectory.duration': 2.0,
-            'frequency': 1000.0,
+            'trajectory.duration': 1.0,
+            'frequency': freq,
         }]
     )
 
@@ -68,11 +71,26 @@ def generate_launch_description():
     )
 
 
+    wait_for_clock = ExecuteProcess(
+        cmd=['ros2', 'topic', 'echo', '--once', '/clock', 'rosgraph_msgs/msg/Clock'],
+        output='log',
+    )
+
+    start_controllers = RegisterEventHandler(
+        OnProcessExit(
+            target_action=wait_for_clock,
+            on_exit=[
+                LogInfo(msg='/clock received from Isaac, spawning controllers'),
+                joint_state_broadcaster_spawner,
+                robo_controller_spawner,
+            ],
+        )
+    )
+
+
     motion_executor = Node(
         package='motion_executor',
         executable='motion_executor_node',
-        
-
     )
 
     return LaunchDescription([
