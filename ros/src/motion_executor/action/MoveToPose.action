@@ -1,5 +1,7 @@
 geometry_msgs/PoseStamped target
+builtin_interfaces/Duration duration
 bool position_only
+
 ---
 bool success
 ---

@@ -130,6 +130,8 @@ public:
         Eigen::Quaterniond quaternion(msg.pose.orientation.w, msg.pose.orientation.x, msg.pose.orientation.y, msg.pose.orientation.z);
         quaternion.normalize();
         pinocchio::SE3 target(quaternion.toRotationMatrix(),position);
+        pinocchio::FrameIndex frame_id = this->model_.getFrameId(msg.header.frame_id);
+        target = this->data_->oMf[frame_id] * target;
 
         // State Evaluation
         Eigen::VectorXd q = jointStateToQ(*this->state_);

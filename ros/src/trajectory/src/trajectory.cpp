@@ -16,15 +16,15 @@ public:
     Trajectory() : Node("ArmVision_Trajectory")
     {
         // Parameters
-        this->declare_parameter<double>("trajectory.duration", 2.0);
-        this->get_parameter("trajectory.duration", this->duration_);
+        // this->declare_parameter<double>("trajectory.duration", 2.0);
+        // this->get_parameter("trajectory.duration", this->duration_);
         this->declare_parameter<double>("frequency", 1000.0);
         this->get_parameter("frequency", this->frequency_);
 
-        if (this->duration_ <= 0.0)
-        {
-            throw std::invalid_argument("trajectory.duration must be greater than 0");
-        }
+        // if (this->duration_ <= 0.0)
+        // {
+        //     throw std::invalid_argument("trajectory.duration must be greater than 0");
+        // }
 
         if (this->frequency_ <= 0.0)
         {
@@ -88,7 +88,8 @@ private:
             qf[i] = request->goal.position[goal_index];
         }
 
-        double T = this->duration_;
+        rclcpp::Duration duration(request->duration);
+        double T = static_cast<double>(duration.seconds()) + static_cast<double>(duration.nanoseconds()) * 1e-9;
 
         Eigen::VectorXd a0 = q0;
         Eigen::VectorXd a1 = Eigen::VectorXd::Zero(q0.size());

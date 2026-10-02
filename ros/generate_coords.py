@@ -15,6 +15,6 @@ for _ in range(5):
     pin.framesForwardKinematics(model, data, q)
     M = data.oMf[ee]
     p = M.translation
-    quat = pin.Quaternion(M.rotation)  # x, y, z, w
+    quat = pin.Quaternion(M.rotation)  
     print(f"q={np.round(q, 3)}  pos=({p[0]:.4f}, {p[1]:.4f}, {p[2]:.4f})  "
           f"quat=({quat.x:.4f}, {quat.y:.4f}, {quat.z:.4f}, {quat.w:.4f})")

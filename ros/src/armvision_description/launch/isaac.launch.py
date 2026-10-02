@@ -44,7 +44,7 @@ def generate_launch_description():
         package='trajectory',
         executable='trajectory_node',
         parameters=[{
-            'trajectory.duration': 1.0,
+            # 'trajectory.duration': 1.0,
             'frequency': freq,
         }],
     )

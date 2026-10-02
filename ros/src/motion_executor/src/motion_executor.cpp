@@ -99,7 +99,8 @@ private:
         }
 
         auto trajectory_request = std::make_shared<trajectory::srv::Trajectory::Request>();
-
+        rclcpp::Duration duration(goal->duration);
+        trajectory_request->duration = duration;
         trajectory_request->goal = kinematics_response->solution;
         auto trajectory_future = this->trajectory_client_->async_send_request(trajectory_request);
         auto trajectory_response = trajectory_future.get();
