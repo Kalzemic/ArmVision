@@ -4,92 +4,81 @@ import numpy as np
 import asyncio
 from local import sim_path
 from capture import StereoCapture
-
-
+from target_object import TargetObject
+from triangulator import Triangulator
 async def main():
     capture = StereoCapture(
         # "/armvision/Geometry/world/base_link/base_plate/rgb_camera/left_camera/Camera",
         # "/armvision/Geometry/world/base_link/base_plate/rgb_camera/right_camera/Camera"
-        '/Root/CameraRig/RightCamera',
-        '/Root/CameraRig/LeftCamera'
+        '/Root/CameraRig/LeftCamera',
+        '/Root/CameraRig/RightCamera'
     )
 
-    stereo = cv2.StereoSGBM_create(
-        minDisparity=0,
-        numDisparities=128,
-        blockSize=5,
-        P1=8 * 5 * 5,
-        P2=32 * 5 * 5,
-        disp12MaxDiff=-1,
-        uniquenessRatio=0,
-        speckleWindowSize=0,
-        speckleRange=0,
-        preFilterCap=63,
-        mode=cv2.STEREO_SGBM_MODE_SGBM_3WAY
-    )
+    target = TargetObject('/Root/TargetObject')
 
+    triangulator = Triangulator()
     await rep.orchestrator.step_async()
 
     left_image, right_image, depth_gt = capture()
 
-    left_gray = cv2.cvtColor(left_image, cv2.COLOR_RGB2GRAY)
-    right_gray = cv2.cvtColor(right_image, cv2.COLOR_RGB2GRAY)
-    # left_gray = cv2.rotate(left_gray, cv2.ROTATE_90_COUNTERCLOCKWISE)
-    # right_gray = cv2.rotate(right_gray, cv2.ROTATE_90_COUNTERCLOCKWISE)
-    disparity = stereo.compute(left_gray, right_gray).astype(np.float32) / 16.0
+    rgbd = triangulator(left_image=left_image, right_image=right_image, capture=capture)
 
-    valid = disparity > 0.0
-
-    # disparity_filtered = disparity.copy()
-    # disparity_filtered[~valid] = 0.0
-    # disparity_filtered = cv2.medianBlur(disparity_filtered, 5)
-
-    # valid = disparity_filtered > 1.0
-
-    fx, fy = capture.focal_length
-
-    depth = np.full(disparity.shape, np.nan, dtype=np.float32)
-
-    if np.any(valid):
-        depth[valid] = (fx * capture.baseline) / disparity[valid]
-
+    depth = rgbd[:, :, 3]
     # Near = bright, far = dark, invalid = black
     heatmap = np.zeros(depth.shape, dtype=np.uint8)
 
-    if np.any(valid):
-        min_depth = depth[valid].min()
-        max_depth = depth[valid].max()
+    # Near = bright, far = dark
+    heatmap = np.zeros(depth.shape, dtype=np.uint8)
 
-        normalized = (depth[valid] - min_depth) / (max_depth - min_depth + 1e-8)
+    min_depth = depth.min()
+    max_depth = depth.max()
 
-        heatmap[valid] = ((1.0 - normalized) * 255).astype(np.uint8)
+    normalized = (depth - min_depth) / (max_depth - min_depth + 1e-8)
 
-    # Disparity visualization
-    disp_vis = np.zeros_like(disparity, dtype=np.uint8)
+    heatmap = ((1.0 - normalized) * 255).astype(np.uint8)
 
-    if np.any(valid):
-        dmin = disparity[valid].min()
-        dmax = disparity[valid].max()
 
-        disp_vis[valid] = (
-            (disparity[valid] - dmin) /
-            (dmax - dmin + 1e-8) * 255
-        ).astype(np.uint8)
 
-    print("baseline:", capture.baseline)
-    print("fx:", fx)
-    print("fy:", fy)
-    print("valid disparity pixels:", np.count_nonzero(valid))
+    # print("baseline:", capture.baseline)
+    # print("fx:", fx)
+    # print("fy:", fy)
+    # print("valid disparity pixels:", np.count_nonzero(valid))
 
-    if np.any(valid):
-        print("disparity range:", disparity[valid].min(), disparity[valid].max())
-        print("depth range:", depth[valid].min(), depth[valid].max())
+    # if np.any(valid):
+    #     print("disparity range:", disparity[valid].min(), disparity[valid].max())
+    #     print("depth range:", depth[valid].min(), depth[valid].max())
+
+
+    print(f'Target Object Coordinates: {target.pos}')
+    print(f'Camera Coordinates: {capture.pos}')
+
+    gt_depth = abs(target[0] - capture.pos[0])
+    
+    h, w = depth.shape
+    # region = depth[h//2-5:h//2+5, w//2-5:w//2+5]
+    # center_depth = np.nanmedian(region)
+    center_depth = depth[h // 2, w // 2]
+    # h, w = disparity.shape
+    # cx, cy = w // 2, h // 2
+
+    # region = disparity[cy-30:cy+30, cx-30:cx+30]
+
+    # print("Center disparity:", disparity[cy, cx])
+    # print("Region disparity range:", np.min(region), np.max(region))
+    # print("Region median:", np.median(region))
+
+    print(f'ground truth depth: {gt_depth}')
+    print(f'triangualted depth: {center_depth}')
+    # print("Center disparity:", disparity[cy, cx])
+    # print("Center depth:", depth[cy, cx])
+    # print("Valid pixels:", np.count_nonzero(valid))    
+
+
 
     output_dir = sim_path
 
     cv2.imwrite(f"{output_dir}/left.png", cv2.cvtColor(left_image, cv2.COLOR_RGB2BGR))
     cv2.imwrite(f"{output_dir}/right.png", cv2.cvtColor(right_image, cv2.COLOR_RGB2BGR))
-    cv2.imwrite(f"{output_dir}/disparity.png", disp_vis)
     cv2.imwrite(f"{output_dir}/depth.png", heatmap)
 
 

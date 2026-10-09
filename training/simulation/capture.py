@@ -44,7 +44,7 @@ class StereoCapture:
         right_position = cache.GetLocalToWorldTransform(right_camera_prim).ExtractTranslation()
 
         self.baseline = (right_position - left_position).GetLength()
-
+        self.pos = left_position
         #depth product
         self.depth_gt = rep.AnnotatorRegistry.get_annotator("distance_to_camera")
         self.depth_gt.attach([left_product])
