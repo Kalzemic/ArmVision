@@ -1,0 +1,160 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "armvision"
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+over "armvision" (
+    prepend apiSchemas = ["IsaacRobotAPI"]
+)
+{
+    prepend rel isaac:physics:robotJoints = [
+        </armvision/Physics/virtual_joint>,
+        </armvision/Physics/joint_1>,
+        </armvision/Physics/joint_2>,
+        </armvision/Physics/plate_to_camera>,
+        </armvision/Physics/joint_3>,
+        </armvision/Physics/horizontal_arm_to_claw_support>,
+        </armvision/Physics/joint_4>,
+        </armvision/Physics/joint_5>,
+    ]
+    prepend rel isaac:physics:robotLinks = [
+        </armvision/Geometry/world/base_link>,
+        </armvision/Geometry/world/base_link/base_plate>,
+        </armvision/Geometry/world/base_link/base_plate/forward_drive_arm>,
+        </armvision/Geometry/world/base_link/base_plate/forward_drive_arm/horizontal_arm>,
+        </armvision/Geometry/world/base_link/base_plate/forward_drive_arm/horizontal_arm/claw_support>,
+        </armvision/Geometry/world/base_link/base_plate/forward_drive_arm/horizontal_arm/claw_support/end_effector>,
+        </armvision/Geometry/world/base_link/base_plate/forward_drive_arm/horizontal_arm/claw_support/gripper_right>,
+        </armvision/Geometry/world/base_link/base_plate/forward_drive_arm/horizontal_arm/claw_support/gripper_left>,
+        </armvision/Geometry/world/base_link/base_plate/rgb_camera>,
+        </armvision/Geometry/world/base_link/base_plate/rgb_camera/left_camera>,
+        </armvision/Geometry/world/base_link/base_plate/rgb_camera/right_camera>,
+    ]
+    token isaac:robotType = "Default"
+
+    over "Geometry"
+    {
+        over "world"
+        {
+            over "base_link" (
+                prepend apiSchemas = ["IsaacLinkAPI"]
+            )
+            {
+                over "base_plate" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "forward_drive_arm" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "horizontal_arm" (
+                            prepend apiSchemas = ["IsaacLinkAPI"]
+                        )
+                        {
+                            over "claw_support" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "gripper_right" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                }
+
+                                over "gripper_left" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                }
+
+                                over "end_effector" (
+                                    prepend apiSchemas = ["IsaacSiteAPI"]
+                                )
+                                {
+                                }
+                            }
+                        }
+                    }
+
+                    over "rgb_camera" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "left_camera" (
+                            prepend apiSchemas = ["IsaacSiteAPI"]
+                        )
+                        {
+                        }
+
+                        over "right_camera" (
+                            prepend apiSchemas = ["IsaacSiteAPI"]
+                        )
+                        {
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    over "Physics"
+    {
+        over "virtual_joint" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint_1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint_2" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint_3" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "horizontal_arm_to_claw_support" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint_4" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint_5" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "plate_to_camera" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+    }
+}
+

@@ -4,3 +4,6 @@ ros/install/
 ros/build/
 ros/log/
 
+.clang-format
+
+local.py

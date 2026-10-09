@@ -89,19 +89,19 @@ over "armvision"
                                     float physics:mass = 0.01
                                     quatf physics:principalAxes = (6.123234e-17, 0.70710677, 0.70710677, 0)
                                 }
-
-                                over "rgb_camera" (
-                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
-                                )
-                                {
-                                    double[] newton:inertia = [1.5e-7, 1.5e-7, 1.5e-7, 0, 0, 0]
-                                    point3f physics:centerOfMass = (0, 0, 0)
-                                    float3 physics:diagonalInertia = (1.5e-7, 1.5e-7, 1.5e-7)
-                                    float physics:mass = 0.001
-                                    quatf physics:principalAxes = (1, 0, 0, 0)
-                                }
                             }
                         }
+                    }
+
+                    over "rgb_camera" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                    )
+                    {
+                        double[] newton:inertia = [1.5e-7, 1.5e-7, 1.5e-7, 0, 0, 0]
+                        point3f physics:centerOfMass = (0, 0, 0)
+                        float3 physics:diagonalInertia = (1.5e-7, 1.5e-7, 1.5e-7)
+                        float physics:mass = 0.001
+                        quatf physics:principalAxes = (1, 0, 0, 0)
                     }
                 }
             }
@@ -218,14 +218,14 @@ over "armvision"
             quatf physics:localRot1 = (1, 0, 0, 0)
         }
 
-        def PhysicsFixedJoint "claw_to_camera"
+        def PhysicsFixedJoint "plate_to_camera"
         {
             custom rel physics:body0
-            append rel physics:body0 = </armvision/Geometry/world/base_link/base_plate/forward_drive_arm/horizontal_arm/claw_support>
+            append rel physics:body0 = </armvision/Geometry/world/base_link/base_plate>
             custom rel physics:body1
-            append rel physics:body1 = </armvision/Geometry/world/base_link/base_plate/forward_drive_arm/horizontal_arm/claw_support/rgb_camera>
-            point3f physics:localPos0 = (0, -0.1, 0.05)
-            point3f physics:localPos1 = (12.5, 34, -0.000044689892)
+            append rel physics:body1 = </armvision/Geometry/world/base_link/base_plate/rgb_camera>
+            point3f physics:localPos0 = (-0.1, 0.1, 0)
+            point3f physics:localPos1 = (0, 49.999935, -50.00007)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (0.09999518, 0.9949879, 0, 0)
         }

@@ -22,7 +22,7 @@ def Xform "armvision" (
     kind = "component"
 )
 {
-    float3[] extentsHint = [(-0.4952498, -0.4947265, -5.7117603e-20), (0.45149624, 1.4500002, 1.8470001), (3.4028235e38, 3.4028235e38, 3.4028235e38), (-3.4028235e38, -3.4028235e38, -3.4028235e38), (3.4028235e38, 3.4028235e38, 3.4028235e38), (-3.4028235e38, -3.4028235e38, -3.4028235e38), (-0.4952498, -0.4947265, -5.7117603e-20), (0.45149624, 1.4500002, 1.6907879)]
+    float3[] extentsHint = [(-0.4952498, -0.4947265, -5.7117603e-20), (0.45149624, 1.4500002, 1.6907879), (3.4028235e38, 3.4028235e38, 3.4028235e38), (-3.4028235e38, -3.4028235e38, -3.4028235e38), (3.4028235e38, 3.4028235e38, 3.4028235e38), (-3.4028235e38, -3.4028235e38, -3.4028235e38), (-0.4952498, -0.4947265, -5.7117603e-20), (0.45149624, 1.4500002, 1.6907879)]
 
     def Scope "Geometry"
     {
@@ -247,19 +247,19 @@ def Xform "armvision" (
                                     double3 xformOp:translate = (-0.09, 0.13, -0.1)
                                     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
                                 }
-
-                                def Xform "rgb_camera" (
-                                    instanceable = true
-                                    prepend references = @./instances.usda@</Instances/pi_camera>
-                                )
-                                {
-                                    quatd xformOp:orient = (0.7071072459, -0.7071063165, 0, 0)
-                                    double3 xformOp:scale = (0.009999999776, 0.009999999776, 0.009999999776)
-                                    double3 xformOp:translate = (-0.125, -0.1, 0.39)
-                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-                                }
                             }
                         }
+                    }
+
+                    def Xform "rgb_camera" (
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/pi_camera>
+                    )
+                    {
+                        quatd xformOp:orient = (0.7071072459, -0.7071063165, 0, 0)
+                        double3 xformOp:scale = (0.009999999776, 0.009999999776, 0.009999999776)
+                        double3 xformOp:translate = (-0.1, 0.6, 0.5)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
                     }
                 }
             }

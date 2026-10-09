@@ -216,7 +216,7 @@
     <link name="rgb_camera">
         <xacro:box_inertial mass="0.001" x="0.03" y="0.03" z="0.03" com="0 0 0" />
         <visual>
-            <origin rpy="-${PI/2} 0 0" xyz="-0.125 0 0.34" />
+            <origin rpy="-1.57 0 -1.57" xyz="-0.1 0.125 0.15" />
             <geometry>
                 <mesh filename="package://armvision_description/meshes/pi_camera.STL"
                     scale="0.01 0.01 0.01" />
@@ -224,10 +224,24 @@
         </visual>
     </link>
 
-    <joint name="claw_to_camera" type="fixed">
-        <parent link="claw_support" />
+    <joint name="plate_to_camera" type="fixed">
+        <parent link="base_plate" />
         <child link="rgb_camera" />
-        <origin xyz="0 -0.1 0.05" rpy="0 0 0" />
+        <origin xyz="0 0.45 0.2" rpy="0 -0.5 1.57" />
+    </joint>
+
+    <link name="left_camera" />
+    <joint name="rgb_to_left_camera" type="fixed">
+        <parent link="rgb_camera" />
+        <child link="left_camera" />
+        <origin xyz="-0.03 0 0" rpy="0 0 0" />
+    </joint>
+
+    <link name="right_camera" />
+    <joint name="rgb_to_right_camera" type="fixed">
+        <parent link="rgb_camera" />
+        <child link="right_camera" />
+        <origin xyz="0.03 0 0" rpy="0 0 0" />
     </joint>
 
 

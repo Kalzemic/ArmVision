@@ -1,270 +1,221 @@
-#include <memory>
-#include <atomic>
-#include <functional>
-#include <rclcpp_action/rclcpp_action.hpp>
-#include <control_msgs/action/follow_joint_trajectory.hpp>
-#include <pluginlib/class_list_macros.hpp>
 #include <Eigen/Dense>
-#include <controller_interface/controller_interface.hpp>
-#include <rclcpp/rclcpp.hpp>
-#include <rclcpp_lifecycle/state.hpp>
-#include <trajectory_msgs/msg/joint_trajectory.hpp>
-#include <pinocchio/parsers/urdf.hpp>
-#include <pinocchio/multibody/model.hpp>
-#include <pinocchio/multibody/data.hpp>
-#include <pinocchio/algorithm/rnea.hpp>
-#include <realtime_tools/realtime_buffer.hpp>
 #include <ament_index_cpp/get_package_share_directory.hpp>
+#include <atomic>
+#include <control_msgs/action/follow_joint_trajectory.hpp>
+#include <controller_interface/controller_interface.hpp>
+#include <functional>
+#include <memory>
+#include <pinocchio/algorithm/rnea.hpp>
+#include <pinocchio/multibody/data.hpp>
+#include <pinocchio/multibody/model.hpp>
+#include <pinocchio/parsers/urdf.hpp>
+#include <pluginlib/class_list_macros.hpp>
+#include <rclcpp/rclcpp.hpp>
+#include <rclcpp_action/rclcpp_action.hpp>
+#include <rclcpp_lifecycle/state.hpp>
+#include <realtime_tools/realtime_buffer.hpp>
+#include <trajectory_msgs/msg/joint_trajectory.hpp>
 
+namespace RoboController {
+class RoboController : public controller_interface::ControllerInterface {
+ public:
+  controller_interface::CallbackReturn on_init() override {
+    this->auto_declare<double>("frequency", 5.0);
+    this->auto_declare<double>("damping_ratio", 1.0);
+    auto_declare<std::string>("description_package", "");
+    auto_declare<std::string>("urdf_file", "");
+    return controller_interface::CallbackReturn::SUCCESS;
+  }
+  controller_interface::CallbackReturn on_activate(const rclcpp_lifecycle::State &) override {
+    this->read_pos();
+    return controller_interface::CallbackReturn::SUCCESS;
+  }
 
-namespace RoboController{
-class RoboController : public controller_interface::ControllerInterface
-{
-public:
+  controller_interface::CallbackReturn on_configure(const rclcpp_lifecycle::State &) override {
+    auto node = this->get_node();
 
-    controller_interface::CallbackReturn on_init() override
-    {
-        this->auto_declare<double>("frequency", 5.0);
-        this->auto_declare<double>("damping_ratio", 1.0);
-        auto_declare<std::string>("description_package", "");
-        auto_declare<std::string>("urdf_file", "");
-        return controller_interface::CallbackReturn::SUCCESS;
+    double wn = node->get_parameter("frequency").as_double();
+    double zeta = node->get_parameter("damping_ratio").as_double();
+
+    this->kp_ = wn * wn;
+    this->kv_ = 2.0 * zeta * wn;
+
+    this->action_server_ = rclcpp_action::create_server<control_msgs::action::FollowJointTrajectory>(
+        node, "follow_joint_trajectory", std::bind(&RoboController::handle_goal, this, std::placeholders::_1, std::placeholders::_2),
+        std::bind(&RoboController::handle_cancel, this, std::placeholders::_1),
+        std::bind(&RoboController::handle_accepted, this, std::placeholders::_1));
+
+    const auto pkg = node->get_parameter("description_package").as_string();
+    const auto file = node->get_parameter("urdf_file").as_string();
+    std::string urdf_path;
+
+    try {
+      urdf_path = ament_index_cpp::get_package_share_directory(pkg) + "/" + file;
+      pinocchio::urdf::buildModel(urdf_path, this->model_);
+
+    } catch (const std::exception &e) {
+      RCLCPP_ERROR(node->get_logger(), "Failed to load URDF '%s' (pkg '%s'): '%s'", urdf_path.c_str(), pkg.c_str(), e.what());
+      return controller_interface::CallbackReturn::ERROR;
     }
-    controller_interface::CallbackReturn on_activate(const rclcpp_lifecycle::State&) override
-    {
+
+    data_ = std::make_unique<pinocchio::Data>(model_);
+
+    for (size_t i = 1; i < model_.names.size(); ++i) {
+      command_names_.push_back(model_.names[i] + "/effort");
+      state_names_.push_back(model_.names[i] + "/position");
+      state_names_.push_back(model_.names[i] + "/velocity");
+    }
+
+    return controller_interface::CallbackReturn::SUCCESS;
+  }
+
+  controller_interface::InterfaceConfiguration command_interface_configuration() const override {
+    return {controller_interface::interface_configuration_type::INDIVIDUAL, command_names_};
+  }
+
+  controller_interface::InterfaceConfiguration state_interface_configuration() const override {
+    return {controller_interface::interface_configuration_type::INDIVIDUAL, state_names_};
+  }
+
+  controller_interface::return_type update(const rclcpp::Time &time, const rclcpp::Duration &) override {
+    auto trajectory = this->trajectory_buffer_.readFromRT();
+    auto goal_handle = this->goal_handle_buffer_.readFromRT();
+    auto result = this->result_buffer_.readFromRT();
+
+    bool active = this->goal_active_.load();
+    if (!trajectory || !(*trajectory) || !goal_handle || !(*goal_handle) || !result || !(*result)) {
+      active = false;
+    }
+
+    size_t point_idx = 0;
+
+    if (active) {
+      if (this->cancel_requested_.load()) {
+        (*goal_handle)->canceled(*result);
+        this->goal_active_.store(false);
+        this->cancel_requested_.store(false);
+        active = false;
         this->read_pos();
-        return controller_interface::CallbackReturn::SUCCESS;
-    }
-
-   controller_interface::CallbackReturn on_configure(const rclcpp_lifecycle::State&) override  
-    {
-        
-        auto node = this->get_node();
-        
-        double wn = node->get_parameter("frequency").as_double();
-        double zeta = node->get_parameter("damping_ratio").as_double();
-
-        this->kp_ = wn * wn;
-        this->kv_ = 2.0 * zeta *wn;
- 
-        this->action_server_ = rclcpp_action::create_server<control_msgs::action::FollowJointTrajectory>(
-            node,
-            "follow_joint_trajectory",
-            std::bind(&RoboController::handle_goal, this, std::placeholders::_1, std::placeholders::_2),
-            std::bind(&RoboController::handle_cancel, this, std::placeholders::_1),
-            std::bind(&RoboController::handle_accepted, this, std::placeholders::_1)
-        );
-
-        const auto pkg = node->get_parameter("description_package").as_string();
-        const auto file = node->get_parameter("urdf_file").as_string();
-        std::string urdf_path;
-
-        try {
-            urdf_path = ament_index_cpp::get_package_share_directory(pkg) + "/" + file;
-            pinocchio::urdf::buildModel(urdf_path, this->model_);
-
-        }catch (const std::exception& e){
-            RCLCPP_ERROR(node->get_logger(), "Failed to load URDF '%s' (pkg '%s'): '%s'", urdf_path.c_str(), pkg.c_str(), e.what());
-            return controller_interface::CallbackReturn::ERROR;
-        }
-
-        
-        data_ = std::make_unique<pinocchio::Data>(model_);
-        
-
-        for (size_t i = 1; i < model_.names.size(); ++i) 
-        {
-            command_names_.push_back(model_.names[i] + "/effort");
-            state_names_.push_back(model_.names[i] + "/position");
-            state_names_.push_back(model_.names[i] + "/velocity");
-        }
-        
-        return controller_interface::CallbackReturn::SUCCESS;
-    }
-
-    controller_interface::InterfaceConfiguration command_interface_configuration() const override
-    { return {controller_interface::interface_configuration_type::INDIVIDUAL, command_names_}; }
-
-    controller_interface::InterfaceConfiguration state_interface_configuration() const override
-    { return {controller_interface::interface_configuration_type::INDIVIDUAL, state_names_}; }
-
-    
-    controller_interface::return_type update(const rclcpp::Time& time, const rclcpp::Duration&) override
-    {
-        auto trajectory = this->trajectory_buffer_.readFromRT();
-        auto goal_handle = this->goal_handle_buffer_.readFromRT();
-        auto result = this->result_buffer_.readFromRT();
-
-        bool active = this->goal_active_.load();
-        if (!trajectory || !(*trajectory) || !goal_handle || !(*goal_handle) || !result || !(*result))
-        {
-             active = false;
-        }
-
-        size_t point_idx = 0;
-
-        if(active)
-        {
-            if (this->cancel_requested_.load())
-            {
-                (*goal_handle)->canceled(*result);
-                this->goal_active_.store(false);
-                this->cancel_requested_.store(false);
-                active = false;
-                this->read_pos();
-                this->trajectory_start_time_ = rclcpp::Time(0);
-
-                return controller_interface::return_type::OK;
-            }
-            else 
-            {
-                if (this->trajectory_start_time_.nanoseconds() == 0)
-                    this->trajectory_start_time_ = time;
-                double elapsed = (time - this->trajectory_start_time_).seconds();
-                
-                
-
-                const auto& points = (*trajectory)->points;
-                
-                while (point_idx < points.size() && rclcpp::Duration(points[point_idx].time_from_start).seconds() < elapsed)
-                {
-                    ++point_idx;
-                }
-                
-
-                if (point_idx >= points.size())
-                {   
-                    if(!this->success_.load())
-                    {    
-                        (*goal_handle)->succeed(*result);
-                        this->success_.store(true);
-                    }
-                    this->goal_active_.store(false);
-                    active = false; 
-                    this->read_pos();
-                    this->trajectory_start_time_ = rclcpp::Time(0);
-
-                }
-            }
-        }
-        
-
-
-        const auto& point = active ? (*trajectory)->points[point_idx] : this->pos_;
-        Eigen::Map<const Eigen::VectorXd> q_d(point.positions.data(),point.positions.size());
-        Eigen::Map<const Eigen::VectorXd> qdot_d(point.velocities.data(),point.velocities.size());
-        Eigen::Map<const Eigen::VectorXd> qdotdot_d(point.accelerations.data(),point.accelerations.size());
-        
-        Eigen::VectorXd q(model_.nq);
-        Eigen::VectorXd qdot(model_.nv);
-
-        
-
-        size_t pos_idx = 0;
-        size_t vel_idx = 0;
-        for(size_t i=0; i < state_interfaces_.size();i++)
-        {
-            const auto& iface = state_interfaces_[i];
-
-            if (iface.get_interface_name() == "position")
-            { 
-                q[pos_idx] = iface.get_value();
-                pos_idx++;
-            }
-            else if (iface.get_interface_name() == "velocity") 
-            {
-                qdot[vel_idx] = iface.get_value();
-                vel_idx++;
-            }
-        }
-
-        auto acc = this->kp_ * (q_d - q) + this->kv_ * (qdot_d - qdot) + qdotdot_d;
-
-
-        auto tau = pinocchio::rnea(this->model_, *data_, q, qdot, acc);
-
-        size_t torque_idx = 0;
-
-        for (auto& iface : command_interfaces_)
-        {
-            if (iface.get_interface_name() == "effort")
-                iface.set_value(tau[torque_idx++]);
-        }
+        this->trajectory_start_time_ = rclcpp::Time(0);
 
         return controller_interface::return_type::OK;
-    } 
+      } else {
+        if (this->trajectory_start_time_.nanoseconds() == 0) this->trajectory_start_time_ = time;
+        double elapsed = (time - this->trajectory_start_time_).seconds();
 
+        const auto &points = (*trajectory)->points;
 
-private:
-
-    void read_pos()
-    {
-        std::vector<double> vec;
-        for (const auto& iface: state_interfaces_)
-        {
-            if (iface.get_interface_name() == "position")
-                vec.push_back(iface.get_value());
-
+        while (point_idx < points.size() && rclcpp::Duration(points[point_idx].time_from_start).seconds() < elapsed) {
+          ++point_idx;
         }
 
-        this->pos_.positions.assign(vec.data(),vec.data() + vec.size());
-        this->pos_.velocities.assign(vec.size(), 0.0);
-        this->pos_.accelerations.assign(vec.size(), 0.0);
+        if (point_idx >= points.size()) {
+          if (!this->success_.load()) {
+            (*goal_handle)->succeed(*result);
+            this->success_.store(true);
+          }
+          this->goal_active_.store(false);
+          active = false;
+          this->read_pos();
+          this->trajectory_start_time_ = rclcpp::Time(0);
+        }
+      }
     }
 
-    rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID&, std::shared_ptr<const control_msgs::action::FollowJointTrajectory::Goal> goal)
-    {
-        if (goal->trajectory.points.empty())
-            return rclcpp_action::GoalResponse::REJECT;
+    const auto &point = active ? (*trajectory)->points[point_idx] : this->pos_;
+    Eigen::Map<const Eigen::VectorXd> q_d(point.positions.data(), point.positions.size());
+    Eigen::Map<const Eigen::VectorXd> qdot_d(point.velocities.data(), point.velocities.size());
+    Eigen::Map<const Eigen::VectorXd> qdotdot_d(point.accelerations.data(), point.accelerations.size());
 
-        bool expected = false;
+    Eigen::VectorXd q(model_.nq);
+    Eigen::VectorXd qdot(model_.nv);
 
-        if (!this->goal_active_.compare_exchange_strong(expected, true))
-            return rclcpp_action::GoalResponse::REJECT;
-        
-        this->cancel_requested_.store(false); 
-        return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
+    size_t pos_idx = 0;
+    size_t vel_idx = 0;
+    for (size_t i = 0; i < state_interfaces_.size(); i++) {
+      const auto &iface = state_interfaces_[i];
+
+      if (iface.get_interface_name() == "position") {
+        q[pos_idx] = iface.get_value();
+        pos_idx++;
+      } else if (iface.get_interface_name() == "velocity") {
+        qdot[vel_idx] = iface.get_value();
+        vel_idx++;
+      }
     }
-    rclcpp_action::CancelResponse handle_cancel(const std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::FollowJointTrajectory>>)
-    {
-        this->cancel_requested_.store(true);
-        return rclcpp_action::CancelResponse::ACCEPT;
+
+    auto acc = this->kp_ * (q_d - q) + this->kv_ * (qdot_d - qdot) + qdotdot_d;
+
+    auto tau = pinocchio::rnea(this->model_, *data_, q, qdot, acc);
+
+    size_t torque_idx = 0;
+
+    for (auto &iface : command_interfaces_) {
+      if (iface.get_interface_name() == "effort") iface.set_value(tau[torque_idx++]);
     }
 
-    void handle_accepted(const std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::FollowJointTrajectory>> goal_handle)
-    {
-        auto trajectory = std::make_shared<trajectory_msgs::msg::JointTrajectory>(goal_handle->get_goal()->trajectory);
-        this->trajectory_buffer_.writeFromNonRT(trajectory);
-        this->goal_handle_buffer_.writeFromNonRT(goal_handle);
-        this->result_buffer_.writeFromNonRT(std::make_shared<control_msgs::action::FollowJointTrajectory::Result>());
-        this->trajectory_start_time_ = rclcpp::Time(0);
-        this->success_.store(false);
+    return controller_interface::return_type::OK;
+  }
+
+ private:
+  void read_pos() {
+    std::vector<double> vec;
+    for (const auto &iface : state_interfaces_) {
+      if (iface.get_interface_name() == "position") vec.push_back(iface.get_value());
     }
-    
-    rclcpp_action::Server<control_msgs::action::FollowJointTrajectory>::SharedPtr action_server_;
-    realtime_tools::RealtimeBuffer<std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::FollowJointTrajectory>>> goal_handle_buffer_;
-    
-    pinocchio::Model model_;
-    std::unique_ptr<pinocchio::Data> data_;
 
-    std::atomic<bool> success_{false};
-    std::atomic<bool> goal_active_{false};
-    std::atomic<bool> cancel_requested_{false};
-    Eigen::VectorXd hold_position_;
-    trajectory_msgs::msg::JointTrajectoryPoint pos_;
-    realtime_tools::RealtimeBuffer<std::shared_ptr<trajectory_msgs::msg::JointTrajectory>> trajectory_buffer_;
-    realtime_tools::RealtimeBuffer<std::shared_ptr<control_msgs::action::FollowJointTrajectory::Result>> result_buffer_;
-    rclcpp::Time trajectory_start_time_;
+    this->pos_.positions.assign(vec.data(), vec.data() + vec.size());
+    this->pos_.velocities.assign(vec.size(), 0.0);
+    this->pos_.accelerations.assign(vec.size(), 0.0);
+  }
 
-    std::vector<std::string> command_names_, state_names_;
-    
-    double kp_;
-    double kv_;
+  rclcpp_action::GoalResponse handle_goal(const rclcpp_action::GoalUUID &,
+                                          std::shared_ptr<const control_msgs::action::FollowJointTrajectory::Goal> goal) {
+    if (goal->trajectory.points.empty()) return rclcpp_action::GoalResponse::REJECT;
+
+    bool expected = false;
+
+    if (!this->goal_active_.compare_exchange_strong(expected, true)) return rclcpp_action::GoalResponse::REJECT;
+
+    this->cancel_requested_.store(false);
+    return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
+  }
+  rclcpp_action::CancelResponse handle_cancel(
+      const std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::FollowJointTrajectory>>) {
+    this->cancel_requested_.store(true);
+    return rclcpp_action::CancelResponse::ACCEPT;
+  }
+
+  void handle_accepted(const std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::FollowJointTrajectory>> goal_handle) {
+    auto trajectory = std::make_shared<trajectory_msgs::msg::JointTrajectory>(goal_handle->get_goal()->trajectory);
+    this->trajectory_buffer_.writeFromNonRT(trajectory);
+    this->goal_handle_buffer_.writeFromNonRT(goal_handle);
+    this->result_buffer_.writeFromNonRT(std::make_shared<control_msgs::action::FollowJointTrajectory::Result>());
+    this->trajectory_start_time_ = rclcpp::Time(0);
+    this->success_.store(false);
+  }
+
+  rclcpp_action::Server<control_msgs::action::FollowJointTrajectory>::SharedPtr action_server_;
+  realtime_tools::RealtimeBuffer<std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::FollowJointTrajectory>>>
+      goal_handle_buffer_;
+
+  pinocchio::Model model_;
+  std::unique_ptr<pinocchio::Data> data_;
+
+  std::atomic<bool> success_{false};
+  std::atomic<bool> goal_active_{false};
+  std::atomic<bool> cancel_requested_{false};
+  Eigen::VectorXd hold_position_;
+  trajectory_msgs::msg::JointTrajectoryPoint pos_;
+  realtime_tools::RealtimeBuffer<std::shared_ptr<trajectory_msgs::msg::JointTrajectory>> trajectory_buffer_;
+  realtime_tools::RealtimeBuffer<std::shared_ptr<control_msgs::action::FollowJointTrajectory::Result>> result_buffer_;
+  rclcpp::Time trajectory_start_time_;
+
+  std::vector<std::string> command_names_, state_names_;
+
+  double kp_;
+  double kv_;
 };
-}
+}  // namespace RoboController
 
-
-PLUGINLIB_EXPORT_CLASS(
-    RoboController::RoboController,
-    controller_interface::ControllerInterface
-)
+PLUGINLIB_EXPORT_CLASS(RoboController::RoboController, controller_interface::ControllerInterface)

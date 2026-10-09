@@ -19,11 +19,11 @@ over "armvision" (
         </armvision/Physics/virtual_joint>,
         </armvision/Physics/joint_1>,
         </armvision/Physics/joint_2>,
+        </armvision/Physics/plate_to_camera>,
         </armvision/Physics/joint_3>,
         </armvision/Physics/horizontal_arm_to_claw_support>,
         </armvision/Physics/joint_4>,
         </armvision/Physics/joint_5>,
-        </armvision/Physics/claw_to_camera>,
     ]
     prepend rel isaac:physics:robotLinks = [
         </armvision/Geometry/world/base_link>,
@@ -34,7 +34,7 @@ over "armvision" (
         </armvision/Geometry/world/base_link/base_plate/forward_drive_arm/horizontal_arm/claw_support/end_effector>,
         </armvision/Geometry/world/base_link/base_plate/forward_drive_arm/horizontal_arm/claw_support/gripper_right>,
         </armvision/Geometry/world/base_link/base_plate/forward_drive_arm/horizontal_arm/claw_support/gripper_left>,
-        </armvision/Geometry/world/base_link/base_plate/forward_drive_arm/horizontal_arm/claw_support/rgb_camera>,
+        </armvision/Geometry/world/base_link/base_plate/rgb_camera>,
     ]
     token isaac:robotType = "Default"
 
@@ -79,14 +79,14 @@ over "armvision" (
                                 )
                                 {
                                 }
-
-                                over "rgb_camera" (
-                                    prepend apiSchemas = ["IsaacLinkAPI"]
-                                )
-                                {
-                                }
                             }
                         }
+                    }
+
+                    over "rgb_camera" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
                     }
                 }
             }
@@ -137,7 +137,7 @@ over "armvision" (
         {
         }
 
-        over "claw_to_camera" (
+        over "plate_to_camera" (
             prepend apiSchemas = ["IsaacJointAPI"]
         )
         {
