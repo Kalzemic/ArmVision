@@ -8,4 +8,6 @@ ros/log/
 
 local.py
 
-training/isaac.usd
+*.usd
+*.png
+*isaac_run.py
