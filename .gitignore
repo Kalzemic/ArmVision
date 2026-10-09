@@ -11,3 +11,5 @@ local.py
 *.usd
 *.png
 *isaac_run.py
+
+*main_filtered.py
