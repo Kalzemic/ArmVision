@@ -7,3 +7,5 @@ ros/log/
 .clang-format
 
 local.py
+
+training/isaac.usd
